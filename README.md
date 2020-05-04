@@ -18,9 +18,9 @@
 
 
 ## GCC compiler Manual Setup on Windows Environment
-http://www.mingw.org/wiki/HOWTO_Install_the_MinGW_GCC_Compiler_Suite#toc1
-http://winlibs.com/
-https://github.com/brechtsanders/winlibs_mingw
+http://www.mingw.org/wiki/HOWTO_Install_the_MinGW_GCC_Compiler_Suite#toc1  
+http://winlibs.com/  
+https://github.com/brechtsanders/winlibs_mingw  
 
 
 ### Hello World Example in C language
