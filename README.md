@@ -42,7 +42,7 @@ sudo apt-get install libgtk-3-dev
 
 ```
 
-## example.c
+## example-0.c
 
 ```
 #include <gtk/gtk.h>
