@@ -2,6 +2,10 @@
 #include <stdlib.h> // malloc()
 #include <string.h> // strcmp(), strcpy()
 
+/* FILENAME: interpreter.c
+   DESCRIPTION: A poor Shell/Command Prompt for Operating Systems.
+*/
+
 
 // Function To Compare strings 
 int equals(const char* a, const char* b) {
