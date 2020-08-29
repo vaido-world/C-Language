@@ -1,2 +1,2 @@
-I'm unable to make winsockets to work.
-These are only trials that do not work.
+I'm unable to make winsockets to work.  
+These are only trials that do not work.  
