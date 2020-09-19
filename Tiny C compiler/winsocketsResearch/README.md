@@ -26,8 +26,8 @@ tcc -impdef ws2_32.dll
 ## Winsock Distribution
 
 #### previous research
-~~ws2_32.dll is probably distributed via  vc_redist.x64.exe and vc_redist.x86.exe
-https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads~~
+ws2_32.dll is **probably** distributed via  vc_redist.x64.exe and vc_redist.x86.exe
+https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads
 #### latest research
 https://docs.microsoft.com/en-us/windows/win32/api/winsock2/nf-winsock2-wsastartup
 > The Winsock2.h header file for Winsock 2 support is included with the Microsoft Windows Software Development Kit (SDK).
