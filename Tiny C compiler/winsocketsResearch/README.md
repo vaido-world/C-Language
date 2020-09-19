@@ -41,4 +41,5 @@ https://docs.microsoft.com/en-us/windows/win32/winsock/initialization-2
 ## The default path to Microsoft Windows Software Development Kit (SDK)
 
 ``C:\Program Files (x86)\Windows Kits\10\``
-
+## Estimated size of Microsoft Windows Software Development Kit (SDK)
+2,6gb
