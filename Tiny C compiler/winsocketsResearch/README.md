@@ -32,6 +32,10 @@ https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-d
 https://docs.microsoft.com/en-us/windows/win32/api/winsock2/nf-winsock2-wsastartup
 > The Winsock2.h header file for Winsock 2 support is included with the Microsoft Windows Software Development Kit (SDK).
 
+#### ws2tcpip.h
+`C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\ws2tcpip.h`
+`C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\WinSock2.h`
+
 
 ## Initialization of winsock
 > **The Ws2_32.dll loads the service provider's interface DLL into the system by using the standard Microsoft Windows dynamic library loading mechanisms, and initializes it by calling WSPStartup.** This is typically triggered by an application calling either socket or WSASocket to create a new socket to be associated with a service provider whose interface DLL is not currently loaded into memory. **The path to each service provider's interface DLL is stored by the Ws2_32.dll** at the time the service provider is being installed. See Installation and Configuration Functions for more information.
