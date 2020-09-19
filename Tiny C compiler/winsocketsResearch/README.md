@@ -38,3 +38,7 @@ https://docs.microsoft.com/en-us/windows/win32/api/winsock2/nf-winsock2-wsastart
 https://docs.microsoft.com/en-us/windows/win32/winsock/initialization-2
 
 
+## The default path to Microsoft Windows Software Development Kit (SDK)
+
+``C:\Program Files (x86)\Windows Kits\10\``
+
