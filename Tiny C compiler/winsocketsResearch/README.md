@@ -15,3 +15,6 @@ https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-d
 ```
 tcc -impdef ws2_32.dll
 ```
+
+## Initialization of winsock
+https://docs.microsoft.com/en-us/windows/win32/winsock/initialization-2
