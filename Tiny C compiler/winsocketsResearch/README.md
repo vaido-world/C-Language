@@ -7,7 +7,8 @@ These are only trials that do not work.
 ## About the Win32 API - platform
 https://docs.microsoft.com/en-us/windows/win32/desktop-programming
 
-# Winsock
+# About Winsock
+https://docs.microsoft.com/en-us/windows/win32/winsock/windows-sockets-start-page-2
 
 https://docs.microsoft.com/en-us/windows/win32/winsock/creating-a-basic-winsock-application
 
