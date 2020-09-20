@@ -22,6 +22,10 @@ can be found in https://github.com/TinyCC/tinycc/tree/mob/win32/lib
 tcc -impdef ws2_32.dll
 ```
 
+## Linking header files from Microsoft Windows Software Development Kit (SDK)
+> Preprocessor options:
+>   -Idir       add include path 'dir'
+
 
 ## Winsock Distribution
 
