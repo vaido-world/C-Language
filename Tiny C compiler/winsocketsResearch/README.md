@@ -56,5 +56,24 @@ https://docs.microsoft.com/en-us/windows/win32/winsock/initialization-2
 
 # Tests
 ```
-tcc baisc.c "-IC:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um"
+C:\Users\Juozas\Desktop\3tcc>tcc baisc.c "-IC:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um"
+In file included from baisc.c:1:
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winsock2.h:20: error: include file 'winapifamily.h' not found
+
+C:\Users\Juozas\Desktop\3tcc>tcc baisc.c "-IC:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um"tcc baisc.c "-IC:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um" "-IC:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared"
+
+C:\Users\Juozas\Desktop\3tcc>tcc baisc.c "-IC:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um" "-IC:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared"
+In file included from baisc.c:1:
+In file included from C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winsock2.h:53:
+In file included from C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/windows.h:167:
+In file included from c:/users/juozas/desktop/3tcc/include/excpt.h:9:
+c:/users/juozas/desktop/3tcc/include/_mingw.h:167: warning: WINAPI_FAMILY_PARTITION redefined
+In file included from baisc.c:1:
+In file included from C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winsock2.h:53:
+In file included from C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/windows.h:171:
+In file included from C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/windef.h:24:
+In file included from C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/minwindef.h:182:
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:3042: error: ';' expected (got "LONG")
+
+C:\Users\Juozas\Desktop\3tcc>
 ```
