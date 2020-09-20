@@ -52,3 +52,9 @@ https://docs.microsoft.com/en-us/windows/win32/winsock/initialization-2
 ``C:\Program Files (x86)\Windows Kits\10\``
 ## Estimated size of Microsoft Windows Software Development Kit (SDK)
 > 2,6gb
+
+
+# Tests
+```
+tcc baisc.c "-IC:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um"
+```
