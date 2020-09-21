@@ -46,7 +46,7 @@ https://repo.or.cz/tinycc.git/tree/89ea62481d111ebd3045621b44a542a0ff1e63e9
 After extracting the Tiny C Compiler Source Code.  
 
 
-Use Command Prompt and navigate to **tinycc-HEAD-8f9bf3f\win32\**  
+Use Command Prompt and navigate to `tinycc-HEAD-8f9bf3f\win32\`  
 `cd tinycc-HEAD-8f9bf3f\win32\`  
 
 And simply execute **build-tcc.bat** with a `-c tcc` parameter.  
