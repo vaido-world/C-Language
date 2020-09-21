@@ -30,3 +30,11 @@ And soon you should see **tcc.exe**  appear in the folder this way: **tinycc-HEA
 
 ## Compiling using TCC itself
 
+Download Precompiled TCC compiler binary from http://download.savannah.gnu.org/releases  
+Example: http://download.savannah.gnu.org/releases/tinycc/tcc-0.9.27-win64-bin.zip
+
+Extract the tcc-0.9.27-win64-bin.zip archive somewhere.
+
+Add the extracted directory to the system path  
+Example: C:\Users\boqsc\Desktop\tcc  
+
