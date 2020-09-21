@@ -9,7 +9,55 @@ Did not work, they are outdated.
 Here is a tutorial for compiling Tiny C Compiler:  
 https://github.com/vaido-world/C-Language-Tutorial/tree/master/Tiny%20C%20compiler/compilingTCC
 
+After compilation simply use the newly compiled latest TCC
+and test if Winsockets works for you:
+
+
+Compile the below example this way: `tcc WinSocktest.c -lws2_32`
+The output should look like this:
+```
+C:\Users\boqsc\Desktop\built>WinSocktest.exe
+socket id: 172
+```
+
+### WinSocktest.c
+```
+#include <stdio.h>
+
+#include <winsock2.h>
+
+ 
+
+int
+
+main() {
+
+    WSADATA wsaData;
+
+    SOCKET so;
+
+    (void)WSAStartup(MAKEWORD(2,2), &wsaData);
+
+    so = socket(AF_UNSPEC, SOCK_STREAM, IPPROTO_TCP);
+
+    printf("socket id: %d\n", so);
+
+    closesocket(so);
+
+    WSACleanup();   
+
+}
+
+ 
+
+C:>tcc foo.c -lws2_32 && foo
+
+Socket id: 180
+```
+
 ----
+## Older research, not relevant anymore
+
 
 I'm unable to make winsockets to work.  
 These are only trials that do not work.  
