@@ -52,3 +52,5 @@ Use Command Prompt and navigate to `tinycc-HEAD-8f9bf3f\win32\`
 And simply execute **build-tcc.bat** with a `-c tcc` parameter.  
 `tinycc-HEAD-8f9bf3f\win32\build-tcc.bat -c tcc`  
 
+Or simply `build-tcc.bat -c tcc -i built`
+
