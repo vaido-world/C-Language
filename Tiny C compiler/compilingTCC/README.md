@@ -6,5 +6,8 @@ To compile With MinGW:
 Download MinGW Setup: **mingw-get-setup.exe**  
 https://osdn.net/projects/mingw/releases/
 
-Use MinGW Installation Manager 
+use **mingw-get-setup.exe** to download **MinGW Installation Manager**
+
+Use **MinGW Installation Manager** to download/install **mingw32-base-bin** package.
 ![](MinGW%20Installation%20Manager.png)
+
