@@ -12,3 +12,11 @@ Use **MinGW Installation Manager** to download/install **mingw32-base-bin** pack
 ![](MinGW%20Installation%20Manager.png)
 
 After the **mingw32-base-bin** package download - Add **C:\MinGW\bin** to system environment Path
+
+
+
+Then Download Tiny C Compiler latest Source code from the git repository
+https://repo.or.cz/tinycc.git/tree/89ea62481d111ebd3045621b44a542a0ff1e63e9
+
+
+
