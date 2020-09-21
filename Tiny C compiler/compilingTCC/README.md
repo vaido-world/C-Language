@@ -23,3 +23,6 @@ https://repo.or.cz/tinycc.git/tree/89ea62481d111ebd3045621b44a542a0ff1e63e9
 After extracting the Tiny C Compiler Source Code.
 
 Simply double click on the file  **tinycc-HEAD-8f9bf3f\win32\build-tcc.bat**
+
+GCC will start to compile the TCC source code.
+And soon you should see **tcc.exe**  appear in the folder this way: **tinycc-HEAD-8f9bf3f\win32\tcc.exe**
