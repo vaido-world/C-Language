@@ -33,8 +33,22 @@ And soon you should see **tcc.exe**  appear in the folder this way: **tinycc-HEA
 Download Precompiled TCC compiler binary from http://download.savannah.gnu.org/releases  
 Example: http://download.savannah.gnu.org/releases/tinycc/tcc-0.9.27-win64-bin.zip
 
-Extract the tcc-0.9.27-win64-bin.zip archive somewhere.
+Extract the **tcc-0.9.27-win64-bin.zip** archive somewhere.
 
 Add the extracted directory to the system path  
 Example: C:\Users\boqsc\Desktop\tcc  
+
+Then Download Tiny C Compiler latest Source code from the git repository
+https://repo.or.cz/tinycc.git/tree/89ea62481d111ebd3045621b44a542a0ff1e63e9
+
+![](TCC-git-repository.png)
+
+After extracting the Tiny C Compiler Source Code.
+
+
+Use Command Prompt and navigate to **tinycc-HEAD-8f9bf3f\win32\**
+`cd tinycc-HEAD-8f9bf3f\win32\`
+
+And simply execute **build-tcc.bat** with a `-c tcc` parameter.
+`tinycc-HEAD-8f9bf3f\win32\build-tcc.bat -c tcc`
 
