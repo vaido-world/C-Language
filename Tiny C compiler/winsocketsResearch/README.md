@@ -13,7 +13,7 @@ After compilation simply use the newly compiled latest TCC
 and test if Winsockets works for you:
 
 
-Compile the below example this way: `tcc WinSocktest.c -lws2_32`
+Compile the below example this way: `tcc WinSocktest.c -lws2_32`  
 The output should look like this:
 ```
 C:\Users\boqsc\Desktop\built>WinSocktest.exe
