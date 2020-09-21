@@ -6,4 +6,5 @@ To compile With MinGW:
 Download MinGW Setup: **mingw-get-setup.exe**  
 https://osdn.net/projects/mingw/releases/
 
-MinGW Installation Manager 
+Use MinGW Installation Manager 
+![](MinGW%20Installation%20Manager.png)
