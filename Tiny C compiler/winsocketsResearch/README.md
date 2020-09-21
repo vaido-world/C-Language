@@ -1,3 +1,16 @@
+
+## 2020-09-21 Update: 
+I was abled to finally use winsocket in a program.  
+Simply you just have to compile the latest TCC compiler.
+
+The precompiled compilers on http://download.savannah.gnu.org/releases/tinycc/  
+Did not work, they are outdated.
+
+Here is a tutorial for compiling Tiny C Compiler:  
+https://github.com/vaido-world/C-Language-Tutorial/tree/master/Tiny%20C%20compiler/compilingTCC
+
+----
+
 I'm unable to make winsockets to work.  
 These are only trials that do not work.  
 
