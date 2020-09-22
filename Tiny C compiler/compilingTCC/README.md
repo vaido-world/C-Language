@@ -54,3 +54,20 @@ And simply execute **build-tcc.bat** with a `-c tcc` parameter.
 
 Or simply `build-tcc.bat -c tcc -i built` for the compiled binaries to be placed in a folder named "built".
 
+
+# Testing on a clean Windows 10 installation
+
+```
+C:\Users\mazvi\Desktop\built>tcc WinSocktest.c
+tcc: error: undefined symbol 'WSAStartup'
+tcc: error: undefined symbol 'socket'
+tcc: error: undefined symbol 'closesocket'
+tcc: error: undefined symbol 'WSACleanup'
+```
+
+If the compiler is compiled from the latest git repository  
+This error simply means that you haven't linked ws2_32.dll that exist in  `C:\Windows.old\Windows\System32`  
+Example of linking library: `tcc WinSocktest.c -lws2_32`
+
+> tcc WinSocktest.c
+
