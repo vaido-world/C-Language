@@ -55,6 +55,25 @@ C:>tcc foo.c -lws2_32 && foo
 Socket id: 180
 ```
 
+
+# Testing on a clean Windows 10 installation
+
+```
+C:\Users\mazvi\Desktop\built>tcc WinSocktest.c
+tcc: error: undefined symbol 'WSAStartup'
+tcc: error: undefined symbol 'socket'
+tcc: error: undefined symbol 'closesocket'
+tcc: error: undefined symbol 'WSACleanup'
+```
+
+If the compiler is compiled from the latest git repository  
+This error simply means that you haven't linked ws2_32.dll that exist in  `C:\Windows.old\Windows\System32`  
+Example of linking library: `tcc WinSocktest.c -lws2_32`
+
+> tcc WinSocktest.c
+
+
+
 ----
 # Older research, not relevant anymore
 
