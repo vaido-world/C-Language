@@ -1,5 +1,6 @@
 ## General tutorial on Sockets
 http://beej.us/guide/bgnet/html/
+https://stackoverflow.com/questions/40168714/winsock-file-transfer-in-c
 
 ## 2020-09-21 Update: 
 I was abled to finally use winsocket in a program.  
