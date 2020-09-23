@@ -1,3 +1,5 @@
+## General tutorial on Sockets
+http://beej.us/guide/bgnet/html/
 
 ## 2020-09-21 Update: 
 I was abled to finally use winsocket in a program.  
