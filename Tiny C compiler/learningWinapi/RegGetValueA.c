@@ -8,6 +8,8 @@ Useful information
 */
 
 // Current situation:          tcc: error: undefined symbol 'RegGetValueA'
+//Update: 2020-09-24 it is library linking error. A Advapi32 library should be linked with -l flag as follows: -ladvapi32
+// But first a def file must be generated and placed along other .def files in the tcc
 
 // Main function for retrieving Registered Owner Name of Windows Operating system.
 void main(){
