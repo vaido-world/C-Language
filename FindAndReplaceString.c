@@ -36,12 +36,15 @@ char* replaceWord(const char* stringInput,
   
     //-------------------------------------------------------
     
+    // After counting Occurences
     // Allocating memory for the result variable
     // Making new string of enough length 
     result = (char*)malloc(
                            i + occurences * (replacementWordLength - searchWordLenght) + 1
      ); 
   
+    
+    // Loop stringInput and replace words
     i = 0; 
     while (*stringInput) { 
         // Compare the substring with the result 
