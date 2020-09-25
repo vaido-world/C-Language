@@ -10,13 +10,13 @@
 
 
 char* replaceWord(const char* stringInput, 
-                  const char* originalWord, 
+                  const char* searchWordLenght, 
                   const char* replacementWord) 
 { 
 	char* result; 
 	
     int replacementWordLength = strlen(replacementWord); 
-    int originalWordLenght = strlen(originalWord); 
+    int searchWordLenghtLenght = strlen(searchWordLenght); 
 	const char terminationCharacter = '\0';	
 	
 	// Loop through the whole input string 
@@ -26,11 +26,11 @@ char* replaceWord(const char* stringInput,
 	int occurences;
     for (i = 0, occurences=0; stringInput[i] != terminationCharacter; i++) { 
 		//Counting Occurences in the Input Array that contain strings.
-        if (strstr(&stringInput[i], originalWord) == &stringInput[i]) { 
+        if (strstr(&stringInput[i], searchWordLenght) == &stringInput[i]) { 
             occurences++; 
   
             // Jumping to index after the old word. 
-            i += originalWordLenght - 1; 
+            i += searchWordLenghtLenght - 1; 
         } 
     } 
   
@@ -38,20 +38,26 @@ char* replaceWord(const char* stringInput,
   
     // Making new string of enough length 
     result = (char*)malloc(
-						   i + occurences * (replacementWordLength - originalWordLenght) + 1
+						   i + occurences * (replacementWordLength - searchWordLenghtLenght) + 1
 	 ); 
   
     i = 0; 
     while (*stringInput) { 
-        // compare the substring with the result 
-        if (strstr(stringInput, originalWord) == stringInput) { 
+        // Compare the substring with the result 
+        if (strstr(stringInput, searchWordLenght) == stringInput) { 
 		
+			// Copy string to the result array
             strcpy(&result[i], replacementWord); 
+			
+			// Add length of replacement word to the Loop increment
             i += replacementWordLength; 
 			
-            stringInput += originalWordLenght; 
+			// Add searchWordLenghtLenght to the String Input???
+            stringInput += searchWordLenghtLenght; 
         } 
         else
+			// If stringInput does not match searchable word
+			// Set result item to the stringInput item 
             result[i++] = *stringInput++; 
     } 
   
@@ -62,16 +68,8 @@ char* replaceWord(const char* stringInput,
 // Driver Program 
 int main() 
 { 
-    char input[] = "xxforxx xx for xx"; 
-    char word[] = "xx"; 
-    char replacement[] = "Geeks"; 
-  
     char* result = NULL; 
-  
-    // originalWord string 
-    printf("Old string: %s\n", input); 
-  
-    result = replaceWord(input, word, replacement); 
+    result = replaceWord("xxforxx xx for xx", "xx", "Geeks"); 
     printf("New String: %s\n", result); 
   
     free(result); 
