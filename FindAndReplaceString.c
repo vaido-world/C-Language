@@ -29,7 +29,7 @@ char* replaceWord(const char* stringInput,
         if (strstr(&stringInput[i], searchWord) == &stringInput[i]) { 
             occurences++; 
   
-            // Jumping to index after the old word. 
+            // Jumping to array index after the old word. 
             i += searchWordLenght - 1; 
         } 
     } 
