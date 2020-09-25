@@ -16,7 +16,7 @@ char* replaceWord(const char* stringInput,
 	char* result; 
 	
     int replacementWordLength = strlen(replacementWord); 
-    int originalLenght = strlen(originalWord); 
+    int originalWordLenght = strlen(originalWord); 
 	const char terminationCharacter = '\0';	
 	
 	// Loop through the whole input string 
