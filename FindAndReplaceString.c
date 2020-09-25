@@ -10,13 +10,13 @@
 
 
 char* replaceWord(const char* stringInput, 
-                  const char* searchWordLenght, 
+                  const char* searchWord, 
                   const char* replacementWord) 
 { 
 	char* result; 
 	
     int replacementWordLength = strlen(replacementWord); 
-    int searchWordLenghtLenght = strlen(searchWordLenght); 
+    int searchWordLenght = strlen(searchWord); 
 	const char terminationCharacter = '\0';	
 	
 	// Loop through the whole input string 
@@ -26,11 +26,11 @@ char* replaceWord(const char* stringInput,
 	int occurences;
     for (i = 0, occurences=0; stringInput[i] != terminationCharacter; i++) { 
 		//Counting Occurences in the Input Array that contain strings.
-        if (strstr(&stringInput[i], searchWordLenght) == &stringInput[i]) { 
+        if (strstr(&stringInput[i], searchWord) == &stringInput[i]) { 
             occurences++; 
   
             // Jumping to index after the old word. 
-            i += searchWordLenghtLenght - 1; 
+            i += searchWordLenght - 1; 
         } 
     } 
   
@@ -38,13 +38,13 @@ char* replaceWord(const char* stringInput,
   
     // Making new string of enough length 
     result = (char*)malloc(
-						   i + occurences * (replacementWordLength - searchWordLenghtLenght) + 1
+						   i + occurences * (replacementWordLength - searchWordLenght) + 1
 	 ); 
   
     i = 0; 
     while (*stringInput) { 
         // Compare the substring with the result 
-        if (strstr(stringInput, searchWordLenght) == stringInput) { 
+        if (strstr(stringInput, searchWord) == stringInput) { 
 		
 			// Copy string to the result array
             strcpy(&result[i], replacementWord); 
@@ -52,15 +52,15 @@ char* replaceWord(const char* stringInput,
 			// Add length of replacement word to the Loop increment
             i += replacementWordLength; 
 			
-			// Add searchWordLenghtLenght to the String Input???
-            stringInput += searchWordLenghtLenght; 
+			// Add searchWordLenght to the String Input???
+            stringInput += searchWordLenght; 
         } 
         else
 			// If stringInput does not match searchable word
 			// Set result item to the stringInput item 
             result[i++] = *stringInput++; 
     } 
-  
+	// Add terminationCharacter at the end of result array
     result[i] = terminationCharacter; 
     return result; 
 } 
