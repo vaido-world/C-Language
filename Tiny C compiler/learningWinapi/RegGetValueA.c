@@ -16,6 +16,15 @@ Useful information
 // tcc -impdef advapi32.dll -o .\lib\advapi32.def
 // tcc -ladvapi32 test.c
 
+// System Path variable locations
+// https://stackoverflow.com/questions/573817/where-are-environment-variables-stored-in-registry/573818#573818
+
+// User Variables
+// HKEY_CURRENT_USER\Environment
+
+// System Variables
+// Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment
+
 // Main function for retrieving Registered Owner Name of Windows Operating system.
 void main(){
 	char value[255];
