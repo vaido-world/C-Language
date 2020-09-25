@@ -56,7 +56,8 @@ char* replaceWord(const char* stringInput,
             // Add length of replacement word to the Loop increment
             i += replacementWordLength; 
             
-            // Add searchWordLenght to the String Input lenght???
+            // After adding a string, increase an array length
+            // Add searchWordLenght to the String Input???
             stringInput += searchWordLenght; 
         } 
         else
