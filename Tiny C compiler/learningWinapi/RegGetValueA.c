@@ -12,6 +12,10 @@ Useful information
 // But first a def file must be generated and placed along other .def files in the tcc (tcc/lib/advapi32.def)
 // https://stackoverflow.com/questions/4069770/tiny-c-compiler-tcc-and-winsock/4070300#4070300
 
+// Proper compilation
+// tcc -impdef advapi32.dll -o .\lib\advapi32.def
+// tcc -ladvapi32 test.c
+
 // Main function for retrieving Registered Owner Name of Windows Operating system.
 void main(){
 	char value[255];
