@@ -9,7 +9,7 @@ Useful information
                      //Required, else an error:               tcc: error: undefined symbol 'RegGetValueA'
  Proper compilation method/tutorial 
    tcc -impdef advapi32.dll -o .\lib\advapi32.def
-   tcc -ladvapi32 test.c
+   tcc -ladvapi32 RegGetValueAPathEnvironmentVariable.c
 
 More Documentation
    System Path variable locations
