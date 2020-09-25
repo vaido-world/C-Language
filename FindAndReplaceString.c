@@ -19,12 +19,13 @@ char* replaceWord(const char* stringInput,
     int originalLenght = strlen(originalWord); 
 	const char terminationCharacter = '\0';	
 	
-	
+	// Loop through the whole input string 
     // Counting the number of times old word 
     // occur in the string
     int i;
 	int occurences;
     for (i = 0, occurences=0; stringInput[i] != terminationCharacter; i++) { 
+		//Counting Occurences in the Input Array that contain strings.
         if (strstr(&stringInput[i], originalWord) == &stringInput[i]) { 
             occurences++; 
   
@@ -44,8 +45,10 @@ char* replaceWord(const char* stringInput,
     while (*stringInput) { 
         // compare the substring with the result 
         if (strstr(stringInput, originalWord) == stringInput) { 
+		
             strcpy(&result[i], replacementWord); 
             i += replacementWordLength; 
+			
             stringInput += originalWordLenght; 
         } 
         else
