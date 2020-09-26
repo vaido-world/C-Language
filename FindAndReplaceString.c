@@ -22,8 +22,8 @@ char* replaceWord(const char* stringInput,
     // Loop through the whole input string 
     // Counting the number of times old word 
     // occur in the string
-    int i;
-    int occurences;
+    int i; //Making available to other functions outside for loop
+    int occurences; //Making available to other functions outside for loop
     for (i = 0, occurences=0; stringInput[i] != terminationCharacter; i++) { 
         //Counting Occurences in the Input Array that contain strings.
         if (strstr(&stringInput[i], searchWord) == &stringInput[i]) { 
@@ -36,15 +36,15 @@ char* replaceWord(const char* stringInput,
   
     //-------------------------------------------------------
     
-    // After counting Occurences
+	// After counting Occurences
     // Allocating memory for the result variable
     // Making new string of enough length 
     result = (char*)malloc(
                            i + occurences * (replacementWordLength - searchWordLenght) + 1
      ); 
   
-    
-    // Loop stringInput and replace words
+	
+	// Loop stringInput and replace words
     i = 0; 
     while (*stringInput) { 
         // Compare the substring with the result 
@@ -56,7 +56,7 @@ char* replaceWord(const char* stringInput,
             // Add length of replacement word to the Loop increment
             i += replacementWordLength; 
             
-            // After adding a string, increase an array length
+			// After adding a string, increase an array length
             // Add searchWordLenght to the String Input???
             stringInput += searchWordLenght; 
         } 
