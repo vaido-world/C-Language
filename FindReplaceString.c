@@ -24,6 +24,7 @@ char* replaceWord(const char* stringInput,
     for (i = 0, occurences=0; stringInput[i] != terminationCharacter; i++) { 
         // If the stringInput Token matches Search word:
         if (strstr(&stringInput[i], searchWord) == &stringInput[i]) { 
+            // Increase Occurences
             occurences++;
             
             // Jumping to index after the old word. 
