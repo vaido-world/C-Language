@@ -9,48 +9,48 @@ char* replaceWord(const char* stringInput,
                   const char* searchWord, 
                   const char* replaceWord) 
 { 
-	// Program constants
-	const char terminationCharacter = '\0'; 
-	
-	// Chapter 1 [Allocating Memory] 
-	
-	// Counting the characters in the variables
-	int searchWordLength = strlen(searchWord);
-	int replaceWordLength = strlen(replaceWord);
-	
-	// Counting Occurences in the stringInput
-	int i;
-	int occurences;
-	for (i = 0, occurences=0; stringInput[i] != terminationCharacter; i++) { 
-		// If the stringInput Token matches Search word:
-		if (strstr(&stringInput[i], searchWord) == &stringInput[i]) { 
-			occurences++;
-			
+    // Program constants
+    const char terminationCharacter = '\0'; 
+    
+    // Chapter 1 [Allocating Memory] 
+    
+    // Counting the characters in the variables
+    int searchWordLength = strlen(searchWord);
+    int replaceWordLength = strlen(replaceWord);
+    
+    // Counting Occurences in the stringInput
+    int i;
+    int occurences;
+    for (i = 0, occurences=0; stringInput[i] != terminationCharacter; i++) { 
+        // If the stringInput Token matches Search word:
+        if (strstr(&stringInput[i], searchWord) == &stringInput[i]) { 
+            occurences++;
+            
             // Jumping to index after the old word. 
             i += searchWordLength - 1; 
-		}
-	}
-	
-	// Chapter 2 [Allocating Memory] 
-	
+        }
+    }
+    
+    // Chapter 2 [Allocating Memory] 
+    
     // Allocating memory for the result variable
     // Making new string of enough length 
-	// i          - The overall counted tokens in the stringInput
-	// occurences - The counted occurences stringInput
-	
-	// (replaceWordLength - searchWordLength) 
-	
-	// Look further: C Operator Precedence (c language arithmetic operators evaluation order)
-	char* result;
+    // i          - The overall counted tokens in the stringInput
+    // occurences - The counted occurences stringInput
+    
+    // (replaceWordLength - searchWordLength) 
+    
+    // Look further: C Operator Precedence (c language arithmetic operators evaluation order)
+    char* result;
     result = (char*)malloc(
                            i + occurences * (replaceWordLength - searchWordLength) + 1
      ); 
-	 
-	 
-	 
-	 
-	// Chapter 3 [Replacing Words] 
-	// Loop stringInput and replace words
+     
+     
+     
+     
+    // Chapter 3 [Replacing Words] 
+    // Loop stringInput and replace words
     i = 0; 
     while (*stringInput) { 
         // Compare the substring with the result 
@@ -62,7 +62,7 @@ char* replaceWord(const char* stringInput,
             // Add length of replacement word to the Loop increment
             i += replaceWordLength; 
             
-			// After adding a string, increase an array length
+            // After adding a string, increase an array length
             // Add searchWordLenght to the String Input???
             stringInput += searchWordLength; 
         } 
