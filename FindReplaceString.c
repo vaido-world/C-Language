@@ -24,7 +24,6 @@ char* replaceWord(const char* stringInput,
     for (i = 0, occurences=0; stringInput[i] != terminationCharacter; i++) { 
         // If the stringInput Token matches Search word:
         if (strstr(&stringInput[i], searchWord) == &stringInput[i]) { 
-            // Increase Occurences
             occurences++;
             
             // Jumping to index after the old word. 
@@ -41,11 +40,14 @@ char* replaceWord(const char* stringInput,
     
     // (replaceWordLength - searchWordLength) 
     
+    
+    printf("i - %i, occurences - %i\n", i, occurences);
     // Look further: C Operator Precedence (c language arithmetic operators evaluation order)
     char* result;
     result = (char*)malloc(
                            i + occurences * (replaceWordLength - searchWordLength) + 1
      ); 
+     printf("result: %i\n", result);
      
      
      
