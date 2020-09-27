@@ -1,3 +1,6 @@
+/*
+A program to replace a string/word with another in a line of text/input.
+*/
 #include <stdio.h> 
 #include <stdlib.h> 
 #include <string.h> 
