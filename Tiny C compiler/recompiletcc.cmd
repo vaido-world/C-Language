@@ -49,7 +49,7 @@ IF NOT EXIST "i386-win32-tcc.exe" ECHO Something went wrong with the Building Ti
 IF NOT EXIST "i386-win32-tcc.exe" CD "%~DP0" 
 IF NOT EXIST "i386-win32-tcc.exe" CALL "%~0" 
 IF     EXIST "i386-win32-tcc.exe" ECHO Recompilation has been successfull, you now have a latest Tiny C Compiler compiled from Source Code
-
+IF     EXIST "i386-win32-tcc.exe" ECHO The New Tiny C Compiler can be Found in %CD%
 
 pause
 
