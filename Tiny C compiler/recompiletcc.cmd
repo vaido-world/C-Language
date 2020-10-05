@@ -32,7 +32,7 @@ ping 127.0.0.1 -n 6 > nul
 ECHO If you see this, this script is still going, that means this script is successfully Unstuck, else something might have gone wrong
 
 ECHO Opening the Directory of the "latest compiled Tiny C Compiler"
-cd "..\..\latest-built"
+CD "..\..\latest-built"
 
 ECHO Downloading "Source code for Winsocket test program"
 curl "https://raw.githubusercontent.com/vaido-world/C-Language-Tutorial/master/Tiny%%20C%%20compiler/winsocketsResearch/WinSocktest.c" -O
@@ -42,6 +42,15 @@ tcc "WinSocktest.c" -lws2_32
 
 ECHO Launching the compiled Winsocket Test Program.
 WinSocktest.exe
+
+REM If this Error happen, there is some kind of problem in the above: Launching "Tiny C Compiler Building Script"
+REM CALL %~0 is simply a statement to start this Batch script again.
+IF NOT EXIST "i386-win32-tcc.exe" ECHO Something went wrong with the Building Tiny C Compiler, restart might help.
+IF NOT EXIST "i386-win32-tcc.exe" CD "%~DP0" 
+IF NOT EXIST "i386-win32-tcc.exe" CALL "%~0" 
+IF     EXIST "i386-win32-tcc.exe" ECHO Recompilation has been successfull, you now have a latest Tiny C Compiler compiled from Source Code
+
+
 pause
 
 REM taskkill /F /FI "WindowTitle eq  build-tcc.bat" /T
