@@ -23,7 +23,7 @@ ECHO Opening "win32" directory of "Latest Tiny C Compiler Source Code"
 CD "win32"
 
 ECHO Launching "Tiny C Compiler Building Script"
-START /B "build-tcc.bat" build-tcc.bat -c tcc -i "..\..\latest-built"
+CALL build-tcc.bat -c tcc -i "..\..\latest-built"
 ECHO Tiny C Compiler Successfully Compiled from the latest Source Code.
 
 ECHO Trying to Unstuck from weirdly written "Tiny C Compiler Building Script"
@@ -42,6 +42,7 @@ tcc "WinSocktest.c" -lws2_32
 
 ECHO Launching the compiled Winsocket Test Program.
 WinSocktest.exe
+pause
 
 REM If this Error happen, there is some kind of problem in the above: Launching "Tiny C Compiler Building Script"
 REM CALL %~0 is simply a statement to start this Batch script again.
