@@ -1,6 +1,6 @@
-#include <stdio.h>   // Prevents a warning:                  test.c:34: warning: implicit declaration of function 'printf'
-#include <windows.h> // Required, else an error:             test.c:12: error: 'DWORD' undeclared
-
+#include <stdio.h>               // Prevents a warning:                                    test.c:34: warning: implicit declaration of function 'printf'
+#include <windows.h>             // Required, else an error:                               test.c:12: error: 'DWORD' undeclared
+#pragma comment(lib, "advapi32") // No more Need for tcc -ladvapi32 RegGetValueA.c         tcc: error: undefined symbol 'RegGetValueA' 
 /* 
 Useful information 
    Function:  RegGetValueA
@@ -14,7 +14,7 @@ Useful information
 
 // Proper compilation 2020-09-25
 // tcc -impdef advapi32.dll -o .\lib\advapi32.def
-// tcc -ladvapi32 test.c
+// tcc -ladvapi32 RegGetValueA.c
 
 // System Path variable locations
 // https://stackoverflow.com/questions/573817/where-are-environment-variables-stored-in-registry/573818#573818
