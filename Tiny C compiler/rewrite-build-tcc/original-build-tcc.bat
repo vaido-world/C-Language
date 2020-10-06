@@ -17,7 +17,8 @@ set EXES_ONLY=no
 goto :a0
 
 
-
+REM shift command line arguments of this script
+REM Shifting twice means skiping the argument's argument
 :a2
 shift
 :a3
