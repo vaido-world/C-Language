@@ -27,7 +27,7 @@ if not (%1)==(-c) goto :a1
 set CC=%~2
 
 
-
+REM IF the argument of -c is cl (clang compiler), call a function responsible for clang
 if (%2)==(cl) set CC=@call :cl
 goto :a2
 :a1
