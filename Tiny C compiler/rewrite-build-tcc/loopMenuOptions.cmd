@@ -1,6 +1,6 @@
 @ECHO OFF
 
-
+REM Delayed expansion workaround notice https://stackoverflow.com/a/44963641/3789797
 REM parameter
 FOR %%G IN (%*) DO ( 
 	SET "commandLineArgument=%%G"
