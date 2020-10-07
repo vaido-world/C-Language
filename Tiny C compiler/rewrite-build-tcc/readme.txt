@@ -14,3 +14,4 @@ if second argument is cl, Set compiler variable
 Expand %2 removing any surrounding quotes (")
 https://github.com/vaido-world/C-Language-Tutorial/blob/master/Tiny%20C%20compiler/rewrite-build-tcc/original-build-tcc.bat#L28
 
+set clang compiler as CC and goto :a2 (shift argument twice)
