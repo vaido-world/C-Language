@@ -1,3 +1,4 @@
+## Check if path variable contains a folder path with tcc.exe executable inside
 ## To check if executable exist in the path variable
 Simply get the path variable.   
 Loop the variable by the character `;`  
