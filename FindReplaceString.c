@@ -14,6 +14,8 @@ char* replaceWord(const char* stringInput,
 { 
     // Program constants
     const char terminationCharacter = '\0'; 
+	// + 1  is for the \0 character in the string array
+    const int terminationCharacterLength = 1; 
     
     // Chapter 1 [Allocating Memory] 
     
@@ -49,10 +51,10 @@ char* replaceWord(const char* stringInput,
     printf("i - %i, occurences - %i\n", i, occurences);
     // Look further: C Operator Precedence (c language arithmetic operators evaluation order)
   
-    // + 1  is for the \0 character in the string array
+
     char* result;
     result = (char*)malloc(
-                           i + occurences * (replaceWordLength - searchWordLength) + 1
+                           i + occurences * (replaceWordLength - searchWordLength) + terminationCharacterLength
      ); 
      
      // occurences * (replaceWordLength - searchWordLength) + 17
