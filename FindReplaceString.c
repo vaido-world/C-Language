@@ -14,7 +14,7 @@ char* replaceWord(const char* stringInput,
 { 
     // Program constants
     const char terminationCharacter = '\0'; 
-	// + 1  is for the \0 character in the string array
+    // + 1  is for the \0 character in the string array
     const int terminationCharacterLength = 1; 
     
     // Chapter 1 [Allocating Memory] 
@@ -26,12 +26,12 @@ char* replaceWord(const char* stringInput,
     // Counting Occurences in the stringInput
     int i;
     int occurences;
-	
-	printf("xx is replace word, so it is jumped over\n               ---\n"); // Look for comment: "Jumping to index after the old word."
+    
+    printf("xx is replace word, so it is jumped over\n               ---\n"); // Look for comment: "Jumping to index after the old word."
     for (i = 0, occurences=0; stringInput[i] != terminationCharacter; i++) { 
         // If the stringInput Token matches Search word:
         printf("%s | stringInput[%i]\n", &stringInput[i], i);
-		// Scans for occurence of searchWord in the current InputString[i], 
+        // Scans for occurence of searchWord in the current InputString[i], 
         if (strstr(&stringInput[i], searchWord) == &stringInput[i]) { 
             occurences++;
             
