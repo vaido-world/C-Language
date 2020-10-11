@@ -37,7 +37,7 @@ char* replaceWord(const char* stringInput,
         if (strstr(&stringInput[i], searchWord) == &stringInput[i]) { 
             occurences++;
             
-            // Jumping to index after the old word. 
+            // Jumping to index after the matched searchWord. 
             i += searchWordLength - 1; 
         }
     }
