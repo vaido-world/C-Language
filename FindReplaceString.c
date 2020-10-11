@@ -28,7 +28,7 @@ char* replaceWord(const char* stringInput,
     int occurences;
     for (i = 0, occurences=0; stringInput[i] != terminationCharacter; i++) { 
         // If the stringInput Token matches Search word:
-        printf("%s | stringInput[increment]\n", &stringInput[i]);
+        printf("%s | stringInput[%i]\n", &stringInput[i], i);
 		// Scans for occurence of searchWord in the current InputString[i], 
         if (strstr(&stringInput[i], searchWord) == &stringInput[i]) { 
             occurences++;
