@@ -33,7 +33,7 @@ char* replaceWord(const char* stringInput,
         printf("%s | stringInput[%i]\n", &stringInput[i], i);
         // Scans for occurence of searchWord in the current InputString[i], 
         // strstr Returns a pointer to the first occurrence
-        // We compare the returned pointer address with ...? the leftover string Address?
+        // We compare the returned pointer address with ...? the remainding string character's Address?
         if (strstr(&stringInput[i], searchWord) == &stringInput[i]) { 
             occurences++;
             
