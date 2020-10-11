@@ -26,6 +26,8 @@ char* replaceWord(const char* stringInput,
     // Counting Occurences in the stringInput
     int i;
     int occurences;
+	
+	printf("xx is replace word, so it is jumped over\n               ---\n"); // Look for comment: "Jumping to index after the old word."
     for (i = 0, occurences=0; stringInput[i] != terminationCharacter; i++) { 
         // If the stringInput Token matches Search word:
         printf("%s | stringInput[%i]\n", &stringInput[i], i);
