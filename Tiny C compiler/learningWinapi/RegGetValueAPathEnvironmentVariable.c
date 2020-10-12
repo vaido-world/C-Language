@@ -1,6 +1,6 @@
 #pragma comment(lib, "advapi32") // No more Need for tcc -ladvapi32 RegGetValueA.c         tcc: error: undefined symbol 'RegGetValueA' 
-#include <stdio.h>   // Prevents a warning:                  test.c:34: warning: implicit declaration of function 'printf'
-#include <windows.h> // Required, else an error:             test.c:12: error: 'DWORD' undeclared
+#include <stdio.h>               // Prevents a warning:                  test.c:34: warning: implicit declaration of function 'printf'
+#include <windows.h>             // Required, else an error:             test.c:12: error: 'DWORD' undeclared
 
 /* 
 Useful information 
