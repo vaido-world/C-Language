@@ -1,13 +1,13 @@
 #pragma comment(lib, "advapi32") // No more Need for tcc -ladvapi32 RegGetValueA.c         tcc: error: undefined symbol 'RegGetValueA' 
-#include <stdio.h>               // Prevents a warning:                  test.c:34: warning: implicit declaration of function 'printf'
-#include <windows.h>             // Required, else an error:             test.c:12: error: 'DWORD' undeclared
+#include <stdio.h>               // Prevents a warning:                                    test.c:34: warning: implicit declaration of function 'printf'
+#include <windows.h>             // Required, else an error:                               test.c:12: error: 'DWORD' undeclared
 
 /* 
 Useful information 
    Function:  RegGetValueA
    Reference: https://docs.microsoft.com/en-us/windows/win32/api/winreg/nf-winreg-reggetvaluea
    
-                                //Required, else an error:               tcc: error: undefined symbol 'RegGetValueA'
+                                //Required, else an error:                                 tcc: error: undefined symbol 'RegGetValueA'
  Proper compilation method/tutorial 
    tcc -impdef advapi32.dll -o .\lib\advapi32.def
    tcc -ladvapi32 RegGetValueAPathEnvironmentVariable.c
