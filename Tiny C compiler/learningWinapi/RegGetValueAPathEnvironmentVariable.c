@@ -27,7 +27,9 @@ More Documentation
 
 
 void main(){
-	char value[255];
+	
+	// Notice: the program silently crashes if there is not enough characters allocated
+	char value[2550];
 	
 	#define BUFFER  8192
 	DWORD BufferSize = BUFFER;
