@@ -42,7 +42,6 @@ tcc "WinSocktest.c" -lws2_32
 
 ECHO Launching the compiled Winsocket Test Program.
 WinSocktest.exe
-pause
 
 REM If this Error happen, there is some kind of problem in the above: Launching "Tiny C Compiler Building Script"
 REM CALL %~0 is simply a statement to start this Batch script again.
