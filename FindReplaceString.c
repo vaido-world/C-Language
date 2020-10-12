@@ -34,12 +34,25 @@ char* replaceWord(const char* stringInput,
         // Scans for occurence of searchWord in the current InputString[i], 
         // strstr Returns a pointer to the first occurrence
         // We compare the returned pointer address with ...? the remainding string character's Address?
+		// If the result of the returned found pointer is the same as 
+		// strstr simply returns whole inputString if the search word matched. It is refered as "pointer of first occurence". Else Null.
+		// That way, this event of first occurence can be used.
         if (strstr(&stringInput[i], searchWord) == &stringInput[i]) { 
+			//printf("strstr: %p\n", strstr(&stringInput[i], searchWord));
+			printf("|>");
+			printf(&stringInput[i]);
+			printf("<|\n");
             occurences++;
             
             // Jumping to index after the matched searchWord. 
             i += searchWordLength - 1; 
-        }
+        } 
+		else {
+			printf("|->");
+			printf(&stringInput[i]);
+			printf("<-|\n");
+			
+		}
     }
     
     // Chapter 2 [Allocating Memory] 
