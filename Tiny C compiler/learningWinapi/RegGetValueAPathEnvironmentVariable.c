@@ -28,7 +28,7 @@ More Documentation
 
 void main(){
 	
-	// Notice: the program silently crashes if there is not enough characters allocated
+	// Notice: the program silently crashes if there are not enough characters allocated
 	char value[2550];
 	
 	#define BUFFER  8192
