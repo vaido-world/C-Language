@@ -74,6 +74,8 @@ void main(){
 		// the program crashes when the array is too small, therefore out of bounds
 		// printf("Is too small");
 	}
+	
+	// https://www.educative.io/edpresso/splitting-a-string-using-strtok-in-c
 		
 
 }
