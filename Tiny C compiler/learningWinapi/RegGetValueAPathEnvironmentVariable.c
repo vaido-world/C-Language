@@ -78,4 +78,7 @@ void main(){
 	// https://www.educative.io/edpresso/splitting-a-string-using-strtok-in-c
 	// https://stackoverflow.com/questions/308695/how-do-i-concatenate-const-literal-strings-in-c/308712#308712
 
+	// https://docs.microsoft.com/en-us/windows/win32/fileio/listing-the-files-in-a-directory
+	// https://stackoverflow.com/questions/2314542/listing-directory-contents-using-c-and-windows/2315808#2315808
+	
 }
