@@ -27,8 +27,11 @@ More Documentation
 
 void main(){
 	
-	// Notice: the program silently crashes if there is not enough characters allocated
-	char value[2000];
+	// Notice: the program silently crashes if there are not enough characters allocated
+	// https://docs.microsoft.com/en-us/windows/win32/seccrypto/retrieving-data-of-unknown-length
+	// https://stackoverflow.com/questions/9137157/no-out-of-bounds-error/9137188#9137188
+	// Allocating 2048 bytes = 2kb for the Path variable output
+	char value[2048];
 	
 	#define BUFFER  8192
 	DWORD BufferSize = BUFFER;
