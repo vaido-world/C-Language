@@ -27,15 +27,11 @@ More Documentation
 
 void main(){
 	
-	
-
-	
 	// Notice: the program silently crashes if there is not enough characters allocated
 	char value[2000];
 	
 	#define BUFFER  8192
 	DWORD BufferSize = BUFFER;
-	
 	
 	HKEY    hkey     = HKEY_LOCAL_MACHINE;
 	LPCSTR  lpSubKey = "SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Environment";
