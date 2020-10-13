@@ -7,6 +7,7 @@ https://www.google.com/search?q=c99+standard&oq=c99+sta&aqs=chrome.0.0i20i263i45
 
 ### Native win32 to download a file
 http://www.plugincafe.com/forum/forum_posts.asp?TID=10627&PID=41265#41265
+https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms775123(v=vs.85)
 
 
 
