@@ -5,6 +5,8 @@
 http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1256.pdf  
 https://www.google.com/search?q=c99+standard&oq=c99+sta&aqs=chrome.0.0i20i263i457j69i57j0i67j0i20i263j0i67l2j0j69i61.2855j0j7&sourceid=chrome&ie=UTF-8  
 
+### Native win32 to download a file
+http://www.plugincafe.com/forum/forum_posts.asp?TID=10627&PID=41265#41265
 
 
 
