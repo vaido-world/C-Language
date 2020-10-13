@@ -81,7 +81,7 @@ void main(){
 		printf("Actual size of the array: %i\n", strlen(pvData));
 		printf("Manually Allocated bytes for the array: %zu", sizeof(pvData));
 		printf("\nSince malloc was used, the dynamic Allocation makes the Manual Allocation results strange.");
-
+		// https://stackoverflow.com/questions/37447198/dynamically-allocated-variable-size
 	/*
 	if (BufferSize >= strlen(value)) {
 		printf("                  ---");
