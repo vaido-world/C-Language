@@ -75,6 +75,6 @@ void main(){
 	}
 	
 	// https://www.educative.io/edpresso/splitting-a-string-using-strtok-in-c
-		
+	// https://stackoverflow.com/questions/308695/how-do-i-concatenate-const-literal-strings-in-c/308712#308712
 
 }
