@@ -9,7 +9,7 @@ https://www.google.com/search?q=c99+standard&oq=c99+sta&aqs=chrome.0.0i20i263i45
 
 
 ---
-
+## 2020-05-04
 
 ## Digital Mars Compiler Manual Setup on Windows Environment
 1. Download ` Digital Mars C/C++ Compiler Version 8.57 (3662658 bytes) (NEW!)`
