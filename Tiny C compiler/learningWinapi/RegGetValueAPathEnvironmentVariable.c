@@ -30,6 +30,7 @@ void main(){
 	
 	// Notice: the program silently crashes if there are not enough characters allocated
 	// https://docs.microsoft.com/en-us/windows/win32/seccrypto/retrieving-data-of-unknown-length
+	// https://stackoverflow.com/questions/9137157/no-out-of-bounds-error/9137188#9137188
 	char value[2550];
 	
 	#define BUFFER  8192
