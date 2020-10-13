@@ -7,7 +7,7 @@ Useful information
    Function:  RegGetValueA
    Reference: https://docs.microsoft.com/en-us/windows/win32/api/winreg/nf-winreg-reggetvaluea
    
-                                //Required, else an error:                                 tcc: error: undefined symbol 'RegGetValueA'
+                                  // Required, else an error:                               tcc: error: undefined symbol 'RegGetValueA'
  Proper compilation method/tutorial 
    tcc -impdef advapi32.dll -o .\lib\advapi32.def
    tcc -ladvapi32 RegGetValueAPathEnvironmentVariable.c
