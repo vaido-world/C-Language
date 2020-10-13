@@ -79,7 +79,8 @@ void main(){
 		printf("\n");
 		printf("\nRetrieved information about array size: %i\n",*pcbData);
 		printf("Actual size of the array: %i\n", strlen(pvData));
-		printf("Manually Allocated bytes for the array: %i", sizeof(pvData));
+		printf("Manually Allocated bytes for the array: %zu", sizeof(pvData));
+		printf("\nSince malloc was used, the dynamic Allocation makes the Manual Allocation results strange.");
 
 	/*
 	if (BufferSize >= strlen(value)) {
