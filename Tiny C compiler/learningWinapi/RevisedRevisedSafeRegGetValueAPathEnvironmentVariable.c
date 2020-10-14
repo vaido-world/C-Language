@@ -27,7 +27,7 @@ void main(){
     LPDWORD pdwType  = NULL;
     PVOID   pvData   = NULL;
     LPDWORD pcbData  = &BufferSize;
-	
+	// https://stackoverflow.com/questions/41822904/why-does-malloc1-work-for-storing-4-byte-integers
 	pvData = malloc(1);
     
     RegGetValueA(
