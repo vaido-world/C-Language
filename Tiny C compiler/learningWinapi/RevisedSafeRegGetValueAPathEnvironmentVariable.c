@@ -7,7 +7,11 @@
                                  //                 Realloc 
 
 
-/*                               // Required, else an error:                        error: undefined symbol 'RegGetValueA'
+/*
+
+             Required, else an error: 
+	  "error: undefined symbol 'RegGetValueA'"
+	  
  Proper compilation method/tutorial 
    tcc -impdef advapi32.dll -o .\lib\advapi32.def
    tcc -ladvapi32 RegGetValueAPathEnvironmentVariable.c
