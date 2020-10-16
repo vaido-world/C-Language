@@ -1,11 +1,10 @@
 #pragma comment(lib, "advapi32") // No more Need for tcc -ladvapi32 RegGetValueA.c  error: undefined symbol 'RegGetValueA' 
 #include <stdio.h>               // Prevents a warning:                             warning: implicit declaration of function 'printf'
 #include <windows.h>             // Required, else an error:                        error: 'DWORD' undeclared
-
-#include <stdlib.h>              // Gives access to Malloc, And  Prevents:          warning: implicit declaration of function 'malloc'
-                                 //                 Calloc,                         warning: cast between pointer and integer of different size
-                                 //                 Realloc 
-
+#include <stdlib.h>              /* Gives access to Malloc, And  Prevents:          warning: implicit declaration of function 'malloc'
+                                                    Calloc,                         warning: cast between pointer and integer of different size
+                                                    Realloc 
+                                 */
 
 /*
         Proper compilation method/tutorial 
@@ -13,7 +12,8 @@
 	  "error: undefined symbol 'RegGetValueA'"
 	  
    1. tcc -impdef advapi32.dll -o .\lib\advapi32.def
-   2. tcc -ladvapi32 RegGetValueAPathEnvironmentVariable.c
+   2. tcc -ladvapi32 RegGetValueAPathEnvironmentVariable.c | Not needed anymore, 
+														   | since the pragma comment is defined above.
 
 
 */
