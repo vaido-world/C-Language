@@ -54,9 +54,9 @@ void main(){
         pcbData
     );
     
-        puts("                  ---");
+        puts("___________________[pvData]___________________");
         puts(pvData);
-        puts("                  ---");
+        puts("___________________[Debug]____________________");
         printf("  Retrieved information about array size: %i\n",*pcbData);
         printf("  Actual size of the array: %i\n", strlen(pvData));
         printf("  Manually Allocated bytes for the array: %zu", sizeof(pvData));
