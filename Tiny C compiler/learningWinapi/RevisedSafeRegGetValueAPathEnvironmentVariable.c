@@ -10,8 +10,8 @@
 /*
 
              Required, else an error: 
-	  "error: undefined symbol 'RegGetValueA'"
-	  
+      "error: undefined symbol 'RegGetValueA'"
+      
  Proper compilation method/tutorial 
    tcc -impdef advapi32.dll -o .\lib\advapi32.def
    tcc -ladvapi32 RegGetValueAPathEnvironmentVariable.c
@@ -30,13 +30,13 @@ void main(){
     PVOID   pvData   = NULL;
     LPDWORD pcbData  = &BufferSize;
     
-	// First, RegGetValueA retrieves pcbData, which contains size of pvData in bytes
+    // First, RegGetValueA retrieves pcbData, which contains size of pvData in bytes
     RegGetValueA(hkey, lpSubKey, lpValue, dwFlags, pdwType, pvData, pcbData);
-	
-	// Allocate Memory for pvData
+    
+    // Allocate Memory for pvData
     pvData = (int*)malloc(*pcbData);
     
-	// Second, RegGetValueA retrieves pvData, which contains path variable value
+    // Second, RegGetValueA retrieves pvData, which contains path variable value
     RegGetValueA(hkey, lpSubKey, lpValue, dwFlags, pdwType, pvData, pcbData);
     
         puts("___________________[pvData]___________________");
