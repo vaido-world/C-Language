@@ -20,7 +20,7 @@
 */
 
 void main(){
-    DWORD BufferSize;
+    DWORD BufferSize = NULL;
     
     HKEY    hkey     = HKEY_LOCAL_MACHINE;
     LPCSTR  lpSubKey = "SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Environment";
