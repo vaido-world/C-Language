@@ -57,11 +57,11 @@ void main(){
         puts("                  ---");
         puts(pvData);
         puts("                  ---");
-        printf("\nRetrieved information about array size: %i\n",*pcbData);
-        printf("Actual size of the array: %i\n", strlen(pvData));
-        printf("Manually Allocated bytes for the array: %zu", sizeof(pvData));
-        printf("\nSince malloc was used, the dynamic Allocation makes the Manual Allocation results strange.");
-        // https://stackoverflow.com/questions/37447198/dynamically-allocated-variable-size
+        printf("  Retrieved information about array size: %i\n",*pcbData);
+        printf("  Actual size of the array: %i\n", strlen(pvData));
+        printf("  Manually Allocated bytes for the array: %zu", sizeof(pvData));
+        printf("\n  (Since malloc was used, the dynamic Allocation makes the Manual Allocation results strange.)\n");
+        // https://stackoverflow.com/questions/37447198/dynamically-allocated-variable-size        // https://stackoverflow.com/questions/37447198/dynamically-allocated-variable-size
     
     
 }
