@@ -20,9 +20,7 @@
 */
 
 void main(){
-
-    #define BUFFER  8192
-    DWORD BufferSize = BUFFER;
+    DWORD BufferSize;
     
     HKEY    hkey     = HKEY_LOCAL_MACHINE;
     LPCSTR  lpSubKey = "SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Environment";
@@ -32,27 +30,14 @@ void main(){
     PVOID   pvData   = NULL;
     LPDWORD pcbData  = &BufferSize;
     
-    RegGetValueA(
-        hkey,
-        lpSubKey,
-        lpValue,
-        dwFlags,
-        pdwType,
-        pvData,
-        pcbData
-    );
-
+	// First, RegGetValueA retrieves pcbData, which contains size of pvData in bytes
+    RegGetValueA(hkey, lpSubKey, lpValue, dwFlags, pdwType, pvData, pcbData);
+	
+	// Allocate Memory for pvData
     pvData = (int*)malloc(*pcbData);
     
-    RegGetValueA(
-        hkey,
-        lpSubKey,
-        lpValue,
-        dwFlags,
-        pdwType,
-        pvData,
-        pcbData
-    );
+	// Second, RegGetValueA retrieves pvData, which contains path variable value
+    RegGetValueA(hkey, lpSubKey, lpValue, dwFlags, pdwType, pvData, pcbData);
     
         puts("___________________[pvData]___________________");
         puts(pvData);
