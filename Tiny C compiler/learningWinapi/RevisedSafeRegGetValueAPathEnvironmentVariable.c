@@ -48,5 +48,5 @@ void main(){
         printf("\n  (Since malloc was used, the dynamic Allocation makes the Manual Allocation results strange.)\n");
         // https://stackoverflow.com/questions/37447198/dynamically-allocated-variable-size        // https://stackoverflow.com/questions/37447198/dynamically-allocated-variable-size
     
-    
+    free(pvData);
 }
