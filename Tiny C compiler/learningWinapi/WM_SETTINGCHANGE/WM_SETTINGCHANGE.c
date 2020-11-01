@@ -1,5 +1,6 @@
-#include <windows.h> // includes also: winuser.h
 #pragma comment(lib, "user32")
+#include <windows.h> // includes also: winuser.h
+
 
 // https://stackoverflow.com/questions/4968373/why-doesnt-sendmessagetimeout-update-the-environment-variables/7547964#7547964
 // https://stackoverflow.com/questions/573817/where-are-environment-variables-stored-in-registry/573818#573818
