@@ -16,8 +16,8 @@ Reloads Windows Environment variables for new processes.
  
  
  ## Changing Environment variables of child processes are not recommended
- https://stackoverflow.com/questions/3636055/how-to-modify-the-path-variable-definitely-through-the-command-line-in-windows/3637478#3637478
- https://docs.microsoft.com/lt-lt/windows/win32/procthread/changing-environment-variables?redirectedfrom=MSDN
+ https://stackoverflow.com/questions/3636055/how-to-modify-the-path-variable-definitely-through-the-command-line-in-windows/3637478#3637478  
+ https://docs.microsoft.com/lt-lt/windows/win32/procthread/changing-environment-variables?redirectedfrom=MSDN  
 
 
 ## Alternative Implementation in D language 
