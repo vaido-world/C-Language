@@ -1,8 +1,9 @@
 ```
-Environment Variables have been reloaded.
 Tiny C Compiler has been Appended to the PATH variable using Registry. 
-
 (HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment Path) 
+
+Environment Variables have been reloaded.
+
 TCC compiler is now available for the new Command Prompt processes!
 Type tcc --version
 ```
