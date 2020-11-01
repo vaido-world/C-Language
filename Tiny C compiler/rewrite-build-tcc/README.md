@@ -1,5 +1,5 @@
-## 2020-11-01 Generating i386-win32-tcc.exe
-
+## 2020-11-01 Experiment - Generating i386-win32-tcc.exe
+Current Directory: `C:\Users\Vaidas\Desktop\tcc\tinycc-HEAD-53587ee\win32`
 ```
 set P32=i386-win32
 set PX=%P32%
