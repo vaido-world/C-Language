@@ -1,3 +1,7 @@
+```
+TCC compiler is now available for the new Command Prompt processes!
+Type tcc --version
+```
 Reloads Windows Environment variables for new processes.
 
 * Works the same as the Official Windows "Edit the system environment variables" GUI.
