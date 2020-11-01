@@ -1,5 +1,4 @@
 #include <windows.h>
-#include <winuser.h>
 #pragma comment(lib, "user32")
 
 // https://stackoverflow.com/questions/4968373/why-doesnt-sendmessagetimeout-update-the-environment-variables/7547964#7547964
