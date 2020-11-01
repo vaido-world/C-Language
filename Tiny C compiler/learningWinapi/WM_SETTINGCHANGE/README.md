@@ -17,7 +17,8 @@ Reloads Windows Environment variables for new processes.
  Refrences:
  https://stackoverflow.com/questions/3636055/how-to-modify-the-path-variable-definitely-through-the-command-line-in-windows/3637349#3637349
  
- 
+ ## `C:\Windows\System32\conhost.exe` might be interesting thing
+ Source code can be found here: https://github.com/microsoft/terminal/tree/ae550e0969595f062b15c2ff5cc33d4afe8ebc3f/src/host/exe
  
  ## Changing Environment variables of child processes are not recommended
  https://stackoverflow.com/questions/3636055/how-to-modify-the-path-variable-definitely-through-the-command-line-in-windows/3637478#3637478  
