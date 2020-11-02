@@ -19,7 +19,7 @@ IF EXIST "%systemdrive%\MinGW\bin\gcc.exe" ECHO     [+] Hope of package installe
 IF EXIST "%systemdrive%\MinGW\bin\gcc.exe" ECHO          [+] mingw32-base-bin ^| A Basic MinGW Installation
 
 IF NOT EXIST "%systemdrive%\MinGW" CALL :determineMinGW 
-IF NOT EXIST "%systemdrive%\MinGW" ECHO [+] Guessed location of MinGW %path_to_MinGWFolder%MinGW )
+IF NOT EXIST "%systemdrive%\MinGW" IF EXIST "%path_to_MinGWFolder%MinGW" ECHO [+] Guessed location of MinGW ^( %path_to_MinGWFolder%MinGW ^)
 IF NOT EXIST "%systemdrive%\MinGW" (
 	IF EXIST "%path_to_MinGWFolder%MinGW\bin\gcc.exe" (
 		ECHO     [+] gcc found, determinations successful ^(%path_to_MinGWFolder%MinGW\bin\gcc.exe ^)
