@@ -5,8 +5,6 @@
 
 REM tcc --version
 
-:: mingw32-base-bin | A Basic MinGW Installation
-
 :: The installers do not automatically modify any environment settings, (in particular the PATH).
 :: You will need to add the MinGW `bin' directory, as described in the "Environment Settings" section below.
 :: http://www.mingw.org/wiki/getting_started#Cautions
@@ -19,6 +17,14 @@ IF EXIST "%systemdrive%\MinGW" ECHO [+] Default location of MinGW has been found
 IF EXIST "%systemdrive%\MinGW" ECHO     [+] Installation Location: %systemdrive%\MinGW
 IF EXIST "%systemdrive%\MinGW\bin\gcc.exe" ECHO     [+] Hope of package installed: 
 IF EXIST "%systemdrive%\MinGW\bin\gcc.exe" ECHO          [+] mingw32-base-bin ^| A Basic MinGW Installation
+
+IF NOT EXIST "%systemdrive%\MinGW" CALL :determineMinGW 
+IF NOT EXIST "%systemdrive%\MinGW" ECHO [+] Guessed location of MinGW %path_to_MinGWFolder%MinGW )
+IF NOT EXIST "%systemdrive%\MinGW" (
+	IF EXIST "%path_to_MinGWFolder%MinGW\bin\gcc.exe" (
+		ECHO     [+] gcc found, determinations successful ^(%path_to_MinGWFolder%MinGW\bin\gcc.exe ^)
+	)
+)
 
 WHERE "gcc.exe" > "%TEMP%/gcc-path.txt" 2>NUL && IF ERRORLEVEL 0 (
 	ECHO [+] Detected GCC Compiler inside PATH Environment Variable
@@ -95,3 +101,24 @@ REM ------------------------GCC-Compiler--------------------------------------
 ECHO GCC Compilation
 
 pause
+
+
+
+EXIT
+:determineMinGW
+REM determineMinGW.cmd
+REM Try to determine MinGW installation location 
+REM by looking at a list of previously used .exe programs by the current computer user
+FOR /F "tokens=1 usebackq" %%A ^
+IN (`reg query "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Compatibility Assistant\Store" /S ^| FIND "MinGW"`) ^
+DO (
+	REM IF NOT "%%A"=="" ECHO MINGW found, determined from %%A 
+	SET "MinGW_paths=%%A"
+)
+	set path_to_MinGWFolder=%MinGW_paths:MinGW\=&rem;%
+	REM echo %path_to_MinGWFolder%MinGW
+GOTO :EOF
+	
+	
+	pause
+	
