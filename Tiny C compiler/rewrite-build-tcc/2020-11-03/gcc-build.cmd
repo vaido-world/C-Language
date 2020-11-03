@@ -1,4 +1,19 @@
 @ECHO OFF
+
+:cl
+@echo off
+set CMD=cl
+:c0
+set ARG=%1
+set ARG=%ARG:.dll=.lib%
+if (%1)==(-shared) set ARG=-LD
+if (%1)==(-o) shift && set ARG=-Fe%2
+set CMD=%CMD% %ARG%
+shift
+if not (%1)==() goto :c0
+echo on
+%CMD% -O1 -W2 -Zi -MT -GS- -nologo -link -opt:ref,icf
+@exit /B %ERRORLEVEL%
 @rem ------------------------------------------------------
 @rem main program
 
