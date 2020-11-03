@@ -14,6 +14,7 @@ if not (%1)==() goto :c0
 echo on
 %CMD% -O1 -W2 -Zi -MT -GS- -nologo -link -opt:ref,icf
 @exit /B %ERRORLEVEL%
+
 @rem ------------------------------------------------------
 @rem main program
 
