@@ -36,24 +36,6 @@ REM             https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html
 REM -Os         Optimize for size. -Os enables all -O2 optimizations except those that often increase code size
 IF "%CC%"=="gcc" SET "CC=%CC% -Os -s -static"
 
-
-set D32=-DTCC_TARGET_PE -DTCC_TARGET_I386
-set D64=-DTCC_TARGET_PE -DTCC_TARGET_X86_64
-set P32=i386-win32
-set P64=x86_64-win32
-
-if %tcc_cpu_architecture%==64 goto :t64
-set D=%D32%
-set DX=%D64%
-set PX=%P64%
-pause
-goto :p3
-:t64
-set D=%D64%
-set DX=%D32%
-set PX=%P32%
-goto :p3
-
 :p3
 @echo on
 
@@ -71,7 +53,9 @@ for %%f in (*tcc.exe *tcc.dll) do @del %%f
 %CC% -o libtcc.dll -shared ..\libtcc.c %D% -DLIBTCC_AS_DLL
 @if errorlevel 1 goto :the_end
 %CC% -o tcc.exe ..\tcc.c libtcc.dll %D% -DONE_SOURCE"=0"
-%CC% -o %PX%-tcc.exe ..\tcc.c %DX%
+
+IF "%tcc_cpu_architecture%"=="32" %CC% -o x86_64-win32-tcc.exe ..\tcc.c -DTCC_TARGET_PE -DTCC_TARGET_I386
+IF "%tcc_cpu_architecture%"=="64" %CC% -o i386-win32-tcc.exe ..\tcc.c -DTCC_TARGET_PE -DTCC_TARGET_X86_64
 
 @if (%EXES_ONLY%)==(yes) goto :files-done
 
