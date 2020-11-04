@@ -13,10 +13,23 @@ The **build-tcc.cmd** script is meant to compile Tiny C Compiler.
 1. There is no need for other compilers if you already have a Tiny C Compiler.  
    Add the tcc folder to the Path Environment Variable and launch **build-tcc.cmd**
 
-2. **gcc.exe** and **cl.exe** compilers are only used to produce **tcc.exe** binary.  
-   TCC Libraries are always compiled by the **tcc.exe** compiler itself.
+2. **gcc.exe** and **cl.exe** compilers are **only** used to produce **tcc.exe** binary.   
+   TCC Libraries are always compiled by the **tcc.exe** compiler itself.  
 
-It takes gcc or cl compiler and 
+It takes gcc or cl compiler and   
 
-The script itself try to search for compilers and 
+The script itself try to search for compilers and   
+
+
+
+## Environment Variables
+
+Neither provide support for Environment Variables.
+
+* **Min**imalist **G**NU for **W**indows 
+* **V**isual **S**tudio Build Tools 
+* Tiny C Compiler
+
+That means it is left up to the user to Manually setup Environment Variables.  
+Or by using a third party application to automate it.  
 
