@@ -7,7 +7,7 @@ REM ------------------------Default-Compiler------------------------------------
 
 REM Blocks from opening in non interactive
 REM IF NOT "%0"=="%~dp0\build-tcc.cmd" ECHO Interactive
-IF NOT %0=="%~dp0%0" ECHO Interactive
+IF NOT "%~0"=="%~f0" ECHO Interactive
 pause
 
 IF "%1"=="" (
