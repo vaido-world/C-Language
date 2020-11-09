@@ -1,10 +1,15 @@
-# Reason to use Header files
-https://stackoverflow.com/questions/11334371/cant-we-include-c-file/11334387#11334387
+In this example we use general header folder.
+The main.c file will be changed to look for header file in the `headers` folder.
+Although to generate the object file, it is still needed for `myfun.c` to be compiled along the `main.c`
 
-Always compile every .c source file separately! (as seen in **compile.cmd**)
 
-GNU Make is a replacement for this compilation script in a large project.  
-GNU Make manages what to build according to modified time, probably has caches and so on.  
-Less processing/building every time - therefore more efficient.  
-However We need a replacement for GNU Make since it is hard to read and understand.  
-In the old days before Make we used bash scripts for building, turns out that having standard building system is less wasteful due to previous reasons.   
+[`main.c`](https://github.com/vaido-world/C-Language-Tutorial/blob/6b60c26f21cc12c1664be7c032d7f872a568454c/examples/header_example/general_header_folder_example/main.c#L1-L5)
+
+```
+#include <stdio.h>
+#include "headers\myfun.h"
+ 
+int main()
+{
+```
+
