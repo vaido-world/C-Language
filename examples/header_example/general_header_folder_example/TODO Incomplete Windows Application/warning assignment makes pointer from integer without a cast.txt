@@ -1,0 +1,4 @@
+warning: assignment makes pointer from integer without a cast
+
+Most of the time: the variable is not having a value.
+
