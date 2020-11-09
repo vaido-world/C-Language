@@ -13,3 +13,4 @@ int main()
 {
 ```
 
+https://stackoverflow.com/questions/15367855/c-how-to-include-own-headers-kept-in-separate-folder/15367967#15367967
