@@ -1,0 +1,8 @@
+tcc: error: undefined symbol ''
+
+Means that there is a function that uses the mentioned variable:
+But it is not defined anywhere in the source file.
+Or included header files do not define the mentioned variable.
+Or the header files are missing that define mentioned variable.
+
+Or there are some problems with the header files.
