@@ -5,3 +5,6 @@ This code is from https://www.binarytides.com/winsock-socket-programming-tutoria
 
 ## Receiving full data without knowing the end file size
 https://www.binarytides.com/receive-full-data-with-recv-socket-function-in-c/
+
+## Connecting to a socket via domain name instead of ip
+https://docs.microsoft.com/lt-lt/windows/win32/api/wsipv6ok/nf-wsipv6ok-gethostbyname?redirectedfrom=MSDN
