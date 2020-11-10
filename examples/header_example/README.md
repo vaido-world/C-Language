@@ -8,3 +8,6 @@ GNU Make manages what to build according to modified time, probably has caches a
 Less processing/building every time - therefore more efficient.  
 However We need a replacement for GNU Make since it is hard to read and understand.  
 In the old days before Make we used bash scripts for building, turns out that having standard building system is less wasteful due to previous reasons.   
+
+## the "TODO Incomplete Windows Application" is closely related to this one:
+Also: https://docs.microsoft.com/en-us/windows/win32/learnwin32/your-first-windows-program
