@@ -10,7 +10,7 @@ https://www.binarytides.com/receive-full-data-with-recv-socket-function-in-c/
 https://docs.microsoft.com/lt-lt/windows/win32/api/wsipv6ok/nf-wsipv6ok-gethostbyname?redirectedfrom=MSDN
 
 ```
-C:\Users\Vaidas\Desktop>tcc -run receive.c google.com
+C:\Users\Vaidas\Desktop>tcc -run convert.c google.com
 Calling gethostbyname with google.com
 Function returned:
         Official name: google.com
