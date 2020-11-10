@@ -18,3 +18,7 @@ Function returned:
         Address length: 4
         IP Address #1: 216.58.209.14
 ```
+
+
+## Advanced file transfer up to 2047mb per call
+https://docs.microsoft.com/en-us/windows/win32/api/winsock/nf-winsock-transmitfile
