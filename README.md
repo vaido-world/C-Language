@@ -3,6 +3,9 @@
 ## 2020-11-12
 ### C language referencing manual
 https://www.quora.com/What-is-the-best-reference-for-the-C-programming-language/answer/Dave-Hansen-4
+**C and tcc: A Language and Compiler for Dynamic Code Generation**  
+http://web.stanford.edu/~engler/tickc.pdf
+**Harbison and Steele’s C: A Reference Manual fifth edition**
 
 ## 2020-10-13
 ### C language specification standard
