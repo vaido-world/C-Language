@@ -1,5 +1,9 @@
 # C-Language-Tutorial
 
+## 2020-11-12
+### C language referencing manual
+https://www.quora.com/What-is-the-best-reference-for-the-C-programming-language/answer/Dave-Hansen-4
+
 ## 2020-10-13
 ### C language specification standard
 http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1256.pdf  
