@@ -6,6 +6,8 @@ https://www.quora.com/What-is-the-best-reference-for-the-C-programming-language/
 **C and tcc: A Language and Compiler for Dynamic Code Generation**  
 http://web.stanford.edu/~engler/tickc.pdf
 **Harbison and Steele’s C: A Reference Manual fifth edition**
+**Compiler Design in C** by ALLEN HOLUB  
+https://holub.com/compiler/  
 
 ## 2020-10-13
 ### C language specification standard
