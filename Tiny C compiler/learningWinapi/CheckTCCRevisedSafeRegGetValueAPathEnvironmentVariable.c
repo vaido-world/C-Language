@@ -50,6 +50,7 @@ void main(){
 		puts("Not working properly, needs checking for directory and correct placement of \\\\");
 		puts("Not working properly, C:\\Program Files (x86) contains space, needs sanitation");
 		puts("Not true, everything works, the emptyString had too little space allocated");
+		puts("Not true, everything works, no need for checking if directory or not, executes properly even with double backslashes");
 		char *token = strtok(pvData, ";"); 
 		while (token != NULL) 
 		{ 
