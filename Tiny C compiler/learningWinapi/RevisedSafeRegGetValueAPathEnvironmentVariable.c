@@ -19,6 +19,11 @@
 
 */
 
+/*              References
+               pvData-split
+      https://www.geeksforgeeks.org/how-to-split-a-string-in-cc-python-and-java/
+*/
+
 void main(){
     DWORD BufferSize = 0;
     
@@ -41,6 +46,13 @@ void main(){
     
         puts("___________________[pvData]___________________");
         puts(pvData);
+        puts("________________[pvData-split]________________");
+		char *token = strtok(pvData, ";"); 
+		while (token != NULL) 
+		{ 
+			printf("%s\n", token); 
+			token = strtok(NULL, ";"); 
+		} 
         puts("___________________[Debug]____________________");
         printf("  Retrieved information about array size: %i\n",*pcbData);
         printf("  Actual size of the array: %i\n", strlen(pvData));
