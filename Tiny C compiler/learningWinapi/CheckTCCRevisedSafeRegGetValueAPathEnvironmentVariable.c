@@ -68,7 +68,7 @@ void main(){
 		
 		if (file = fopen(emptyString, "r")){
 			fclose(file);
-			printf("yes");
+			printf("yes\n");
 			
 		}	
 	
