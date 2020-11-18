@@ -52,6 +52,7 @@ void main(){
 		puts("Not working properly, C:\\Program Files (x86) contains space, needs sanitation");
 		puts("Not true, everything works, the emptyString had too little space allocated");
 		puts("Not true, everything works, no need for checking if directory or not, executes properly even with double backslashes");
+		puts("C:\\ is lower priority than C:\\Windows directory,but higher than C:\\Users\\user\\Desktop");
 		char *token = strtok(pvData, ";"); 
 		while (token != NULL) 
 		{ 
