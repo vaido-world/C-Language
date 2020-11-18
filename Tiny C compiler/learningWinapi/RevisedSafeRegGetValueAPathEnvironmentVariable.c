@@ -33,7 +33,7 @@ void main(){
     // First, RegGetValueA retrieves pcbData, which contains size of pvData in bytes
     RegGetValueA(hkey, lpSubKey, lpValue, dwFlags, pdwType, pvData, pcbData);
     
-    // Allocate Memory for pvData
+    // Allocate Memory for pvData | Returns address for pvData to use
     pvData = (int*)malloc(*pcbData);
     
     // Second, RegGetValueA retrieves pvData, which contains path variable value
