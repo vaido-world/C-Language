@@ -24,8 +24,14 @@
       https://www.geeksforgeeks.org/how-to-split-a-string-in-cc-python-and-java/
 	  https://www.geeksforgeeks.org/how-to-append-a-character-to-a-string-in-c/
 	  https://eklitzke.org/declaring-c-string-constants-the-right-way
+	  https://stackoverflow.com/questions/21638303/do-i-need-to-change-the-size-of-my-char-pointer-every-time-i-change-its-content/21638422#21638422
+	  https://stackoverflow.com/questions/1495368/strtok-and-memory-leaks/1495374#1495374
+	  https://stackoverflow.com/questions/2259890/using-sizeof-on-mallocd-memory/2259897#2259897
+	  https://stackoverflow.com/questions/2259890/using-sizeof-on-mallocd-memory/2259909#2259909
 	  https://docs.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation#:~:text=In%20the%20Windows%20API%20(with,and%20a%20terminating%20null%20character.
 */
+
+#define TERMINATING_CHARACTER_SIZE 1
 
 void main(){
     DWORD BufferSize = 0;
@@ -43,6 +49,10 @@ void main(){
     
     // Allocate Memory for pvData | Returns address for pvData to use
     pvData = (int*)malloc(*pcbData);
+	printf("%i",*pcbData);
+	getchar();
+	
+
     
     // Second, RegGetValueA retrieves pvData, which contains path variable value
     RegGetValueA(hkey, lpSubKey, lpValue, dwFlags, pdwType, pvData, pcbData);
@@ -59,25 +69,35 @@ void main(){
 		puts("Not true, the priority depends on the position in the path variable");
 		puts("Requires Dynamic Memory Allocation support.");
 		
+		
+		puts("char *token       is a pointer address to pvData");
+		puts("strtok only returns a pointer to a location inside the string you give it as input-- it doesn't allocate new memory for you");
+		puts("https://stackoverflow.com/questions/1495368/strtok-and-memory-leaks/1495374#1495374");
+		printf("The size of pvdata is pcbData %i bytes\n", *pcbData);
+        printf("\n   |-> (sizeof operator only finds the size of a variable in bytes at compile time.)");
+        printf("\n   |-> (To know the size of heap-allocated memory, you need to keep track of it manually, sizeof won't help you.)");
+        printf("\n   |-> (https://stackoverflow.com/questions/2259890/using-sizeof-on-mallocd-memory/2259897#2259897)");
+
 		char *token = strtok(pvData, ";"); 
 		while (token != NULL) 
 		{ 
 	
 		FILE *file;
 		const char filename[] = "\\tcc.exe";
-		printf("%i\n", sizeof(filename));
-		printf("%i\n", sizeof(token));
+		printf("filename size: %i\n", sizeof(filename));
+		printf("token size: %i\n", sizeof(token));
 		
-		getchar();
+
 		char emptyString[90];
 		emptyString[0] = '\0';
 		strcat(emptyString, token);
 		strcat(emptyString, filename);
 		printf("Concatinated: ");
 		printf("%i\n", sizeof(emptyString));
+		printf("strln: %i\n", strlen(emptyString)+TERMINATING_CHARACTER_SIZE);
 		printf(emptyString);
 		printf("\n");
-		
+		//getchar();
 		if (file = fopen(emptyString, "r")){
 			fclose(file);
 			printf("yes\n");
@@ -91,8 +111,10 @@ void main(){
         printf("  Retrieved information about array size: %i\n",*pcbData);
         printf("  Actual size of the array: %i\n", strlen(pvData));
         printf("  Manually Allocated bytes for the array: %zu", sizeof(pvData));
-        printf("\n  (Since malloc was used, the dynamic Allocation makes the Manual Allocation results strange.)\n");
-        // https://stackoverflow.com/questions/37447198/dynamically-allocated-variable-size        // https://stackoverflow.com/questions/37447198/dynamically-allocated-variable-size
+        printf("\n   |-> (sizeof operator only finds the size of a variable in bytes at compile time.)");
+        printf("\n   |-> (To know the size of heap-allocated memory, you need to keep track of it manually, sizeof won't help you.)");
+        printf("\n   |-> (https://stackoverflow.com/questions/2259890/using-sizeof-on-mallocd-memory/2259897#2259897)");
+        //        https://stackoverflow.com/questions/37447198/dynamically-allocated-variable-size
     
     free(pvData);
 }
