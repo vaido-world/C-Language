@@ -2,6 +2,8 @@
 
 ## 2020-11-21
 ### Integrate Tiny C Compiler with Run As in Windows 10
+https://www.google.com/search?sxsrf=ALeKk02TCOnpbIyXZDMH2OL1AZubW1hRuA%3A1605970675246&ei=8yq5X-SyDufhrgS5lr7wCg&q=file+association+change+registry+win32&oq=file+association+change+registry+win32&gs_lcp=CgZwc3ktYWIQAzIFCCEQoAE6BAgAEEc6BQgAEMkDOgYIABAWEB46CQgAEMkDEBYQHjoICAAQCBANEB5Q-QZYwBhgkBloAHACeACAAZQBiAH3C5IBAzUuOZgBAKABAaoBB2d3cy13aXrIAQjAAQE&sclient=psy-ab&ved=0ahUKEwik-Pf88pPtAhXnsIsKHTmLD64Q4dUDCA0&uact=5
+
 In .lnk file as target:
 ```
 %windir%\system32\cmd.exe /c "tcc.exe -run"
