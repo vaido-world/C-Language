@@ -6,6 +6,8 @@ https://www.google.com/search?sxsrf=ALeKk03OOzMxgcN9HJbX96jVl27a9NPoDw%3A1605970
 
 https://docs.microsoft.com/en-us/windows/win32/shell/fa-sample-scenarios
 
+https://stackoverflow.com/questions/2681878/associate-file-extension-with-application/2697804#2697804
+
 In .lnk file as target:
 ```
 %windir%\system32\cmd.exe /c "tcc.exe -run"
