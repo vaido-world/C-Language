@@ -1,5 +1,21 @@
 # C-Language-Tutorial
 
+## 2020-11-21
+### Using 
+In .lnk file as target:
+```
+%windir%\system32\cmd.exe /c "tcc.exe -run"
+```
+shorcoming: .lnk files Not working with Run As.
+
+In Batch file 
+```
+@ECHO OFF
+%windir%\system32\cmd.exe /c "tcc.exe -run %1"
+echo.
+pause
+```
+
 ## 2020-11-12
 ### C language referencing manual
 https://www.quora.com/What-is-the-best-reference-for-the-C-programming-language/answer/Dave-Hansen-4
