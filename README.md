@@ -1,7 +1,7 @@
 # C-Language-Tutorial
 
 ## 2020-11-21
-### Using 
+### Integrate Tiny C Compiler with Run As in Windows 10
 In .lnk file as target:
 ```
 %windir%\system32\cmd.exe /c "tcc.exe -run"
