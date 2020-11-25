@@ -17,6 +17,7 @@ General Overview:
 #include <stdio.h>
 #include <limits.h>
 void main(){
+	//  openedFile - the pointer to a FILE object that identifies the stream.
 	FILE *openedFile = fopen(__FILE__, "r");
 	char bufferLine[CHAR_MAX];
 	while (fgets(bufferLine, CHAR_MAX, openedFile)){
