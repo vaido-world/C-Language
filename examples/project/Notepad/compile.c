@@ -8,6 +8,6 @@
 
 int main(){
 	system("tcc -run .\\program\\*.c \
-							");
+										");
 	return 0;
 }
