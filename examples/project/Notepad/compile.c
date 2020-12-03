@@ -7,7 +7,7 @@
 // and then outer-folder and outer-folder subfolders.
 
 int main(){
-	system("tcc -run .\\program\\main.c \
+	system("tcc -run .\\program\\*.c \
 							");
 	return 0;
 }
