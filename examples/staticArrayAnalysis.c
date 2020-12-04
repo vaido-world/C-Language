@@ -28,7 +28,7 @@ int main(int argc, char *argv[]){
    
    
    
-   
+   //https://www.daniweb.com/programming/software-development/threads/59077/copy-argv-to-string-in-c-newbie-question#post266957
    
    
    
