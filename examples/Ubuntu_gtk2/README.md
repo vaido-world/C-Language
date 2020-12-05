@@ -1,3 +1,13 @@
+```
+To use gtk2 or gtk3 apps you don't need to install anything. But, if you want to develop (or even just compile) apps this is what you're looking for:
+```
+
+### Check if any GTK is installed
+dpkg -l libgtk*
+### Check if any GTK development environment is installed.
+dpkg -l libgtk*-dev  
+
+## Instructions
 
 sudo apt install tcc
 
@@ -7,7 +17,7 @@ sudo gedit /etc/apt/sources.list
 sudo apt-get update
 ```
 
-
+## GTK 2
 https://askubuntu.com/questions/765526/how-to-install-gtk2-0/839609#839609
 ```
 Package gtk+-2.0 was not found in the pkg-config search path.
@@ -136,3 +146,49 @@ https://stackoverflow.com/questions/49964345/tinyc-gtk2-pkg-config-main-missing
 
 <code>
 	tcc -run `pkg-config --libs --cflags gtk+-2.0` test.c</code>
+	
+## GTK 3
+sudo apt-get install libgtk-3-dev
+
+<code>
+tcc test.c `pkg-config --libs --cflags gtk+-3.0`
+	
+</code>
+
+https://developer.gnome.org/gtk3/stable/gtk-getting-started.html
+
+
+```
+
+#include <gtk/gtk.h>
+
+static void
+activate (GtkApplication* app,
+          gpointer        user_data)
+{
+  GtkWidget *window;
+
+  window = gtk_application_window_new (app);
+  gtk_window_set_title (GTK_WINDOW (window), "Window");
+  gtk_window_set_default_size (GTK_WINDOW (window), 200, 200);
+  gtk_widget_show_all (window);
+}
+
+int
+main (int    argc,
+      char **argv)
+{
+  GtkApplication *app;
+  int status;
+
+  app = gtk_application_new ("org.gtk.example", G_APPLICATION_FLAGS_NONE);
+  g_signal_connect (app, "activate", G_CALLBACK (activate), NULL);
+  status = g_application_run (G_APPLICATION (app), argc, argv);
+  g_object_unref (app);
+
+  return status;
+}
+```
+
+
+
