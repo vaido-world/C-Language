@@ -10,6 +10,13 @@ sudo apt-get update
 
 https://askubuntu.com/questions/765526/how-to-install-gtk2-0/839609#839609
 ```
+Package gtk+-2.0 was not found in the pkg-config search path.
+Perhaps you should add the directory containing `gtk+-2.0.pc'
+to the PKG_CONFIG_PATH environment variable
+No package 'gtk+-2.0' found
+test.c:1: error: include file 'gtk/gtk.h' not found
+```
+```
 sudo apt-get install libgtk2.0-dev
 sudo apt-get install gtk2.0
 ```
@@ -19,6 +26,7 @@ sudo apt-get install gtk2.0
 
 
 https://developer.gnome.org/gtk-tutorial/stable/c39.html#SEC-HELLOWORLD
+
 
 ```
 #include <gtk/gtk.h>
