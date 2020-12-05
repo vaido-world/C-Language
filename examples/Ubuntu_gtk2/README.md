@@ -120,5 +120,8 @@ int main( int   argc,
     return 0;
 }
 ```
+
+https://stackoverflow.com/questions/49964345/tinyc-gtk2-pkg-config-main-missing
+
 <code>
 tcc gt.c `pkg-config --libs --cflags gtk+-2.0`</code>
