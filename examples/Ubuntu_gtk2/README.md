@@ -120,5 +120,5 @@ int main( int   argc,
     return 0;
 }
 ```
-
-tcc gt.c `pkg-config --libs --cflags gtk+-2.0`
+<code>
+tcc gt.c `pkg-config --libs --cflags gtk+-2.0`</code>
