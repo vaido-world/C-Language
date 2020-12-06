@@ -9,13 +9,12 @@ CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 
 int 
 WINAPI wWinMain(HINSTANCE hInstance, 
-				HINSTANCE hPrevInstance, 
-				PWSTR     pCmdLine, 
-				int       nCmdShow)
+		HINSTANCE hPrevInstance, 
+		PWSTR     pCmdLine, 
+		int       nCmdShow)
 {
     // Register the window class.
-    const 
-	wchar_t CLASS_NAME[] = L"Sample Window Class";
+    const wchar_t CLASS_NAME[] = L"Sample Window Class";
     
     WNDCLASS wc = { };
     wc.lpfnWndProc   = WindowProc;
