@@ -10,8 +10,8 @@ CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 int 
 WINAPI wWinMain(HINSTANCE hInstance, 
 		HINSTANCE hPrevInstance, 
-		PWSTR		pCmdLine, 
-		int			nCmdShow)
+		PWSTR       pCmdLine, 
+		int         nCmdShow)
 {
 	// Register the window class.
 	const wchar_t CLASS_NAME[] = L"Sample Window Class";
@@ -36,7 +36,7 @@ WINAPI wWinMain(HINSTANCE hInstance,
 	HMENU     hMenu;
 	LPVOID    lpParam;
 	
-	HWND hwnd = CreateWindowEx(
+	HWND WindowHandle = CreateWindowEx(
 		(DWORD)  dwExStyle        = 0,                                   // Optional window styles.
 		(LPTSTR) lpClassName      = (LPTSTR)wc.lpszClassName,            // Window class
 		(LPTSTR) lpWindowName     = L"Learn to Program Windows",         // Window text
@@ -48,18 +48,18 @@ WINAPI wWinMain(HINSTANCE hInstance,
 		(int) nWidth 	= CW_USEDEFAULT, 
 		(int) nHeight	= CW_USEDEFAULT,
 
-		(HWND)      hWndParent = NULL,		// Parent window    
-		(HMENU)     hMenu      = NULL,		// Menu
-		(HINSTANCE) hInstance  = hInstance,	// Instance handle
-		(LPVOID)    lpParam    = NULL		// Additional application data
+		(HWND)      hWndParent = NULL,      // Parent window    
+		(HMENU)     hMenu      = NULL,      // Menu
+		(HINSTANCE) hInstance  = hInstance, // Instance handle
+		(LPVOID)    lpParam    = NULL       // Additional application data
 		);
 
-	if (hwnd == NULL)
+	if (WindowHandle == NULL)
 	{
 		return 0;
 	}
 
-	ShowWindow(hwnd, nCmdShow);
+	ShowWindow(WindowHandle, nCmdShow);
 
 	// Run the message loop.
 
