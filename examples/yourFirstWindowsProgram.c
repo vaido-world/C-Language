@@ -27,8 +27,8 @@ WINAPI wWinMain(HINSTANCE hInstance,
 	DWORD dwExStyle;
 	
     HWND hwnd = CreateWindowEx(
-        (DWORD) dwExStyle = 0,                              // Optional window styles.
-        wc.lpszClassName,                           // Window class
+        (DWORD) dwExStyle = 0,          // Optional window styles.
+        wc.lpszClassName,               // Window class
         L"Learn to Program Windows",    // Window text
         WS_OVERLAPPEDWINDOW,            // Window style
 
