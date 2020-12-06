@@ -30,7 +30,7 @@ WINAPI wWinMain(HINSTANCE hInstance,
 		(DWORD)  dwExStyle        = 0,                           // Optional window styles.
 		(LPTSTR) wc.lpszClassName = L"Sample Window Class",      // Window class
 		(LPTSTR) lpWindowName     = L"Learn to Program Windows", // Window text
-		(int)    dwStyle             = WS_OVERLAPPEDWINDOW,      // Window style
+		(int)    dwStyle          = WS_OVERLAPPEDWINDOW,      // Window style
 
 		// Size and position
 		CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT,
