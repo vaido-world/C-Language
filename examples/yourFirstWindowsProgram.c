@@ -80,6 +80,7 @@ WINAPI wWinMain(HINSTANCE hInstance,
 }
 
 //____________________________WindowProc callback function___________________________
+// Window Procedure, react to changes in the Window.
 // https://docs.microsoft.com/en-us/windows/win32/learnwin32/writing-the-window-procedure
 
 LRESULT 
