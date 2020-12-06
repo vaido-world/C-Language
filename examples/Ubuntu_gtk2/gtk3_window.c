@@ -21,14 +21,15 @@ main (int    argc,
       char **argv)
 {
   GtkApplication *application;
-  int status;
+  gulong g_signal_status;
+  int application_status;
 
-  application = gtk_application_new ("org.gtk.examples", G_APPLICATION_FLAGS_NONE);
-  g_signal_connect(application, "activate", G_CALLBACK (activate), NULL);
-  status = g_application_run (G_APPLICATION (application), argc, argv);
+  application         = gtk_application_new ("org.gtk.examples", G_APPLICATION_FLAGS_NONE);
+  g_signal_status     = g_signal_connect(application, "activate", G_CALLBACK (activate), NULL);
+  application_status  = g_application_run (G_APPLICATION (application), argc, argv);
   g_object_unref(application);
 
-  return status;
+  return application_status;
 }
 
 static void
@@ -39,7 +40,6 @@ activate(GtkApplication* app,
 
   window = gtk_application_window_new (app);
   gtk_window_set_title (GTK_WINDOW (window), "Window");
-  gtk_window_set_default_size (GTK_WINDOW (window), 200, 200);
+  gtk_window_set_default_size (GTK_WINDOW (window), 200, 0);
   gtk_widget_show_all (window);
 }
-
