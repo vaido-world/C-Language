@@ -12,6 +12,9 @@
 #pragma comment(lib, "glib-2.0") 
 #pragma GCC system_header
 
+// Instructions:
+// tcc -run `pkg-config --libs --cflags gtk+-3.0` ./gtk3_window.c 
+
 #include <gtk/gtk.h>
 
 static void activate();
