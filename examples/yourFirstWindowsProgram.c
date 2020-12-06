@@ -80,6 +80,7 @@ WINAPI wWinMain(HINSTANCE hInstance,
 }
 
 //____________________________WindowProc callback function___________________________
+// https://docs.microsoft.com/en-us/windows/win32/learnwin32/writing-the-window-procedure
 
 LRESULT 
 CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
