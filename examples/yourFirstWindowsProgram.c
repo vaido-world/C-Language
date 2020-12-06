@@ -26,19 +26,31 @@ WINAPI wWinMain(HINSTANCE hInstance,
 	DWORD dwExStyle;
 	LPTSTR lpWindowName;
 	int dwStyle;
+	int	X;
+	int	Y;
+	int nWidth;
+	int	nHeight;
+	
+	HWND      hWndParent;
+	HMENU     hMenu;
+	LPVOID    lpParam;
+	
 	HWND hwnd = CreateWindowEx(
 		(DWORD)  dwExStyle        = 0,                           // Optional window styles.
 		(LPTSTR) wc.lpszClassName = L"Sample Window Class",      // Window class
 		(LPTSTR) lpWindowName     = L"Learn to Program Windows", // Window text
-		(int)    dwStyle          = WS_OVERLAPPEDWINDOW,      // Window style
+		(int)    dwStyle          = WS_OVERLAPPEDWINDOW,         // Window style
 
 		// Size and position
-		CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT,
+		(int) X 		= CW_USEDEFAULT, 
+		(int) Y 		= CW_USEDEFAULT, 
+		(int) nWidth 	= CW_USEDEFAULT, 
+		(int) nHeight	= CW_USEDEFAULT,
 
-		NULL,		// Parent window    
-		NULL,		// Menu
-		hInstance,	// Instance handle
-		NULL		// Additional application data
+		(HWND)      hWndParent = NULL,		// Parent window    
+		(HMENU)     hMenu      = NULL,		// Menu
+		(HINSTANCE) hInstance  = hInstance,	// Instance handle
+		(LPVOID)    lpParam    = NULL		// Additional application data
 		);
 
 	if (hwnd == NULL)
