@@ -1,9 +1,14 @@
+/*
+WindowHandle.c
+
+//https://docs.microsoft.com/en-us/windows/win32/learnwin32/your-first-windows-program
+*/
 #ifndef UNICODE
 #define UNICODE
 #endif 
 
 #include <windows.h>
-//https://docs.microsoft.com/en-us/windows/win32/learnwin32/your-first-windows-program
+
 LRESULT 
 CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 
@@ -13,7 +18,7 @@ WINAPI wWinMain(HINSTANCE hInstance,
 		PWSTR       pCmdLine, 
 		int         nCmdShow)
 {
-	// Register the window class.
+//____________________________Register_the_window_class____________________________
 	const wchar_t CLASS_NAME[] = L"Sample Window Class";
 	
 	WNDCLASS wc = { };
@@ -22,7 +27,7 @@ WINAPI wWinMain(HINSTANCE hInstance,
 	wc.lpszClassName = CLASS_NAME;
 	RegisterClass(&wc);
 
-	// Create the window.
+//____________________________C̲r̲e̲a̲t̲e̲_t̲h̲e̲_W̲i̲n̲d̲o̲w̲_H̲a̲n̲d̲l̲e̲̲_____________________________
 	DWORD dwExStyle;
 	LPTSTR lpClassName;
 	LPTSTR lpWindowName;
@@ -58,6 +63,7 @@ WINAPI wWinMain(HINSTANCE hInstance,
 	{
 		return 0;
 	}
+//____________________________Use the Window Handle.________________________________
 
 	ShowWindow(WindowHandle, nCmdShow);
 
@@ -73,7 +79,10 @@ WINAPI wWinMain(HINSTANCE hInstance,
 	return 0;
 }
 
-LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
+//____________________________WindowProc callback function___________________________
+
+LRESULT 
+CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
 	switch (uMsg)
 	{
