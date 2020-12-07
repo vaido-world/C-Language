@@ -1,5 +1,10 @@
 # C-Language-Tutorial
 
+## 2020-12-07
+### windres to add icons resource to the executable
+The main source for learning C programming language so far.
+https://stackoverflow.com/questions/708238/how-do-i-add-an-icon-to-a-mingw-gcc-compiled-executable/708382#708382
+
 ## 2020-11-25
 ### C: A Reference Manual, 5th Edition 5th Edition
 The main source for learning C programming language so far.
