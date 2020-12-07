@@ -109,10 +109,12 @@ CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 		{
 			PAINTSTRUCT ps;
 			HDC hdc = BeginPaint(hwnd, &ps);
-
-
-
 			FillRect(hdc, &ps.rcPaint, (HBRUSH) (COLOR_WINDOW+1));
+			
+			HICON hIcon; 
+			hIcon = LoadIcon(NULL, IDI_QUESTION); 
+		
+			DrawIconEx( hdc, 100, 200,hIcon, 72, 78, 0, NULL, DI_NORMAL);
 
 			EndPaint(hwnd, &ps);
 			}
