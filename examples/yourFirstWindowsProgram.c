@@ -7,6 +7,7 @@
 
 Resources:
 	https://docs.microsoft.com/en-us/windows/win32/learnwin32/your-first-windows-program
+	https://docs.microsoft.com/en-us/windows/win32/winmsg/about-messages-and-message-queues
 ____________________________________________________________________________________________*/
 
 #ifndef UNICODE
