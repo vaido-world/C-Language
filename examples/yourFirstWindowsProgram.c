@@ -58,10 +58,10 @@ WINAPI wWinMain(HINSTANCE hInstance,
 		(int)    dwStyle          = WS_OVERLAPPEDWINDOW,                 // Window style
 
 		// Size and position
-		(int) X 		= CW_USEDEFAULT, 
-		(int) Y 		= CW_USEDEFAULT, 
-		(int) nWidth 	= CW_USEDEFAULT, 
-		(int) nHeight	= CW_USEDEFAULT,
+		(int) X         = CW_USEDEFAULT, 
+		(int) Y         = CW_USEDEFAULT, 
+		(int) nWidth    = CW_USEDEFAULT, 
+		(int) nHeight   = CW_USEDEFAULT,
 
 		(HWND)      hWndParent = NULL,      // Parent window    
 		(HMENU)     hMenu      = NULL,      // Menu
