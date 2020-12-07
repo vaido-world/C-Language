@@ -1,5 +1,4 @@
-/*
-WindowHandle.c
+/* WindowHandle.c
 	Register the Window Class
 	Create the Window Handle
 	Use the Window Handle
