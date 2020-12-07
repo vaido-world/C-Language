@@ -1,7 +1,13 @@
 /*
 WindowHandle.c
+	Register the Window Class
+	Create the Window Handle
+	Use the Window Handle
+	Run Message Loop
+	Call WindowProc
 
-//https://docs.microsoft.com/en-us/windows/win32/learnwin32/your-first-windows-program
+Resources:
+	https://docs.microsoft.com/en-us/windows/win32/learnwin32/your-first-windows-program
 */
 #ifndef UNICODE
 #define UNICODE
@@ -25,11 +31,11 @@ WINAPI wWinMain(HINSTANCE hInstance,
 //____________________________Register_the_window_class____________________________
 	const wchar_t CLASS_NAME[] = L"Sample Window Class";
 	
-	WNDCLASS wc = { };
-	wc.lpfnWndProc   = WindowProc;
-	wc.hInstance     = hInstance;
-	wc.lpszClassName = CLASS_NAME;
-	RegisterClass(&wc);
+	WNDCLASS WindowClass = { };
+	WindowClass.lpfnWndProc   = WindowProc;
+	WindowClass.hInstance     = hInstance;
+	WindowClass.lpszClassName = CLASS_NAME;
+	RegisterClass(&WindowClass);
 
 //____________________________C̲r̲e̲a̲t̲e̲_t̲h̲e̲_W̲i̲n̲d̲o̲w̲_H̲a̲n̲d̲l̲e̲̲_____________________________
 	DWORD dwExStyle;
@@ -47,7 +53,7 @@ WINAPI wWinMain(HINSTANCE hInstance,
 	
 	HWND WindowHandle = CreateWindowEx(
 		(DWORD)  dwExStyle        = 0,                                   // Optional window styles.
-		(LPTSTR) lpClassName      = (LPTSTR)wc.lpszClassName,            // Window class
+		(LPTSTR) lpClassName      = (LPTSTR)WindowClass.lpszClassName,   // Window class
 		(LPTSTR) lpWindowName     = L"Learn to Program Windows",         // Window text
 		(int)    dwStyle          = WS_OVERLAPPEDWINDOW,                 // Window style
 
