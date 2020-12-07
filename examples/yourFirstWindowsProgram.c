@@ -9,6 +9,8 @@ WindowHandle.c
 
 #include <windows.h>
 
+//___________________________Function Declarations_________________________________
+
 LRESULT 
 CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 
@@ -69,7 +71,7 @@ WINAPI wWinMain(HINSTANCE hInstance,
 
 	ShowWindow(WindowHandle, nCmdShow);
 
-	// Run the message loop.
+//____________________________Run the Message Loop._________________________________ 
 
 	MSG msg = { };
 	while (GetMessage(&msg, NULL, 0, 0))
@@ -79,7 +81,9 @@ WINAPI wWinMain(HINSTANCE hInstance,
 	}
 
 	return 0;
-}
+} 
+//____________________________The End of the Program________________________________
+ 
 
 //____________________________WindowProc callback function___________________________
 // Window Procedure, react to changes in the Window.
