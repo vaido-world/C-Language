@@ -3,6 +3,7 @@
 ## 2020-12-08
 ### Research on windres to add icons resource to the executable
 https://lists.nongnu.org/archive/html/tinycc-devel/2014-02/msg00049.html
+https://en.wikibooks.org/wiki/Windows_Programming/Resource_Script_Reference
 
 ## 2020-12-07
 ### windres to add icons resource to the executable
