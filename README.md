@@ -4,6 +4,8 @@
 ### Research on windres to add icons resource to the executable
 https://lists.nongnu.org/archive/html/tinycc-devel/2014-02/msg00049.html
 https://en.wikibooks.org/wiki/Windows_Programming/Resource_Script_Reference
+https://www.google.com/search?ei=8K3PX5iHEMSxrgSzmbaQDg&q=win32+resource++paper&oq=win32+resource++paper&gs_lcp=CgZwc3ktYWIQA1CgbVj0dWC5fGgAcAB4AIABigGIAe4IkgEDOC40mAEAoAEBqgEHZ3dzLXdpesABAQ&sclient=psy-ab&ved=0ahUKEwiYv93-6r7tAhXEmIsKHbOMDeIQ4dUDCA0&uact=5
+https://www.codeguru.com/cpp/w-p/win32/tutorials/article.php/c12873/Hacking-Icon-Resources.htm
 
 ## 2020-12-07
 ### windres to add icons resource to the executable
