@@ -1,6 +1,6 @@
 # C-Language-Tutorial
 
-## 2020-12-07
+## 2020-12-08
 ### Research on windres to add icons resource to the executable
 https://lists.nongnu.org/archive/html/tinycc-devel/2014-02/msg00049.html
 
