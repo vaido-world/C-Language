@@ -115,7 +115,7 @@ CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 			hIcon = LoadIcon(NULL, IDI_QUESTION); 
 			
 			// Taskbar Icon
-			SendMessage(GetWindow(hwnd, GW_OWNER), WM_SETICON, ICON_SMALL, hIcon);
+			SendMessage(GetWindow(hwnd, GW_OWNER), WM_SETICON, ICON_SMALL, (LPARAM)hIcon);
 			
 			// Window Icon
 			SendMessage (hwnd, WM_SETICON, ICON_BIG, (LPARAM)hIcon);
