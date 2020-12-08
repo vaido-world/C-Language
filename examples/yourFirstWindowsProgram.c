@@ -113,7 +113,11 @@ CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 			
 			HICON hIcon; 
 			hIcon = LoadIcon(NULL, IDI_QUESTION); 
-		
+			
+			// Window Icon
+			SendMessage (hwnd, WM_SETICON, ICON_BIG, (LPARAM)hIcon);
+			
+			// Client area Icon
 			DrawIconEx( hdc, 100, 200,hIcon, 72, 78, 0, NULL, DI_NORMAL);
 
 			EndPaint(hwnd, &ps);
