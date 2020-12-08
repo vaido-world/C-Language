@@ -1,6 +1,10 @@
 # C-Language-Tutorial
 
 ## 2020-12-07
+### Research on windres to add icons resource to the executable
+https://lists.nongnu.org/archive/html/tinycc-devel/2014-02/msg00049.html
+
+## 2020-12-07
 ### windres to add icons resource to the executable
 The main source for learning C programming language so far.
 https://stackoverflow.com/questions/708238/how-do-i-add-an-icon-to-a-mingw-gcc-compiled-executable/708382#708382
