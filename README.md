@@ -1,7 +1,7 @@
 # C-Language-Tutorial
 
 ## 2020-12-09
-### Research on injection into running CMD process to change Environment Block
+### Win32 Research on injection into running CMD process to change Environment Block
 https://social.msdn.microsoft.com/Forums/en-US/db75e7c3-3c86-4fa7-a12c-8b3ad454bc99/how-to-write-win32-winapi-hack-program-in-c-language-that-prints-something-on-cmdexe-console?forum=vcgeneral
 
 ## 2020-12-08
