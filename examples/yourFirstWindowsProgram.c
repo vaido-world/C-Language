@@ -94,6 +94,7 @@ WINAPI wWinMain(HINSTANCE hInstance,
 
 //____________________________WindowProcedure callback function___________________________
 // Window Procedure, react to changes in the Window.
+// DispatchMessage() is calling the WindowProcedure that is attached in the WindowClass as: WindowClass.lpfnWndProc
 // https://docs.microsoft.com/en-us/windows/win32/learnwin32/writing-the-window-procedure
 
 LRESULT 
