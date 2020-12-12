@@ -29,7 +29,7 @@ WINAPI wWinMain(HINSTANCE hInstance,
 		PWSTR       pCmdLine, 
 		int         nCmdShow)
 {
-//____________________________Register_the_window_class____________________________
+//____________________________Register_the_Window_Class____________________________
 	const wchar_t CLASS_NAME[] = L"Sample Window Class";
 	
 	WNDCLASS WindowClass = { };
