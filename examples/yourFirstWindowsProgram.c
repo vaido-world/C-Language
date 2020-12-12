@@ -83,8 +83,8 @@ WINAPI wWinMain(HINSTANCE hInstance,
 	MSG msg = { };
 	while (GetMessage(&msg, NULL, 0, 0))
 	{
-		TranslateMessage(&msg);
-		DispatchMessage(&msg); // Dispatches a message to a WindowProcedure.
+		TranslateMessage(&msg); // Translates virtual-key messages into character messages.
+		DispatchMessage(&msg);  // Dispatches a message to a WindowProcedure.
 	}
 
 	return 0;
