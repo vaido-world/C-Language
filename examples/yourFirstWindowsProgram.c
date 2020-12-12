@@ -3,7 +3,7 @@
 	Create the Window Handle
 	Use the Window Handle
 	Run Message Loop
-	Call WindowProc
+	Call WindowProcedure
 
 Resources:
 	https://docs.microsoft.com/en-us/windows/win32/learnwin32/your-first-windows-program
@@ -19,7 +19,7 @@ ________________________________________________________________________________
 //___________________________Function Declarations_________________________________
 
 LRESULT 
-CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
+CALLBACK WindowProcedure(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 
 //____________________________The Main Program_____________________________________
 
@@ -33,7 +33,7 @@ WINAPI wWinMain(HINSTANCE hInstance,
 	const wchar_t CLASS_NAME[] = L"Sample Window Class";
 	
 	WNDCLASS WindowClass = { };
-	WindowClass.lpfnWndProc   = WindowProc;
+	WindowClass.lpfnWndProc   = WindowProcedure;
 	WindowClass.hInstance     = hInstance;
 	WindowClass.lpszClassName = CLASS_NAME;
 	RegisterClass(&WindowClass);
@@ -92,12 +92,12 @@ WINAPI wWinMain(HINSTANCE hInstance,
 //____________________________The End of the Program________________________________
  
 
-//____________________________WindowProc callback function___________________________
+//____________________________WindowProcedure callback function___________________________
 // Window Procedure, react to changes in the Window.
 // https://docs.microsoft.com/en-us/windows/win32/learnwin32/writing-the-window-procedure
 
 LRESULT 
-CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
+CALLBACK WindowProcedure(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
 	switch (uMsg)
 	{
