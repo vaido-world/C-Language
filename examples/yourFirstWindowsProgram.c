@@ -53,9 +53,9 @@ WINAPI wWinMain(HINSTANCE hInstance,
 	LPVOID    lpParam;
 	
 	HWND WindowHandle = CreateWindowEx(
-		(DWORD)  dwExStyle        = 0,                                   // Optional window styles.
+		(DWORD)  dwExStyle        = 0,                                   // Optional window style.
 		(LPTSTR) lpClassName      = (LPTSTR)WindowClass.lpszClassName,   // Window class
-		(LPTSTR) lpWindowName     = L"Learn to Program Windows",         // Window text
+		(LPTSTR) lpWindowName     = L"Learn to Program Windows",         // Window title
 		(int)    dwStyle          = WS_OVERLAPPEDWINDOW,                 // Window style
 
 		// Size and position
