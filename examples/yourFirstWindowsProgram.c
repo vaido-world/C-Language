@@ -30,7 +30,7 @@ WINAPI wWinMain(HINSTANCE hInstance,
 		int         nCmdShow)
 {
 //____________________________Register_the_Window_Class____________________________
-	const wchar_t CLASS_NAME[] = L"Sample Window Class";
+	const wchar_t CLASS_NAME[] = L"Sample Window Class"; // Can be removed/merged
 	
 	WNDCLASS WindowClass = { };
 	WindowClass.lpfnWndProc   = WindowProcedure;
