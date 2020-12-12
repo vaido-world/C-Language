@@ -100,7 +100,7 @@ WINAPI wWinMain(HINSTANCE hInstance,
 LRESULT 
 CALLBACK WindowProcedure(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
-	switch (uMsg)
+	switch (uMsg) //WM_ (WindowMessage)
 	{
 	case WM_DESTROY:
 		PostQuitMessage(0);
