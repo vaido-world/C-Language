@@ -1,5 +1,9 @@
 # C-Language-Tutorial
 
+## 2020-12-12
+### Thread on embeding an icon to non-executable
+https://docs.microsoft.com/en-us/answers/questions/193982/linking-and-embedding-icon-for-a-non-executable-fi.html
+
 ## 2020-12-10
 ### Research on Windows Resource Icons and general icons - filetype icons
 https://superuser.com/questions/764643/how-can-i-give-a-file-a-custom-icon
