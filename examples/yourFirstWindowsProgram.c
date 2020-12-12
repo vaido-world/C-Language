@@ -84,7 +84,7 @@ WINAPI wWinMain(HINSTANCE hInstance,
 	while (GetMessage(&msg, NULL, 0, 0))
 	{
 		TranslateMessage(&msg);
-		DispatchMessage(&msg);
+		DispatchMessage(&msg); // Dispatches a message to a window procedure.
 	}
 
 	return 0;
