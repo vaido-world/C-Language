@@ -45,7 +45,7 @@ WINAPI wWinMain(HINSTANCE hInstance,
 	int dwStyle;
 	int	X;
 	int	Y;
-	int nWidth;
+	int	nWidth;
 	int	nHeight;
 	
 	HWND      hWndParent;
