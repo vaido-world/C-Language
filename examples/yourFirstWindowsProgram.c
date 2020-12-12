@@ -79,7 +79,7 @@ WINAPI wWinMain(HINSTANCE hInstance,
 	ShowWindow(WindowHandle, nCmdShow);
 
 //____________________________Run the Message Loop._________________________________ 
-
+// After ShowWindow, Message Loop waits for Messages and is responsible for destruction of the Window.
 	MSG msg = { };
 	while (GetMessage(&msg, NULL, 0, 0))
 	{
