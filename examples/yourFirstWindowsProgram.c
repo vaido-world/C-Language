@@ -29,13 +29,12 @@ WINAPI wWinMain(HINSTANCE hInstance,
 		PWSTR       pCmdLine, 
 		int         nCmdShow)
 {
-//____________________________Register_the_Window_Class____________________________
-	const wchar_t CLASS_NAME[] = L"Sample Window Class"; // Can be removed/merged
-	
+//____________________________Register_the_Window_Class____________________________	
 	WNDCLASS WindowClass = { };
 	WindowClass.lpfnWndProc   = WindowProcedure;
 	WindowClass.hInstance     = hInstance;
-	WindowClass.lpszClassName = CLASS_NAME;
+	WindowClass.lpszClassName = L"Sample Window Class";
+	WindowClass.hCursor       = LoadCursor(NULL, IDC_ARROW); // Default Cursor. Else, When moving mouse outside to inside client area, the cursor inside client area - depends on the outside cursor.
 	RegisterClass(&WindowClass);
 
 //____________________________C̲r̲e̲a̲t̲e̲_t̲h̲e̲_W̲i̲n̲d̲o̲w̲_H̲a̲n̲d̲l̲e̲̲_____________________________
