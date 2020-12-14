@@ -7,6 +7,8 @@ https://stackoverflow.com/questions/65286191/how-to-identify-appendmenu-mf-popup
 https://docs.microsoft.com/en-us/windows/win32/shell/how-to-create-icon-handlers
 #### Process creation without a Window
 https://stackoverflow.com/questions/13954537/c-windows-createchildprocess-hide-do-not-show-the-child-process-console-win
+#### Manipulation of Desktop Icons
+https://stackoverflow.com/questions/49964260/manipulating-the-positions-of-desktop-icons/49964613#49964613
 
 ## 2020-12-12
 ### Thread on embeding an icon to non-executable
