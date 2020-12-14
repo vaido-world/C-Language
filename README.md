@@ -5,6 +5,8 @@
 https://stackoverflow.com/questions/65286191/how-to-identify-appendmenu-mf-popup-menu-in-the-windowprocedure
 #### Icon Handlers
 https://docs.microsoft.com/en-us/windows/win32/shell/how-to-create-icon-handlers
+#### Process creation without a Window
+https://stackoverflow.com/questions/13954537/c-windows-createchildprocess-hide-do-not-show-the-child-process-console-win
 
 ## 2020-12-12
 ### Thread on embeding an icon to non-executable
