@@ -15,7 +15,7 @@ ________________________________________________________________________________
 #endif 
 
 #include <windows.h>
-UINT_PTR item = 0;
+
 //___________________________Function Declarations_________________________________
 
 LRESULT 
@@ -163,7 +163,7 @@ void addMenus(HWND hwnd){
 	LPWSTR   lpNewItem;
 	
 	
-	AppendMenu(hMenu, uFlags=MF_POPUP, item=(UINT_PTR)hFileMenu, lpNewItem=TEXT("File"));
+	AppendMenu(hMenu, uFlags=MF_POPUP, uIDNewItem=(UINT_PTR)hFileMenu, lpNewItem=TEXT("File"));
 		AppendMenu(hFileMenu, uFlags=MF_STRING,    uIDNewItem=1, lpNewItem=TEXT("New"));;
 		AppendMenu(hFileMenu, uFlags=MF_STRING,    uIDNewItem=2, lpNewItem=TEXT("Open"));;
 		AppendMenu(hFileMenu, uFlags=MF_SEPARATOR, uIDNewItem=3, lpNewItem=0);
