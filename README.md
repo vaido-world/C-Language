@@ -1,5 +1,9 @@
 # C-Language-Tutorial
 
+## 2020-12-16
+### Multiline Win32 Edit Control
+https://docs.microsoft.com/en-us/windows/win32/controls/use-a-multiline-edit-control
+
 ## 2020-12-14
 ### Win32 AppendMenu MF_POPUP identification Issue in the WindowProcedure
 https://stackoverflow.com/questions/65286191/how-to-identify-appendmenu-mf-popup-menu-in-the-windowprocedure
