@@ -3,6 +3,8 @@
 ## 2020-12-16
 ### Multiline Win32 Edit Control
 https://docs.microsoft.com/en-us/windows/win32/controls/use-a-multiline-edit-control
+### Win32 Rich Edit Control
+https://docs.microsoft.com/en-us/windows/win32/controls/about-rich-edit-controls
 
 ## 2020-12-14
 ### Win32 AppendMenu MF_POPUP identification Issue in the WindowProcedure
