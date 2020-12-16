@@ -134,6 +134,7 @@ CALLBACK WindowProcedure(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 			FillRect(hdc, &ps.rcPaint, (HBRUSH) (COLOR_WINDOW+1));
 			FillRect(hdc, &ps.rcPaint, (HBRUSH) (COLOR_BACKGROUND+1));
 			
+			// Loading an Icon
 			HICON hIcon; 
 			hIcon = LoadIcon(NULL, IDI_QUESTION); 
 			
@@ -144,7 +145,15 @@ CALLBACK WindowProcedure(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 			SendMessage (hwnd, WM_SETICON, ICON_BIG, (LPARAM)hIcon);
 			
 			// Client area Icon
-			DrawIconEx( hdc, 100, 200,hIcon, 72, 78, 0, NULL, DI_NORMAL);
+			DrawIconEx( hdc,        // Handle for Device Context
+						100,        // xLeft
+						200,        // yTop
+						hIcon,      // hIcon
+						72,         // cxWidth
+						78,         // cyWidth
+						0,          // istepIfAniCur
+						NULL,       // hbrFlickerFreeDraw
+						DI_NORMAL); // diFlags
 
 			EndPaint(hwnd, &ps);
 			}
