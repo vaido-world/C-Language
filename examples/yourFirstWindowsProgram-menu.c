@@ -146,14 +146,14 @@ CALLBACK WindowProcedure(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 			
 			// Client area Icon
 			DrawIconEx( hdc,        // Handle for Device Context
-						100,        // xLeft
-						200,        // yTop
-						hIcon,      // hIcon
-						72,         // cxWidth
-						78,         // cyWidth
-						0,          // istepIfAniCur
-						NULL,       // hbrFlickerFreeDraw
-						DI_NORMAL); // diFlags
+                        100,        // xLeft
+                        200,        // yTop
+                        hIcon,      // hIcon
+                        72,         // cxWidth
+                        78,         // cyWidth
+                        0,          // istepIfAniCur
+                        NULL,       // hbrFlickerFreeDraw
+                        DI_NORMAL); // diFlags
 
 			EndPaint(hwnd, &ps);
 			}
