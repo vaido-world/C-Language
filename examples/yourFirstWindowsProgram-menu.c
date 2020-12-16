@@ -145,7 +145,7 @@ CALLBACK WindowProcedure(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 			SendMessage (hwnd, WM_SETICON, ICON_BIG, (LPARAM)hIcon);
 			
 			// Client area Icon
-			DrawIconEx( hdc,        // Handle for Device Context
+            DrawIconEx( hdc,        // Handle for Device Context
                         100,        // xLeft
                         200,        // yTop
                         hIcon,      // hIcon
