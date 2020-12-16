@@ -5,6 +5,8 @@
 https://docs.microsoft.com/en-us/windows/win32/controls/use-a-multiline-edit-control
 ### Win32 Rich Edit Control
 https://docs.microsoft.com/en-us/windows/win32/controls/about-rich-edit-controls
+### Compile GTK2 GTK3 Applications on Windows using GCC (and maybe adaptable for TCC)
+https://stackoverflow.com/questions/56784001/how-to-build-a-gtk3-program-on-windows-without-msys2
 
 ## 2020-12-14
 ### Win32 AppendMenu MF_POPUP identification Issue in the WindowProcedure
