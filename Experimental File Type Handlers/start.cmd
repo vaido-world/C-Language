@@ -2,7 +2,7 @@
 
 
 REM start /MIN /B  "sdf" "tcc.exe" -run %~1
-"tcc.exe" -Wlsubsystem=windows -run %~1
+"tcc.exe" -Wlsubsystem=windows -run %1
 echo.
 pause
 
