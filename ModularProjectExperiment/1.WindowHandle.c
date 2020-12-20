@@ -74,6 +74,12 @@ WINAPI wWinMain(HINSTANCE hInstance,
 	{
 		return 0;
 	}
+	
+	/* Appending Text Field to the Window Handle*/	
+	  HWND hWndEdit = CreateWindowEx(WS_EX_CLIENTEDGE, TEXT("Edit"), TEXT("test"),
+                               WS_CHILD | WS_VISIBLE, 100, 20, 140,
+                               20, WindowHandle, NULL, NULL, NULL);
+			       
 //____________________________Use the Window Handle.________________________________
 
 	ShowWindow(WindowHandle, nCmdShow);
