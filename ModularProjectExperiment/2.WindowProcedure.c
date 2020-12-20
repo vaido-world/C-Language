@@ -18,6 +18,14 @@ CALLBACK WindowProcedure(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 
 		DestroyWindow(hwnd);
 		return 0;
+		
+	/* Set Minimum Window Size */
+	case WM_GETMINMAXINFO:
+	{
+	    LPMINMAXINFO lpMMI = (LPMINMAXINFO)lParam;
+	    lpMMI->ptMinTrackSize.x = 340;
+	    lpMMI->ptMinTrackSize.y = 340;
+	}
 	case WM_COMMAND:
 		switch(wParam){
 			case 1:
