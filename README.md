@@ -2,7 +2,8 @@
 
 ## 2020-12-22
 #### Tick C Resources
-https://pdos.csail.mit.edu/archive/tickc/
+https://pdos.csail.mit.edu/archive/tickc/  
+https://pdos.csail.mit.edu/papers/tickc-poletto-phd.pdf  
 
 ## 2020-12-16
 ### Multiline Win32 Edit Control
