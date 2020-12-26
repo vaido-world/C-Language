@@ -1,3 +1,9 @@
+#if 0
+  set -e; 
+  tcc -run `pkg-config --libs --cflags gtk+-2.0` "$0"
+  exit
+#endif
+
 #include <gtk/gtk.h>
 
 //http://zetcode.com/gui/gtk2/firstprograms/
