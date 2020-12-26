@@ -1,0 +1,9 @@
+tcc -impdef wininet.dll -o .\lib\wininet.def
+
+winapi-full-for-0.9.27\include\winapi\wininet.h
+winapi-full-for-0.9.27\include\winapi\specstrings.h
+
+#pragma comment (lib, "wininet.lib")
+
+// Upload a file and handle the response via PHP
+https://stackoverflow.com/questions/471198/is-there-any-good-example-of-http-upload-using-wininet-c-library/61457815#61457815
