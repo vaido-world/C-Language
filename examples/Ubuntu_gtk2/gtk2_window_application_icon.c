@@ -8,6 +8,7 @@
 
 //http://zetcode.com/gui/gtk2/firstprograms/
 // tcc -run `pkg-config --libs --cflags gtk+-3.0` new.c
+// Needs permission: Allow executing file as program
 
 
 GdkPixbuf *create_pixbuf(const gchar * filename) {
