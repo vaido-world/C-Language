@@ -3,3 +3,6 @@ https://stackoverflow.com/questions/51202662/wininet-only-downloading-a-part-of-
 
 #### Caution on needing multithreading support
 https://stackoverflow.com/questions/30140596/how-to-avoid-freezing-when-download-file-using-wininet/30140667#30140667
+
+#### Overview of wininet
+https://docs.microsoft.com/en-us/cpp/mfc/how-wininet-makes-it-easier-to-create-internet-client-applications?view=msvc-160
