@@ -6,3 +6,8 @@ https://stackoverflow.com/questions/30140596/how-to-avoid-freezing-when-download
 
 #### Overview of wininet
 https://docs.microsoft.com/en-us/cpp/mfc/how-wininet-makes-it-easier-to-create-internet-client-applications?view=msvc-160
+
+#### Filename before download
+https://stackoverflow.com/questions/19052117/how-to-get-the-file-name-before-downloading-the-file
+
+#### Download progress and download speed
