@@ -1,7 +1,8 @@
 # C-Language-Tutorial
 
 ## 2020-12-30
-####
+#### https://www.quora.com/Is-1-true-and-0-false-in-programming
+
 ```
 // Most of the functions in standard C library, a successful function - returns 0 (in traditional sense - false) 
 // When used directly in the If statement, this triggers Else statement.
