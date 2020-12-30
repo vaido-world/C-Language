@@ -46,7 +46,7 @@ SET "Architecture=%PROCESSOR_ARCHITECTURE%%PROCESSOR_ARCHITEW6432%"
 IF NOT "%Architecture%"=="AMD64" SET "Architecture=x32"
 
 WHERE "tcc.exe" >NUL 2>NUL && IF ERRORLEVEL 0 SET "CC=tcc"
-WHERE "cl.exe" >NUL 2>NUL && IF ERRORLEVEL 0 SET "CC=cl"
+WHERE "cl.exe"  >NUL 2>NUL && IF ERRORLEVEL 0 SET "CC=cl"
 WHERE "gcc.exe" >NUL 2>NUL && IF ERRORLEVEL 0 SET "CC=gcc"
 REM TODO CALL :SearchAroundForCompiler
 IF "CC"="" ECHO NO COMPILERS FOUND && EXIT /B 1
