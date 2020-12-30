@@ -1,5 +1,12 @@
 # C-Language-Tutorial
 
+## 2020-12-30
+####
+```
+// Most of the functions in standard C library, a successful function - returns 0 (in traditional sense - false) 
+// When used directly in the If statement, this triggers Else statement.
+// Therefore if (function(argument) != 0){} is often used to reverse the trend.
+```
 ## 2020-12-22
 #### Tick C Resources
 https://pdos.csail.mit.edu/archive/tickc/  
