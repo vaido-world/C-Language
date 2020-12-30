@@ -7,7 +7,7 @@
 // When used directly in the If statement, this triggers Else statement.
 // Therefore if (function(argument) != 0){} is often used to reverse the trend.
 
-// Example:
+// Example: a string comparison
 if (strcmp("test", "tests") != 0){ printf("yes");} else { printf("test");}
 ```
 ## 2020-12-22
