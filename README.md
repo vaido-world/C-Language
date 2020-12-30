@@ -6,6 +6,9 @@
 // Most of the functions in standard C library, a successful function - returns 0 (in traditional sense - false) 
 // When used directly in the If statement, this triggers Else statement.
 // Therefore if (function(argument) != 0){} is often used to reverse the trend.
+
+// Example:
+if (strcmp("test", "tests") != 0){ printf("yes");} else { printf("test");}
 ```
 ## 2020-12-22
 #### Tick C Resources
