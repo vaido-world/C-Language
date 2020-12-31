@@ -1,5 +1,15 @@
 # C-Language-Tutorial
 
+
+## 2020-12-31
+#### ArgumentsLoop study
+```
+// compile --compiler "Switchargument" argument
+// command --parameter "subargument" "subargument" --parameter "subargument" CommandArgument
+// program --parameter "subargument" "subargument" --parameter "subargument" ProgramArgument
+
+```
+
 ## 2020-12-30
 #### https://www.quora.com/Is-1-true-and-0-false-in-programming
 https://stackoverflow.com/questions/595450/why-does-strcmp-return-0-when-its-inputs-are-equal
