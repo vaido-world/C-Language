@@ -5,6 +5,34 @@ When the argument of the parameter is empty (NULL) - It is replaced with `"SHELL
 On Windows
 Seems to be replaced with `(null)`
 
+####
+
+
+
+`tcc -run ArgumentLoop.c -compile `
+```
+[The interpretation of Argument Loop.] 
+ 0,  BaseArgument: ArgumentLoop.c
+ 1,  parameter: -compile
+ 2   Argument:  (null)
+```
+
+```
+tcc -run ArgumentLoop.c -compile dsf
+[The interpretation of Argument Loop.] 
+ 0,  BaseArgument: ArgumentLoop.c
+ 1,  parameter: -compile
+ 2   Argument:  dsf
+```
+
+```
+tcc -run ArgumentLoop.c 
+[The interpretation of Argument Loop.] 
+ 0,  BaseArgument: ArgumentLoop.c
+ 1,  parameter: -compile
+ 2   Argument:  SHELL=/bin/bash
+```
+
 
 #### Test subject
 ```
@@ -13,6 +41,8 @@ Seems to be replaced with `(null)`
 #include <stdlib.h>
 
 //Example:  tcc -run BooleanTest.c -compile tcc sdf
+
+
 
 void main(int argc, char *argv[]){
 	if ( argv[1] == NULL ) {argv[1] = "-compile"; argc++;}
