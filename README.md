@@ -12,6 +12,8 @@
 
 https://unix.stackexchange.com/questions/285575/whats-the-difference-between-a-flag-an-option-and-an-argument
 
+### Switches?
+
 ## 2020-12-30
 #### https://www.quora.com/Is-1-true-and-0-false-in-programming
 https://stackoverflow.com/questions/595450/why-does-strcmp-return-0-when-its-inputs-are-equal
