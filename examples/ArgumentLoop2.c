@@ -17,8 +17,9 @@ void main(int argc, char *argv[]){
 			if (index == 0){
 				printf(" %i,  BaseArgument: %s", index, argv[index]); 
 			} else {
-		
 				printf("\n %i,  BaseArgument: %s", index, argv[index]); 
+				if (index == argc-1){ printf(" (The last element)");}
+				
 			}
 		}
 		if(strcmp(argv[index], "-compile") == 0) {
