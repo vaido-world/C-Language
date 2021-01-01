@@ -136,6 +136,15 @@ void main(int argc, char *argv[]){
 ```
 
 ## Fixed 
+
+```
+tcc -run ArgumentLoop.c 
+[The interpretation of Argument Loop.] 
+ 0,  BaseArgument: ArgumentLoop.c
+ 1,  parameter: -compile
+ 2   Argument:  (null)
+```
+
 ```
 #include <stdio.h>
 #include <string.h>
