@@ -2,6 +2,8 @@
 ### A weird inconsistency when using printf on an Empty Array Item
 https://www.google.com/search?sxsrf=ALeKk02fO7lYccNCXxMyGTr9hVWbRUWi4w%3A1609590644801&ei=dGfwX9nFMLLrrgTs2rMI&q=argv+heap+or+stack&oq=argv+heap+or+stack&gs_lcp=CgZwc3ktYWIQAzoECCMQJzoLCAAQyQMQDRAFEB46CAgAEA0QBRAeOggIABAIEA0QHjoHCCEQChCgAVCaS1irVGDhVWgAcAB4AIABbogBjAeSAQM5LjGYAQCgAQGqAQdnd3Mtd2l6wAEB&sclient=psy-ab&ved=0ahUKEwjZz_e0oP3tAhWytYsKHWztDAEQ4dUDCA0&uact=5
 
+https://stackoverflow.com/questions/25125218/extending-argv-to-hold-more-values
+
 On Linux
 When the argument of the parameter is empty (NULL) - It is replaced with `"SHELL=/bin/bash"`
 
