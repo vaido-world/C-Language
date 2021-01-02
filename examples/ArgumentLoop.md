@@ -137,6 +137,7 @@ void main(int argc, char *argv[]){
 ```
 
 ## Fixed 
+But overwrites the memory. Instead of pushing it forward.
 
 ```
 tcc -run ArgumentLoop.c 
