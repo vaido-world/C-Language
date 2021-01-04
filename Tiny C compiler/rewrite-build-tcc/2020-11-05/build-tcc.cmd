@@ -12,7 +12,7 @@ pause
 
 IF "%1"=="" (
 	WHERE "gcc.exe" >NUL 2>NUL 
-	IF ERRORLEVEL 01 (
+	IF NOT ERRORLEVEL 01 (
 		ECHO              DEFAULT COMPILER will be used
 		ECHO          GCC is the suggested default compiler
 		ECHO __________________________________________________________
