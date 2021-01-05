@@ -11,7 +11,8 @@ IF NOT "%~0"=="%~f0" ECHO Interactive
 pause
 
 IF "%1"=="" (
-	WHERE "gcc.exe" >NUL 2>NUL 
+	WHERE "gcc.exe" >NUL 2>NUL
+	REM compares multiple error levels: 0 - Successfull Where, 1 - Whether the gcc was not found
 	IF NOT ERRORLEVEL 01 (
 		ECHO              DEFAULT COMPILER will be used
 		ECHO          GCC is the suggested default compiler
