@@ -58,6 +58,10 @@ IF NOT EXIST "../win32/include/tccdefs.h" (
 ECHO -------------------------------
 
 pause
+ECHO The reason why this Command Line Window is not closing, is that build-tcc.bat has EXIT statement with /B option. 
+ECHO Therefore build-tcc.bat Command Prompt Window is never closing. That's a bug of build-tcc, /B option should be removed everywhere.
+ECHO x32recompiletcc.cmd launches build-tcc.bat without /WAIT option in the START statement, therefore x32recompiletcc.cmd does not wait until "build-tcc.bat" completes, but rahter when the thread is awailable?
+
 
 REM taskkill /F /FI "WindowTitle eq  build-tcc.bat" /T
 REM little hack to prevent this script from being stuck after build-tcc.bat Exit 
