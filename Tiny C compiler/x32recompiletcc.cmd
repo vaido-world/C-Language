@@ -42,6 +42,19 @@ tcc "WinSocktest.c" -lws2_32
 
 ECHO Launching the compiled Winsocket Test Program.
 WinSocktest.exe
+
+ECHO ---------Diagnostics-----------
+
+IF NOT EXIST "../win32/include/tccdefs.h" ( 
+  IF EXIST "../include/tccdefs.h" ECHO ../include/tccdefs.h yes exist 
+	ECHO BUG DETECTED, x86_64-win32-tcc.exe will not be compiled.
+	ECHO New evidence suggests: "tinycc-HEAD-704c816/include" is simply not copied to the "tinycc-HEAD-704c816/win32/include"
+	ECHO  copy  ..\include\.h include does not complete copy before execution of statement: CC -o PX-tcc.exe ..\tcc.c DX
+	ECHO simply needs copy of files from tinycc-HEAD-704c816\include\.h to tinycc-HEAD-704c816\win32\include\.h manually
+	ECHO Needs a bugfix inside in the build-tcc.bat 
+)
+ECHO -------------------------------
+
 pause
 
 REM taskkill /F /FI "WindowTitle eq  build-tcc.bat" /T
