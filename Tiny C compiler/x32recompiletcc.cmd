@@ -52,6 +52,7 @@ IF NOT EXIST "../win32/include/tccdefs.h" (
 	ECHO  Explanation: "copy^>nul ..\include\*.h include" does not complete copy before execution of statement: "%%CC%% -o %%PX%%-tcc.exe ..\tcc.c %%DX%%"
 	ECHO simply needs copy of files from tinycc-HEAD-704c816\include\.h to tinycc-HEAD-704c816\win32\include\.h manually
 	ECHO Needs a bugfix inside in the build-tcc.bat
+	ECHO The specific file that is missing: <command line>:9: error: include file 'tccdefs.h' not found
 )
 ECHO -------------------------------
 
