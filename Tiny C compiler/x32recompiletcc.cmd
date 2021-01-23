@@ -19,6 +19,23 @@ tar xf "HEAD.tar.gz"
 ECHO Opening "Latest Tiny C Compiler Source Code" extraction directory
 CD "tinycc-HEAD-*"
 
+REM Patch in progress
+REM SET /p "version="<"VERSION" 
+REM SET version_without_dots=%VERSION:.=%
+REM IF %version_without_dots% GEQ 0927 (
+REM 
+REM if not exist win32\libtcc mkdir win32\libtcc
+REM if not exist win32\doc mkdir win32\doc
+REM 
+REM copy include\*.h win32\include
+REM copy tcclib.h win32\include
+REM copy libtcc.h win32\libtcc
+REM copy tests\libtcc_test.c win32\examples
+REM 
+REM pause
+REM )
+
+
 ECHO Opening "win32" directory of "Latest Tiny C Compiler Source Code"
 CD "win32"
 
