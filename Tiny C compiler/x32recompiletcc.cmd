@@ -35,6 +35,16 @@ REM
 REM pause
 REM )
 
+REM tcc: error: libtcc1-32.a not found
+REM tcc: error: undefined symbol '__udivdi3'
+REM tcc: error: undefined symbol '__umoddi3'
+REM tcc: error: undefined symbol '__ashldi3'
+REM tcc: error: undefined symbol '__lshrdi3'
+REM tcc: error: undefined symbol '__floatundidf'
+REM tcc: error: undefined symbol '__fixunsdfdi'
+REM tcc: error: undefined symbol '__chkstk'
+REM tcc: error: undefined symbol '_start'
+
 
 ECHO Opening "win32" directory of "Latest Tiny C Compiler Source Code"
 CD "win32"
