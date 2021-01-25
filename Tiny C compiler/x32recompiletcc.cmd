@@ -35,6 +35,8 @@ REM
 REM pause
 REM )
 
+REM     GOTO :libtcc1.a       is required before      %CC% -o %PX%-tcc.exe ..\tcc.c %DX%    Happens
+
 REM tcc: error: libtcc1-32.a not found
 REM tcc: error: undefined symbol '__udivdi3'
 REM tcc: error: undefined symbol '__umoddi3'
