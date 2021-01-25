@@ -1,4 +1,5 @@
 old tcc folder is required
+tcc source code is required
 ```
 compile.cmd is standalone | ./
 tcc folder | ./
