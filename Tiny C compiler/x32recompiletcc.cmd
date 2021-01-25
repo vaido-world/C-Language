@@ -36,6 +36,12 @@ REM pause
 REM )
 
 REM     GOTO :libtcc1.a       is required before      %CC% -o %PX%-tcc.exe ..\tcc.c %DX%    Happens
+REM more specific: 
+REM tcc -m64 -ar lib/libtcc1-64.a %O1% alloca86_64.o alloca86_64-bt.o
+REM tcc -m32 -ar lib/libtcc1-32.a %O1% alloca86.o alloca86-bt.o
+REM However, it seems that the whole      :libtcc1.a        is required
+REM And     :libtcc1.a    Requires everything else
+REM Probable solution: x64 generation of tcc should be repeated at the end once more, after the   :libtcc1.a   compilation  
 
 REM tcc: error: libtcc1-32.a not found
 REM tcc: error: undefined symbol '__udivdi3'
