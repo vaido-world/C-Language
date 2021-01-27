@@ -67,6 +67,9 @@ IF ERRORLEVEL 1 (
 ) ELSE ECHO [+] TCC Secondary Executable: %prefix-architecture%-tcc.exe is Compiled Successfuly.
 
 
+ECHO TIP: %%EXES_ONLY%% simply jumps over Header files being included and compilation of further libraries.
+ECHO Skips any Documentation and Deletes *.o *.def files created.
+
 PAUSE
 REM ECHO Now we need -DONE_SOURCE"=0" option to test what it does.
 REM ECHO I think that it is simply make libtcc.dll library usable with multiple architectures 
