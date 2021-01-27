@@ -27,8 +27,13 @@ REM primary architecture build
 REM secondary architecture build
 
 
-
+REM DflagsForX64
+REM DflagsForX32
+REM FilenameforX32  i386-win32
+REM FilenameforX64  x86_64-win32
 SET "Dflags=-DTCC_TARGET_PE -DTCC_TARGET_X86_64"
+SET "DflagsSecondary=-DTCC_TARGET_PE -DTCC_TARGET_I386"
+SET "prefix-architecture=i386-win32"
 
 
 
@@ -54,6 +59,13 @@ ECHO ___________________________________________________
 IF ERRORLEVEL 1 (
 	ECHO [-] Unable To Compile: TCC Executable: tcc.exe
 ) ELSE ECHO [+] TCC Executable: tcc.exe is Compiled Successfuly.
+
+ECHO 3. Secondary TCC Executable is being compiled.. (For x32 architecture build)
+%CC% -o "%prefix-architecture%-tcc.exe" "..\tcc.c" %DflagsSecondary%
+IF ERRORLEVEL 1 (
+	ECHO [-] Unable To Compile: TCC Secondary Executable: %prefix-architecture%-tcc.exe
+) ELSE ECHO [+] TCC Secondary Executable: %prefix-architecture%-tcc.exe is Compiled Successfuly.
+
 
 PAUSE
 REM ECHO Now we need -DONE_SOURCE"=0" option to test what it does.
