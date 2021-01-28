@@ -52,6 +52,7 @@ ECHO.
 
 ECHO 2. TCC Executable is being compiled.. 
 ECHO  Source File: ..\tcc.c
+ECHO  Output Files: tcc.exe
 ECHO  Preprocessor Flags: %Dflags% -DONE_SOURCE"=0"
 ECHO  Explanation: -DONE_SOURCE"=0" is used to link tcc.exe to libtcc.dll and reuse it. Can be ommited, but saves disk space.
 ECHO ___________________________________________________
