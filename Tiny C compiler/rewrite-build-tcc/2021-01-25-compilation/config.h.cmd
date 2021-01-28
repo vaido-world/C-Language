@@ -47,7 +47,7 @@ ECHO ___________________________________________________
 %CC% -shared "..\libtcc.c" %Dflags% -DLIBTCC_AS_DLL -o "libtcc.dll"
 IF ERRORLEVEL 1 (
 	ECHO [-] Unable To Compile: TCC Library: libtcc.dll
-) ELSE ECHO [+] TCC Library is Compiled Successfuly.
+) ELSE ECHO [+] TCC Library libtcc.dll is Compiled Successfuly.
 ECHO.
 
 ECHO 2. TCC Executable is being compiled.. 
