@@ -47,8 +47,9 @@ REM FIXED:   .\randoom   instead of  .\randoom\   - Appends a name "randoom" to 
 
 SET "outputDir=%USERPROFILE%\Desktop\output"
 MKDIR "%outputDir%" 2>NUL & IF ERRORLEVEL 1 (
-	ECHO|SET /p="MKDIR INFO: "
+	ECHO|SET /p="[MKDIR INFO-NOTICE]: "
 	MKDIR "%outputDir%"
+	ECHO.
 )
 
 ECHO General Output directory: %outputDir%
