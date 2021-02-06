@@ -35,8 +35,19 @@ SET "Dflags=-DTCC_TARGET_PE -DTCC_TARGET_X86_64"
 SET "DflagsSecondary=-DTCC_TARGET_PE -DTCC_TARGET_I386"
 SET "prefix-architecture=i386-win32"
 
+REM outputDir Examples: 
+REM          ..\                 - Lower level Directory
+REM          .\                  - Current directory of the Command Prompt (Default)
+REM          .\randoom\          - "randoom" named directory In the Current Directory
+REM %USERPROFILE%\Desktop\output - In an "output" folder inside "Desktop" of the Current user.
+REM          %~dp0\              - Current Directory of this executable script file. 
 
+REM Common Mistakes:  
+REM FIXED:   .\randoom   instead of  .\randoom\   - Appends a name "randoom" to the output filenames.
 
+SET "outputDir=%USERPROFILE%\Desktop\output"
+MKDIR "%outputDir%"
+ECHO General Output directory: %outputDir%
 
 :Compilation
                                 
@@ -44,7 +55,7 @@ ECHO   Title:  TCC Library is being compiled!
 ECHO   Source File: ..\libtcc.c 
 ECHO   Output Files: libtcc.dll, libtcc.def
 ECHO   Preprocessor Flags: -shared %Dflags% -DLIBTCC_AS_DLL 
-%CC% -shared "..\libtcc.c" %Dflags% -DLIBTCC_AS_DLL -o "libtcc.dll"
+%CC% -shared "..\libtcc.c" %Dflags% -DLIBTCC_AS_DLL -o "%outputDir%\libtcc.dll"
 IF ERRORLEVEL 1 (
 	ECHO  [-] Unable To Compile: TCC Library: libtcc.dll
 ) ELSE ECHO   TCC Library libtcc.dll is Compiled Successfuly.
@@ -54,8 +65,8 @@ ECHO   Source File: ..\tcc.c
 ECHO   Output files: tcc.exe
 ECHO   Preprocessor Flags: %Dflags% -DONE_SOURCE"=0"
 ECHO   Explanation: -DONE_SOURCE"=0" is used to link tcc.exe to libtcc.dll and reuse it. 
-ECHO               (-DONE_SOURCE"=0" Can be ommited, flag is only used to reduce size)
-%CC%  ..\tcc.c libtcc.dll %Dflags% -DONE_SOURCE"=0" -o "tcc.exe"
+REM                (-DONE_SOURCE"=0" Can be ommited, flag is only used to reduce size)
+%CC%  "..\tcc.c" "libtcc.dll" %Dflags% -DONE_SOURCE"=0" -o "%outputDir%\tcc.exe"
 IF ERRORLEVEL 1 (
 	ECHO  Unable To Compile: TCC Executable: tcc.exe
 ) ELSE  ECHO   TCC Executable  tcc.exe is Compiled Successfuly.
@@ -65,7 +76,7 @@ ECHO   Source File: ..\tcc.c
 ECHO   Output files: %prefix-architecture%-tcc.exe
 ECHO   Preprocessor Flags: %DflagsSecondary%
 
-%CC% -o "%prefix-architecture%-tcc.exe" "..\tcc.c" %DflagsSecondary%
+%CC% "..\tcc.c" %DflagsSecondary% -o "%outputDir%\%prefix-architecture%-tcc.exe"
 IF ERRORLEVEL 1 ( ECHO  Unable To Compile: TCC Secondary Executable: %prefix-architecture%-tcc.exe
 ) ELSE ECHO   TCC Secondary Executable: %prefix-architecture%-tcc.exe is Compiled Successfuly.
 ECHO.
