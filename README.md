@@ -1,12 +1,14 @@
 # C-Language-Tutorial
 
 ## 2021-02-07
-https://stackoverflow.com/questions/2029103/correct-way-to-read-a-text-file-into-a-buffer-in-c  
+https://stackoverflow.com/questions/2029103/correct-way-to-read-a-text-file-into-a-buffer-in-c/2029117#2029117  
 https://www.studymite.com/blog/strings-in-c
+https://c-for-dummies.com/blog/?p=1112  
 
 ## 2021-02-01
 https://stackoverflow.com/questions/2029103/correct-way-to-read-a-text-file-into-a-buffer-in-c/2029227#2029227  
 https://stackoverflow.com/questions/41210227/fastest-way-to-write-integer-to-file-in-c  
+
 
 ## 2020-12-31
 #### ArgumentsLoop study
