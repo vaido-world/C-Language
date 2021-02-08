@@ -31,9 +31,10 @@ REM DflagsForX64
 REM DflagsForX32
 REM FilenameforX32  i386-win32
 REM FilenameforX64  x86_64-win32
-SET "Dflags=-DTCC_TARGET_PE -DTCC_TARGET_X86_64"
-SET "DflagsSecondary=-DTCC_TARGET_PE -DTCC_TARGET_I386"
+SET "DflagsSecondary=-DTCC_TARGET_PE -DTCC_TARGET_X86_64"
+SET "Dflags=-DTCC_TARGET_PE -DTCC_TARGET_I386"
 SET "prefix-architecture=i386-win32"
+SET "prefix-architecture=x86_64-win32"
 
 REM outputDir Examples: 
 REM          ..\                 - Lower level Directory
