@@ -1,9 +1,9 @@
 # C-Language-Tutorial
 
 ## 2021-02-08
-`tcc: error: -run is not available in a cross compiler`  
-The reason for this error is that `-run` is not available in tcc.exe that is x64 (or maybe the libtcc.dll itself)
-Using x32 Dflags to compile tcc.exe seems to allow `-run` flags.
+`tcc: error: -run is not available in a cross compiler`   
+The reason for this error is that `-run` is not available in tcc.exe that is x64 (or maybe the libtcc.dll itself)  
+Using x32 Dflags to compile tcc.exe seems to allow `-run` flags.  
 
 ## 2021-02-07
 https://stackoverflow.com/questions/2029103/correct-way-to-read-a-text-file-into-a-buffer-in-c/2029117#2029117  
