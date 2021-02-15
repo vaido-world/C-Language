@@ -94,6 +94,7 @@ IF ERRORLEVEL 1 (
 )
 ECHO.
 
+REM  [No more Needed, for historical reference] When compiling TCC Library libtcc.c, already makes one.
 REM  Backwards comptibility for .def of tcc lib 
 REM  Makes .def file from libtcc.dll library
 REM  Using -impdef source code from tcctools.c that is recently included in the tcc.exe binary itself.
