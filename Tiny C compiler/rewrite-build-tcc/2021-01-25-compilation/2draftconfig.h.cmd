@@ -64,7 +64,9 @@ ECHO   ^| Preprocessor Flags: -shared %Dflags% -DLIBTCC_AS_DLL
 %CC% -shared "..\libtcc.c" %Dflags% -DLIBTCC_AS_DLL -o "%outputDir%\libtcc.dll"
 IF ERRORLEVEL 1 (
 	ECHO  [-] Unable To Compile: TCC Library: libtcc.dll
-) ELSE ECHO   TCC Library libtcc.dll is Compiled Successfuly.
+) ELSE (
+	ECHO   TCC Library libtcc.dll is Compiled Successfuly.
+)
 ECHO.
 ECHO   TCC Executable is being compiled!
 ECHO   ^| Source File: ..\tcc.c
@@ -75,7 +77,9 @@ REM                (-DONE_SOURCE"=0" Can be ommited, flag is only used to reduce
 %CC%  "..\tcc.c" "libtcc.dll" %Dflags% -DONE_SOURCE"=0" -o "%outputDir%\tcc.exe"
 IF ERRORLEVEL 1 (
 	ECHO  Unable To Compile: TCC Executable: tcc.exe
-) ELSE  ECHO   TCC Executable  tcc.exe is Compiled Successfuly.
+) ELSE (
+	ECHO   TCC Executable  tcc.exe is Compiled Successfuly.
+)
 ECHO.
 ECHO   Alternative TCC Executable is being compiled! 
 ECHO   ^| Source File: ..\tcc.c 
@@ -85,9 +89,17 @@ ECHO   ^| Preprocessor Flags: %DflagsSecondary%
 %CC% "..\tcc.c" %DflagsSecondary% -o "%outputDir%\%prefix-architecture%-tcc.exe"
 IF ERRORLEVEL 1 ( 
 	ECHO  Unable To Compile: TCC Secondary Executable: %prefix-architecture%-tcc.exe
-) ELSE ECHO   TCC Secondary Executable: %prefix-architecture%-tcc.exe is Compiled Successfuly.
+) ELSE (
+	ECHO   TCC Secondary Executable: %prefix-architecture%-tcc.exe is Compiled Successfuly.
+)
 ECHO.
 
+REM  Backwards comptibility for .def of tcc lib 
+REM  Makes .def file from libtcc.dll library
+REM  Using -impdef source code from tcctools.c that is recently included in the tcc.exe binary itself.
+IF NOT EXIST ".\libtcc.def" (
+	.\tcc.exe -impdef "libtcc.dll" -o "libtcc\libtcc.def"
+)
 
 ECHO  TIP: %%EXES_ONLY%% simply jumps over Header files being included and compilation of further libraries.
 ECHO  Skips any Documentation and Deletes *.o *.def files created.
