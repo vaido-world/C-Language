@@ -57,17 +57,19 @@ ECHO General Output directory: %outputDir%
 
 :Compilation
                                 
-ECHO   TCC Library is being compiled! ^| Source File: ..\libtcc.c
-ECHO   Output Files: libtcc.dll, libtcc.def
-ECHO   Preprocessor Flags: -shared %Dflags% -DLIBTCC_AS_DLL 
+ECHO   TCC Library is being compiled!
+ECHO   ^| Source File: ..\libtcc.c
+ECHO   ^| Output Files: libtcc.dll, libtcc.def
+ECHO   ^| Preprocessor Flags: -shared %Dflags% -DLIBTCC_AS_DLL 
 %CC% -shared "..\libtcc.c" %Dflags% -DLIBTCC_AS_DLL -o "%outputDir%\libtcc.dll"
 IF ERRORLEVEL 1 (
 	ECHO  [-] Unable To Compile: TCC Library: libtcc.dll
 ) ELSE ECHO   TCC Library libtcc.dll is Compiled Successfuly.
 ECHO.
-ECHO   TCC Executable is being compiled! ^| Source File: ..\tcc.c
-ECHO   Output Files: tcc.exe
-ECHO   Preprocessor Flags: %Dflags% -DONE_SOURCE"=0"
+ECHO   TCC Executable is being compiled!
+ECHO   ^| Source File: ..\tcc.c
+ECHO   ^| Output Files: tcc.exe
+ECHO   ^| Preprocessor Flags: %Dflags% -DONE_SOURCE"=0"
 REM    Explanation: -DONE_SOURCE"=0" is used to link tcc.exe to libtcc.dll and reuse it. 
 REM                (-DONE_SOURCE"=0" Can be ommited, flag is only used to reduce size)
 %CC%  "..\tcc.c" "libtcc.dll" %Dflags% -DONE_SOURCE"=0" -o "%outputDir%\tcc.exe"
@@ -75,9 +77,10 @@ IF ERRORLEVEL 1 (
 	ECHO  Unable To Compile: TCC Executable: tcc.exe
 ) ELSE  ECHO   TCC Executable  tcc.exe is Compiled Successfuly.
 ECHO.
-ECHO   Alternative TCC Executable is being compiled! ^| Source File: ..\tcc.c 
-ECHO   Output Files: %prefix-architecture%-tcc.exe
-ECHO   Preprocessor Flags: %DflagsSecondary%
+ECHO   Alternative TCC Executable is being compiled! 
+ECHO   ^| Source File: ..\tcc.c 
+ECHO   ^| Output Files: %prefix-architecture%-tcc.exe
+ECHO   ^| Preprocessor Flags: %DflagsSecondary%
 
 %CC% "..\tcc.c" %DflagsSecondary% -o "%outputDir%\%prefix-architecture%-tcc.exe"
 IF ERRORLEVEL 1 ( ECHO  Unable To Compile: TCC Secondary Executable: %prefix-architecture%-tcc.exe
