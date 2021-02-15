@@ -64,6 +64,7 @@ ECHO   ^| Preprocessor Flags: -shared %Dflags% -DLIBTCC_AS_DLL
 %CC% -shared "..\libtcc.c" %Dflags% -DLIBTCC_AS_DLL -o "%outputDir%\libtcc.dll"
 IF ERRORLEVEL 1 (
 	ECHO  [-] Unable To Compile: TCC Library: libtcc.dll
+	PAUSE
 ) ELSE ECHO   TCC Library libtcc.dll is Compiled Successfuly.
 ECHO.
 ECHO   TCC Executable is being compiled!
@@ -75,6 +76,7 @@ REM                (-DONE_SOURCE"=0" Can be ommited, flag is only used to reduce
 %CC%  "..\tcc.c" "libtcc.dll" %Dflags% -DONE_SOURCE"=0" -o "%outputDir%\tcc.exe"
 IF ERRORLEVEL 1 (
 	ECHO  Unable To Compile: TCC Executable: tcc.exe
+	PAUSE
 ) ELSE  ECHO   TCC Executable  tcc.exe is Compiled Successfuly.
 ECHO.
 ECHO   Alternative TCC Executable is being compiled! 
@@ -83,7 +85,9 @@ ECHO   ^| Output Files: %prefix-architecture%-tcc.exe
 ECHO   ^| Preprocessor Flags: %DflagsSecondary%
 
 %CC% "..\tcc.c" %DflagsSecondary% -o "%outputDir%\%prefix-architecture%-tcc.exe"
-IF ERRORLEVEL 1 ( ECHO  Unable To Compile: TCC Secondary Executable: %prefix-architecture%-tcc.exe
+IF ERRORLEVEL 1 ( 
+	ECHO  Unable To Compile: TCC Secondary Executable: %prefix-architecture%-tcc.exe
+	PAUSE
 ) ELSE ECHO   TCC Secondary Executable: %prefix-architecture%-tcc.exe is Compiled Successfuly.
 ECHO.
 
