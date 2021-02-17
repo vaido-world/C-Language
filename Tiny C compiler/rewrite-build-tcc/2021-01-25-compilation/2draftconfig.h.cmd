@@ -85,7 +85,6 @@ ECHO   Alternative TCC Executable is being compiled!
 ECHO   ^| Source File: ..\tcc.c 
 ECHO   ^| Output Files: %prefix-architecture%-tcc.exe
 ECHO   ^| Preprocessor Flags: %DflagsSecondary%
-
 %CC% "..\tcc.c" %DflagsSecondary% -o "%outputDir%\%prefix-architecture%-tcc.exe"
 IF ERRORLEVEL 1 ( 
 	ECHO  Unable To Compile: TCC Secondary Executable: %prefix-architecture%-tcc.exe
@@ -101,6 +100,27 @@ REM  Using -impdef source code from tcctools.c that is recently included in the 
 IF NOT EXIST ".\libtcc.def" (
 	.\tcc.exe -impdef "libtcc.dll" -o "libtcc\libtcc.def"
 )
+
+REM EXES_ONLY
+
+REM "Folder ok" means Okey, a playful indication that it is ok. (^__^)
+REM Originally, MKDIR did not log/show messages of the Sucessfull attempts, only Error text output. 
+ECHO Creating directories..
+IF NOT EXIST "%outputDir%\libtcc"   ( MKDIR "%outputDir%\libtcc"   & IF ERRORLEVEL 0 ECHO  Sucessfully created "%outputDir%\libtcc"   ) ELSE ECHO  Folder ok "%outputDir%\libtcc"  Already exist 
+IF NOT EXIST "%outputDir%\lib"      ( MKDIR "%outputDir%\lib"      & IF ERRORLEVEL 0 ECHO  Sucessfully created "%outputDir%\lib"      ) ELSE ECHO  Folder ok "%outputDir%\lib"     Already exist
+IF NOT EXIST "%outputDir%\doc"      ( MKDIR "%outputDir%\doc"      & IF ERRORLEVEL 0 ECHO  Sucessfully created "%outputDir%\doc"      ) ELSE ECHO  Folder ok "%outputDir%\doc"     Already exist 
+IF NOT EXIST "%outputDir%\include"  ( MKDIR "%outputDir%\include"  & IF ERRORLEVEL 0 ECHO  Sucessfully created "%outputDir%\include"  ) ELSE ECHO  Folder ok "%outputDir%\include" Already exist 
+IF NOT EXIST "%outputDir%\examples" ( MKDIR "%outputDir%\examples" & IF ERRORLEVEL 0 ECHO  Sucessfully created "%outputDir%\examples" ) ELSE ECHO  Folder ok "%outputDir%\libtcc"  Already exist 
+ECHO.
+
+ECHO 
+
+
+REM & IF ERRORLEVEL 1 ECHO Folder already exist or could not be created.
+REM & IF ERRORLEVEL 1 ECHO Folder already exist or could not be created.
+REM & IF ERRORLEVEL 1 ECHO Folder already exist or could not be created.
+REM & IF ERRORLEVEL 1 ECHO Folder already exist or could not be created.
+REM & IF ERRORLEVEL 1 ECHO Folder already exist or could not be created.ECHO..
 
 ECHO  TIP: %%EXES_ONLY%% simply jumps over Header files being included and compilation of further libraries.
 ECHO  Skips any Documentation and Deletes *.o *.def files created.
