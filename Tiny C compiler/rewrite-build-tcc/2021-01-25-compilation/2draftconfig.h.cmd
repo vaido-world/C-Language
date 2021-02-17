@@ -112,18 +112,18 @@ REM  [No more Needed, for historical reference] When compiling TCC Library libtc
 REM  Backwards comptibility for .def of tcc lib 
 REM  Makes .def file from libtcc.dll library
 REM  Using -impdef source code from tcctools.c that is recently included in the tcc.exe binary itself.
-IF NOT EXIST ".\libtcc.def" (
+
+IF NOT EXIST "%outputDir%\libtcc.def" (
 	ECHO Making a .def file from TCC Library (libtcc.dll)
-	.\tcc.exe -impdef "libtcc.dll" -o "libtcc\libtcc.def"
+	.\tcc.exe -impdef "%outputDir%\libtcc.dll" -o "%outputDir%\libtcc\libtcc.def"
 )
 
-
-
-REM & IF ERRORLEVEL 1 ECHO Folder already exist or could not be created.
-REM & IF ERRORLEVEL 1 ECHO Folder already exist or could not be created.
-REM & IF ERRORLEVEL 1 ECHO Folder already exist or could not be created.
-REM & IF ERRORLEVEL 1 ECHO Folder already exist or could not be created.
-REM & IF ERRORLEVEL 1 ECHO Folder already exist or could not be created.ECHO..
+ECHO 
+copy>nul ..\include\*.h include
+copy>nul ..\tcclib.h include
+copy>nul ..\libtcc.h libtcc
+copy>nul ..\tests\libtcc_test.c examples
+copy>nul tcc-win32.txt doc
 
 ECHO  TIP: %%EXES_ONLY%% simply jumps over Header files being included and compilation of further libraries.
 ECHO  Skips any Documentation and Deletes *.o *.def files created.
