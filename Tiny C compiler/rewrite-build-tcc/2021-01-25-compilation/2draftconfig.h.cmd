@@ -93,13 +93,6 @@ IF ERRORLEVEL 1 (
 )
 ECHO.
 
-REM  [No more Needed, for historical reference] When compiling TCC Library libtcc.c, already makes one.
-REM  Backwards comptibility for .def of tcc lib 
-REM  Makes .def file from libtcc.dll library
-REM  Using -impdef source code from tcctools.c that is recently included in the tcc.exe binary itself.
-IF NOT EXIST ".\libtcc.def" (
-	.\tcc.exe -impdef "libtcc.dll" -o "libtcc\libtcc.def"
-)
 
 REM EXES_ONLY
 
@@ -113,7 +106,17 @@ IF NOT EXIST "%outputDir%\include"  ( MKDIR "%outputDir%\include"  & IF ERRORLEV
 IF NOT EXIST "%outputDir%\examples" ( MKDIR "%outputDir%\examples" & IF ERRORLEVEL 0 ECHO  Sucessfully created "%outputDir%\examples" ) ELSE ECHO  Folder ok "%outputDir%\libtcc"  Already exist 
 ECHO.
 
-ECHO 
+
+
+REM  [No more Needed, for historical reference] When compiling TCC Library libtcc.c, already makes one.
+REM  Backwards comptibility for .def of tcc lib 
+REM  Makes .def file from libtcc.dll library
+REM  Using -impdef source code from tcctools.c that is recently included in the tcc.exe binary itself.
+IF NOT EXIST ".\libtcc.def" (
+	ECHO Making a .def file from TCC Library (libtcc.dll)
+	.\tcc.exe -impdef "libtcc.dll" -o "libtcc\libtcc.def"
+)
+
 
 
 REM & IF ERRORLEVEL 1 ECHO Folder already exist or could not be created.
