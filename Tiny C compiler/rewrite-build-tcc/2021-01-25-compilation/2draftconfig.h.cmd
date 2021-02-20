@@ -2,6 +2,7 @@
 
 :config.h
 
+REM Can be seen via "tcc -version"
 set /p VERSION= < ..\VERSION 
 REM Writes a new config.h
 (
