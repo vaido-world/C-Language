@@ -139,6 +139,10 @@ COPY "..\tests\libtcc_test.c" "%outputDir%\examples"
 COPY "tcc-win32.txt"          "%outputDir%\doc"
 
 ECHO.
+ECHO -------------Compiling TCC runtime library and other libraries------------  
+ECHO libtcc1.c
+
+ECHO.
 ECHO  TIP: %%EXES_ONLY%% simply jumps over Header files being included and compilation of further libraries.
 ECHO  Skips any Documentation and Deletes *.o *.def files created.
 
