@@ -56,7 +56,7 @@ MKDIR "%outputDir%" 2>NUL & IF ERRORLEVEL 1 (
 ECHO General Output directory: %outputDir%
 
 :Compilation
-ECHO -------------------------------Compilation-------------------------------            
+ECHO ----------------------------Main-Compilation-----------------------------            
 ECHO   TCC Library is being compiled!
 ECHO   ^| Source File: ..\libtcc.c
 ECHO   ^| Output Files: libtcc.dll, libtcc.def
