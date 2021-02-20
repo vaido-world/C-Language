@@ -120,6 +120,10 @@ REM                 Using -impdef source code from tcctools.c that is recently i
 IF NOT EXIST "%outputDir%\libtcc.def" (
 	ECHO Making a .def file from TCC Library (libtcc.dll)
 	.\tcc.exe -impdef "%outputDir%\libtcc.dll" -o "%outputDir%\libtcc.def"
+	IF ERRORLEVEL 1 (
+		ECHO An Error occured while making "libtcc.def" file out of "libtcc.dll" using "tcc.exe -impdef"
+		PAUSE
+	)
 )
 
 REM [Definition files .def]
