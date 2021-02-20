@@ -107,26 +107,34 @@ IF NOT EXIST "%outputDir%\include"  ( MKDIR "%outputDir%\include"  & IF ERRORLEV
 IF NOT EXIST "%outputDir%\examples" ( MKDIR "%outputDir%\examples" & IF ERRORLEVEL 0 ECHO  Sucessfully created "%outputDir%\examples" ) ELSE ECHO  Folder ok "%outputDir%\examples"  Already exist 
 ECHO.
 
+ECHO ------------------Copy .h Headers and .def files, .txt files---------------
 
 
-REM  [No more Needed, for historical reference] When compiling TCC Library libtcc.c, already makes one.
-REM  Backwards comptibility for .def of tcc lib 
-REM  Makes .def file from libtcc.dll library
-REM  Using -impdef source code from tcctools.c that is recently included in the tcc.exe binary itself.
-ECHO  %CD%
-PAUSE
+REM  [Generating .def file] 
+REM  [No more Needed, for historical reference only] [Backwards comptibility]
+REM  When compiling TCC Library, libtcc.c - already makes one.
+REM
+REM  Description:   Makes .def file from libtcc.dll library
+REM                 Using -impdef source code from tcctools.c that is recently included in the tcc.exe binary itself.
+
 IF NOT EXIST "%outputDir%\libtcc.def" (
 	ECHO Making a .def file from TCC Library (libtcc.dll)
-	.\tcc.exe -impdef "%outputDir%\libtcc.dll" -o "%outputDir%\libtcc\libtcc.def"
+	.\tcc.exe -impdef "%outputDir%\libtcc.dll" -o "%outputDir%\libtcc.def"
 )
 
-ECHO 
-copy>nul ..\include\*.h include
-copy>nul ..\tcclib.h include
-copy>nul ..\libtcc.h libtcc
-copy>nul ..\tests\libtcc_test.c examples
-copy>nul tcc-win32.txt doc
+REM [Definition files .def]
+COPY "%outputDir%\libtcc.def" "%outputDir%\libtcc\"
 
+
+REM [Header files .h]
+ECHO. 
+COPY "..\include\*.h"         "%outputDir%\include"
+COPY "..\tcclib.h"            "%outputDir%\include"
+COPY "..\libtcc.h"            "%outputDir%\libtcc"
+COPY "..\tests\libtcc_test.c" "%outputDir%\examples"
+COPY "tcc-win32.txt"          "%outputDir%\doc"
+
+ECHO.
 ECHO  TIP: %%EXES_ONLY%% simply jumps over Header files being included and compilation of further libraries.
 ECHO  Skips any Documentation and Deletes *.o *.def files created.
 
