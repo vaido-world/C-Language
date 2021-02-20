@@ -127,7 +127,7 @@ IF NOT EXIST "%outputDir%\libtcc.def" (
 )
 
 REM [Definition files .def]
-COPY "%outputDir%\libtcc.def" "%outputDir%\libtcc\"
+MOVE "%outputDir%\libtcc.def" "%outputDir%\libtcc\"
 
 
 REM [Header files .h]
