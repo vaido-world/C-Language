@@ -1,9 +1,11 @@
 @ECHO OFF
 
 :config.h
+
+set /p VERSION= < ..\VERSION 
 REM Writes a new config.h
 (
-  ECHO #define TCC_VERSION "%VERSION%"
+  ECHO #define TCC_VERSION "%VERSION% (Compiled at: %DATE: =0%)"
   ECHO #ifdef TCC_TARGET_X86_64
   ECHO #define TCC_LIBTCC1 "libtcc1-64.a"
   ECHO #else
