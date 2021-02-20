@@ -56,7 +56,7 @@ MKDIR "%outputDir%" 2>NUL & IF ERRORLEVEL 1 (
 ECHO General Output directory: %outputDir%
 
 :Compilation
-                                
+ECHO -------------------------------Compilation-------------------------------            
 ECHO   TCC Library is being compiled!
 ECHO   ^| Source File: ..\libtcc.c
 ECHO   ^| Output Files: libtcc.dll, libtcc.def
@@ -93,6 +93,7 @@ IF ERRORLEVEL 1 (
 )
 ECHO.
 
+ECHO ---------------------------Creating Directories---------------------------  
 
 REM EXES_ONLY
 
@@ -103,7 +104,7 @@ IF NOT EXIST "%outputDir%\libtcc"   ( MKDIR "%outputDir%\libtcc"   & IF ERRORLEV
 IF NOT EXIST "%outputDir%\lib"      ( MKDIR "%outputDir%\lib"      & IF ERRORLEVEL 0 ECHO  Sucessfully created "%outputDir%\lib"      ) ELSE ECHO  Folder ok "%outputDir%\lib"     Already exist
 IF NOT EXIST "%outputDir%\doc"      ( MKDIR "%outputDir%\doc"      & IF ERRORLEVEL 0 ECHO  Sucessfully created "%outputDir%\doc"      ) ELSE ECHO  Folder ok "%outputDir%\doc"     Already exist 
 IF NOT EXIST "%outputDir%\include"  ( MKDIR "%outputDir%\include"  & IF ERRORLEVEL 0 ECHO  Sucessfully created "%outputDir%\include"  ) ELSE ECHO  Folder ok "%outputDir%\include" Already exist 
-IF NOT EXIST "%outputDir%\examples" ( MKDIR "%outputDir%\examples" & IF ERRORLEVEL 0 ECHO  Sucessfully created "%outputDir%\examples" ) ELSE ECHO  Folder ok "%outputDir%\libtcc"  Already exist 
+IF NOT EXIST "%outputDir%\examples" ( MKDIR "%outputDir%\examples" & IF ERRORLEVEL 0 ECHO  Sucessfully created "%outputDir%\examples" ) ELSE ECHO  Folder ok "%outputDir%\examples"  Already exist 
 ECHO.
 
 
@@ -112,7 +113,8 @@ REM  [No more Needed, for historical reference] When compiling TCC Library libtc
 REM  Backwards comptibility for .def of tcc lib 
 REM  Makes .def file from libtcc.dll library
 REM  Using -impdef source code from tcctools.c that is recently included in the tcc.exe binary itself.
-
+ECHO  %CD%
+PAUSE
 IF NOT EXIST "%outputDir%\libtcc.def" (
 	ECHO Making a .def file from TCC Library (libtcc.dll)
 	.\tcc.exe -impdef "%outputDir%\libtcc.dll" -o "%outputDir%\libtcc\libtcc.def"
