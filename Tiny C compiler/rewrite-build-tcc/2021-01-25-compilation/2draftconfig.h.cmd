@@ -91,7 +91,7 @@ ECHO   ^| Preprocessor Flags: %Dflags% -DONE_SOURCE"=0"
 REM    Explanation: -DONE_SOURCE"=0" is used to link tcc.exe to libtcc.dll and reuse it. 
 REM                (-DONE_SOURCE"=0" Can be ommited, flag is only used to reduce size)
 
-:: Bug Found, -run |  Compiling with an old/previous libtcc library, everything is alright. A newly compiled library says that -run is not available(%outputDir%\libtcc.dll)
+:: Bug Found, -run |  Compiling with an old/previous libtcc library, everything is alright (FROM Bellards official site). A newly compiled library says that -run is not available(%outputDir%\libtcc.dll)
 %CC%  "..\tcc.c" "libtcc.dll" %Dflags% -DONE_SOURCE"=0" -o "%outputDir%\tcc.exe"
 IF ERRORLEVEL 1 (
 	ECHO  Unable To Compile: TCC Executable: tcc.exe
@@ -103,7 +103,7 @@ ECHO   Alternative TCC Executable is being compiled!
 ECHO   ^| Source File: ..\tcc.c 
 ECHO   ^| Output Files: %prefix-architecture%-tcc.exe
 ECHO   ^| Preprocessor Flags: %DflagsSecondary%
-:: Bug Found, -run |  Compiling with an old/previous libtcc library, everything is alright. A newly compiled library says that -run is not available (%outputDir%\libtcc.dll)
+:: Bug Found, -run |  Compiling with an old/previous libtcc library, everything is alright (FROM Bellards official site). A newly compiled library says that -run is not available (%outputDir%\libtcc.dll)
 %CC% "..\tcc.c" "libtcc.dll" %DflagsSecondary% -o "%outputDir%\%prefix-architecture%-tcc.exe"
 IF ERRORLEVEL 1 ( 
 	ECHO  Unable To Compile: TCC Secondary Executable: %prefix-architecture%-tcc.exe
