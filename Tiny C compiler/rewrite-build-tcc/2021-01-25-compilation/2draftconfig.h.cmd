@@ -1,5 +1,13 @@
 @ECHO OFF
 
+FOR %%I in (.) DO SET "thisFolder=%%~nxI"
+IF NOT "%thisFolder%" == "win32" (
+	ECHO Please place/move/copy this script file inside win32 folder of TCC source code.
+	ECHO Example: "tinycc-HEAD-d0d0c8b\win32\%~nx0"
+	PAUSE
+
+ )
+
 :config.h
 
 REM Can be seen via "tcc -version"
@@ -67,6 +75,11 @@ ECHO   ^| Preprocessor Flags: -shared %Dflags% -DLIBTCC_AS_DLL
 %CC% -shared "..\libtcc.c" %Dflags% -DLIBTCC_AS_DLL -o "%outputDir%\libtcc.dll"
 IF ERRORLEVEL 1 (
 	ECHO  [-] Unable To Compile: TCC Library: libtcc.dll
+	IF NOT EXIST "%CC%" ( 
+		ECHO     [-] The TCC compiler has not been found here: 
+		ECHO         "%CC%"
+		)
+	ECHO      [?] Current Directory: %CD%
 ) ELSE (
 	ECHO   TCC Library libtcc.dll is Compiled Successfuly.
 )
@@ -77,6 +90,8 @@ ECHO   ^| Output Files: tcc.exe
 ECHO   ^| Preprocessor Flags: %Dflags% -DONE_SOURCE"=0"
 REM    Explanation: -DONE_SOURCE"=0" is used to link tcc.exe to libtcc.dll and reuse it. 
 REM                (-DONE_SOURCE"=0" Can be ommited, flag is only used to reduce size)
+
+:: Bug Found, -run |  Compiling with an old/previous libtcc library, everything is alright. A newly compiled library says that -run is not available(%outputDir%\libtcc.dll)
 %CC%  "..\tcc.c" "libtcc.dll" %Dflags% -DONE_SOURCE"=0" -o "%outputDir%\tcc.exe"
 IF ERRORLEVEL 1 (
 	ECHO  Unable To Compile: TCC Executable: tcc.exe
@@ -88,7 +103,8 @@ ECHO   Alternative TCC Executable is being compiled!
 ECHO   ^| Source File: ..\tcc.c 
 ECHO   ^| Output Files: %prefix-architecture%-tcc.exe
 ECHO   ^| Preprocessor Flags: %DflagsSecondary%
-%CC% "..\tcc.c" %DflagsSecondary% -o "%outputDir%\%prefix-architecture%-tcc.exe"
+:: Bug Found, -run |  Compiling with an old/previous libtcc library, everything is alright. A newly compiled library says that -run is not available (%outputDir%\libtcc.dll)
+%CC% "..\tcc.c" "libtcc.dll" %DflagsSecondary% -o "%outputDir%\%prefix-architecture%-tcc.exe"
 IF ERRORLEVEL 1 ( 
 	ECHO  Unable To Compile: TCC Secondary Executable: %prefix-architecture%-tcc.exe
 ) ELSE (
@@ -122,7 +138,7 @@ REM                 Using -impdef source code from tcctools.c that is recently i
 
 IF NOT EXIST "%outputDir%\libtcc.def" (
 	ECHO Making a .def file from TCC Library (libtcc.dll)
-	.\tcc.exe -impdef "%outputDir%\libtcc.dll" -o "%outputDir%\libtcc.def"
+	"%outputDir%\tcc.exe" -impdef "%outputDir%\libtcc.dll" -o "%outputDir%\libtcc.def"
 	IF ERRORLEVEL 1 (
 		ECHO An Error occured while making "libtcc.def" file out of "libtcc.dll" using "tcc.exe -impdef"
 		PAUSE
