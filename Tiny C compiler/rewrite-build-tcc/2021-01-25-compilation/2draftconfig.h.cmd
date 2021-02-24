@@ -103,7 +103,7 @@ IF ERRORLEVEL 1 (
 	IF ERRORLEVEL 1 (
 		ECHO No Error
 	) ELSE (
-		ECHO There is Error
+		ECHO There is Error: -run is not available in a cross compiler
 	)
 
 	
