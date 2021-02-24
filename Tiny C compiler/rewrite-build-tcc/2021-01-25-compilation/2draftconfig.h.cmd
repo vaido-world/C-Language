@@ -97,12 +97,17 @@ IF ERRORLEVEL 1 (
 	ECHO  Unable To Compile: TCC Executable: tcc.exe
 ) ELSE (
 	ECHO   TCC Executable  tcc.exe is Compiled Successfuly.
-	"%outputDir%\tcc.exe" "-run" 2^>^&1 | findstr "is"
-	if %errorlevel% == 0 (
-	    echo virtual machine
-	) else (
-	    echo real machine
+	
+	
+	"%outputDir%\tcc" "-run"  2>&1  | findstr /N /A:4E /c:"-run is not available in a cross compiler"
+	IF ERRORLEVEL 1 (
+		ECHO No Error
+	) ELSE (
+		ECHO There is Error
 	)
+
+	
+
 
 PAUSE
 
