@@ -99,7 +99,7 @@ IF ERRORLEVEL 1 (
 	ECHO   TCC Executable  tcc.exe is Compiled Successfuly.
 	
 	
-	"%outputDir%\tcc" "-run"  2>&1  | findstr /N /A:4E /c:"-run is not available in a cross compiler"
+	("%outputDir%\tcc" "-run"  2>&1  | findstr /N /A:4E /c:"-run is not available in a cross compiler" ) >NUL
 	IF ERRORLEVEL 1 (
 		ECHO No Error
 	) ELSE (
