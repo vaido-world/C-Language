@@ -92,19 +92,27 @@ REM    Explanation: -DONE_SOURCE"=0" is used to link tcc.exe to libtcc.dll and r
 REM                (-DONE_SOURCE"=0" Can be ommited, flag is only used to reduce size)
 
 :: Bug Found, -run |  Compiling with an old/previous libtcc library, everything is alright (FROM Bellards official site). A newly compiled library says that -run is not available(%outputDir%\libtcc.dll)
-%CC%  "..\tcc.c" "libtcc.dll" %Dflags% -DONE_SOURCE"=0" -o "%outputDir%\tcc.exe"
+%CC%  "..\tcc.c" "%outputDir%\libtcc.dll" %Dflags% -DONE_SOURCE"=0" -o "%outputDir%\tcc.exe"
 IF ERRORLEVEL 1 (
 	ECHO  Unable To Compile: TCC Executable: tcc.exe
 ) ELSE (
 	ECHO   TCC Executable  tcc.exe is Compiled Successfuly.
-)
+	"%outputDir%\tcc.exe" "-run" 2^>^&1 | findstr "is"
+	if %errorlevel% == 0 (
+	    echo virtual machine
+	) else (
+	    echo real machine
+	)
+
+PAUSE
+
 ECHO.
 ECHO   Alternative TCC Executable is being compiled! 
 ECHO   ^| Source File: ..\tcc.c 
 ECHO   ^| Output Files: %prefix-architecture%-tcc.exe
 ECHO   ^| Preprocessor Flags: %DflagsSecondary%
 :: Bug Found, -run |  Compiling with an old/previous libtcc library, everything is alright (FROM Bellards official site). A newly compiled library says that -run is not available (%outputDir%\libtcc.dll)
-%CC% "..\tcc.c" "libtcc.dll" %DflagsSecondary% -o "%outputDir%\%prefix-architecture%-tcc.exe"
+%CC% "..\tcc.c" "%outputDir%\libtcc.dll" %DflagsSecondary% -o "%outputDir%\%prefix-architecture%-tcc.exe"
 IF ERRORLEVEL 1 ( 
 	ECHO  Unable To Compile: TCC Secondary Executable: %prefix-architecture%-tcc.exe
 ) ELSE (
