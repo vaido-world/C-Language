@@ -1,6 +1,11 @@
 @ECHO OFF
 TITLE Compile Tiny C with itself AND run WinSocket example
 
+SET "RandomNumber=%RANDOM%"
+MKDIR "%RandomNumber%Directory"
+CD "%RandomNumber%Directory"
+
+
 ECHO Downloading "Old Precompiled Tiny C Compiler" in .zip archive format
 curl -L "http://download.savannah.gnu.org/releases/tinycc/tcc-0.9.27-win64-bin.zip" -O
 
