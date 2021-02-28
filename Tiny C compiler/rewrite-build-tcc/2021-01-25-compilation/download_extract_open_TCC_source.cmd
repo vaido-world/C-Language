@@ -15,4 +15,6 @@ tar xf "HEAD.tar.gz"
 
 CD "tinycc-HEAD-*/win32"
 
+curl "https://github.com/vaido-world/C-Language-Tutorial/raw/master/Tiny%20C%20compiler/rewrite-build-tcc/2021-01-25-compilation/2draftconfig.h.cmd" -O
+
 "C:\Windows\explorer.exe" "."
