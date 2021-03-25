@@ -1,5 +1,8 @@
 # C-Language-Tutorial
 
+## 2021-03-25
+https://scottc130.medium.com/writing-your-first-x86-program-3fd2b33139d6
+
 ## 2021-02-08
 `tcc: error: -run is not available in a cross compiler`   
 The reason for this error is that `-run` is not available in tcc.exe that is x64 (or maybe the libtcc.dll itself)  
