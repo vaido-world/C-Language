@@ -1,5 +1,8 @@
 # C-Language-Tutorial
 
+## 2021-04-07
+https://www.unf.edu/~wkloster/2220/ppts/cprogramming_tutorial.pdf
+
 ## 2021-03-25
 https://scottc130.medium.com/writing-your-first-x86-program-3fd2b33139d6
 
