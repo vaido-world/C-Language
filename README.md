@@ -1,5 +1,8 @@
 # C-Language-Tutorial
 
+## 2021-05-22
+http://www.compsci.hunter.cuny.edu/~sweiss/course_materials/csci493.73/csci493.73_spr10.php
+
 ## 2021-04-07
 https://www.unf.edu/~wkloster/2220/ppts/cprogramming_tutorial.pdf
 
