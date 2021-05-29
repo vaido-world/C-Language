@@ -1,5 +1,8 @@
 # C-Language-Tutorial
 
+## 2021-05-29
+https://www-personal.acfr.usyd.edu.au/tbailey/ctext/ctext.pdf
+
 ## 2021-05-22
 http://www.compsci.hunter.cuny.edu/~sweiss/course_materials/csci493.73/csci493.73_spr10.php
 
