@@ -1,5 +1,8 @@
 # C-Language-Tutorial
 
+## 2021-05-31
+https://stackoverflow.com/questions/61861026/how-does-the-c-standard-library-work-behind-the-scenes/61861971#61861971
+
 ## 2021-05-29
 https://www-personal.acfr.usyd.edu.au/tbailey/ctext/ctext.pdf
 
