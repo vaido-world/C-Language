@@ -49,7 +49,7 @@ void main(){
 	PVOID   pvData   = NULL;
 	LPDWORD pcbData  = &BufferSize;
 	
-	// Retrieve the size of the pvData registry value and place it into pcbData variable
+	// Retrieves the size of the pvData registry value and place it into pcbData variable
 	RegGetValueA(
 		hkey,
 		lpSubKey,
