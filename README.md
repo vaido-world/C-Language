@@ -1,7 +1,7 @@
 # C-Language-Tutorial
 
 ## 2021-06-01
-### Redefining main method with Macros
+### Redefining main method with Macros (Use macro as function name)
 
 `__FILE__` macro is not expanded in the function name.
 #### Example: WindowProc.c
