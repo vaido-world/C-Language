@@ -82,8 +82,8 @@ void WindowProc3a()
 
 } 
 ```
-Results: they are all executable and can be included in each other and called when needed.
-Downside: Requires a lot of manual work to avoid the conflict between the main functions of each source file. 
+Results: they are all executable and can be included in each other and called when needed.  
+Downside: Requires a lot of manual work to avoid the conflict between the main functions of each source file.   
 
 
 ## 2021-05-31
