@@ -37,7 +37,7 @@ void main(){
 	
 	
 	
-	
+	// Define the settings for the RegGetValueA function  
 	#define BUFFER  8192
 	DWORD BufferSize = BUFFER;
 	
@@ -49,6 +49,7 @@ void main(){
 	PVOID   pvData   = NULL;
 	LPDWORD pcbData  = &BufferSize;
 	
+	// Retrieve the size of the pvData registry value
 	RegGetValueA(
 		hkey,
 		lpSubKey,
@@ -59,8 +60,10 @@ void main(){
 		pcbData
 	);
 
+	// Allocate memory for the size of retrieved pcbData value
 	pvData = (int*)malloc(*pcbData);
 	
+	// Retrieve the content of the registry value and store it in pvData
 	RegGetValueA(
 		hkey,
 		lpSubKey,
