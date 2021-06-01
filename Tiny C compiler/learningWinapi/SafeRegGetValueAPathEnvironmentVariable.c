@@ -1,6 +1,8 @@
 #pragma comment(lib, "advapi32") // No more Need for "tcc -ladvapi32 RegGetValueA.c"         tcc: error: undefined symbol 'RegGetValueA' 
 #include <stdio.h>               // Prevents a warning:                  test.c:34: warning: implicit declaration of function 'printf'
 #include <windows.h>             // Required, else an error:             test.c:12: error: 'DWORD' undeclared
+#include <stdlib.h>              // Required, else a warning:            RegGetValue.c:62: warning: implicit declaration of function 'malloc'
+
 /* 
 Useful information 
    Function:  RegGetValueA
@@ -10,17 +12,13 @@ Useful information
  Proper compilation method/tutorial 
    tcc -impdef advapi32.dll -o .\lib\advapi32.def
    tcc -ladvapi32 RegGetValueAPathEnvironmentVariable.c
-
 More Documentation
    System Path variable locations
    https://stackoverflow.com/questions/573817/where-are-environment-variables-stored-in-registry/573818#573818
-
    User Variables
    HKEY_CURRENT_USER\Environment
-
    System Variables
    Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment
-
 */
 
 
@@ -95,7 +93,6 @@ void main(){
 		printf("\n");
 		printf("                  ---");
 		printf("\n");
-
 		printf("Retrieved information about array size: %i\n",BufferSize);
 		printf("Actual size of the array: %i\n", strlen(value));
 		printf("Manually Allocated bytes for the array: %i", sizeof(value));
