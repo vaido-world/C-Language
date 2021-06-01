@@ -4,6 +4,29 @@
 ### Looking at the C language compiler output using -E Preprocesor parameter in TCC
 `tcc -E  windowproc.c`
 
+```
+#define main __FILE__ 
+void main() 
+{ 
+	printf("WindowProc\n");
+	gets();
+
+} 
+```
+
+Output of `tcc -E  windowproc.c`
+
+```
+
+void "windowproc.c"()
+{
+        printf("WindowProc\n");
+        gets();
+
+}
+
+```
+
 ### Some average quality C Reference Book
 http://www.cs.columbia.edu/~sedwards/papers/sgi1999c.pdf
 ### References
