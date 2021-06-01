@@ -38,6 +38,52 @@ void WindowProc2a()
 ```
 
 
+### Modular project experiment with multiple main functions
+This example will show that it is possible to make three different source files with main methods.
+#### ModularProject.c
+```
+#define main main
+#include "WindowProc2a.c"
+#include "WindowProc3a.c"
+void main() 
+{ 	
+	WindowProc2a();
+	WindowProc3a();
+	printf(__FILE__" \n");
+
+
+} 
+```
+#### WindowProc2a.c
+```
+#ifndef main
+#define WindowProc2a main
+#endif
+
+#include <stdio.h>
+void WindowProc2a() 
+{ 
+	printf(__FILE__" \n");
+
+
+} 
+```
+#### WindowProc3a.c
+```
+#ifndef main
+#define WindowProc3a main
+#endif
+
+#include <stdio.h>
+void WindowProc3a() 
+{ 
+	printf(__FILE__" \n");
+
+
+} 
+```
+Results: they are all executable and can be included in each other and called when needed.
+Downside: Requires a lot of manual work to avoid the conflict between the main functions of each source file. 
 
 
 ## 2021-05-31
