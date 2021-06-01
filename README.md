@@ -1,6 +1,7 @@
 # C-Language-Tutorial
 
 ## 2021-06-01
+http://www.cs.columbia.edu/~sedwards/papers/sgi1999c.pdf
 ### References
 https://www.tutorialspoint.com/c_standard_library/index.htm  
 https://www.tutorialspoint.com/cprogramming/index.htm
