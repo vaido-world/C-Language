@@ -36,6 +36,7 @@ void main(){
 	
 	
 	// Define the settings for the RegGetValueA function  
+	// https://docs.microsoft.com/en-us/windows/win32/api/winreg/nf-winreg-reggetvaluea#parameters
 	
 	// Minimal Buffer size
 	#define BUFFER  8192
