@@ -26,6 +26,7 @@ void "windowproc.c"()
 }
 
 ```
+**Notice:** As can be seen `__FILE__` is expanded to `"windowproc.c"` the quotes (`""`) seem to not let to use this macro as function name. 
 
 ### Some average quality C Reference Book
 http://www.cs.columbia.edu/~sedwards/papers/sgi1999c.pdf
