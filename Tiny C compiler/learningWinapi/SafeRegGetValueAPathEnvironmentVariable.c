@@ -45,8 +45,8 @@ void main(){
 	LPCSTR  lpSubKey = "SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Environment";
 	LPCSTR  lpValue  = "Path";
 	DWORD   dwFlags  = RRF_RT_ANY;
-	LPDWORD pdwType  = NULL;
-	PVOID   pvData   = NULL;
+	LPDWORD pdwType  = NULL; // This default NULL value, states that we do not request the data, only the Size of it
+	PVOID   pvData   = NULL; // This default NULL value, states that we do not request the data, only the Size of it
 	LPDWORD pcbData  = &BufferSize;
 	
 	// Retrieves the size of the pvData registry value and place it into pcbData variable
