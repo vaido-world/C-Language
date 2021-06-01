@@ -38,6 +38,8 @@ void main(){
 	
 	
 	// Define the settings for the RegGetValueA function  
+	
+	// Minimal Buffer size
 	#define BUFFER  8192
 	DWORD BufferSize = BUFFER;
 	
