@@ -1,5 +1,31 @@
 # C-Language-Tutorial
 
+## 2021-06-01
+### Redefining main method with Macros
+
+`__FILE__` macro is not expanded in the function name.
+#### Example: WindowProc.c
+```
+#ifndef __FILE__t
+#define __FILE__t main
+#endif
+
+void __FILE__t() 
+{ 
+	printf("WindowProc\n");
+	gets();
+
+} 
+```
+
+It is simply treated as function name `__FILE__t` instead of `WindowProc.c_t`
+
+### Redefining main method with literal strings
+
+
+
+
+
 ## 2021-05-31
 https://stackoverflow.com/questions/61861026/how-does-the-c-standard-library-work-behind-the-scenes/61861971#61861971
 
