@@ -1,6 +1,10 @@
 # C-Language-Tutorial
 
 ## 2021-06-01
+### References
+https://www.tutorialspoint.com/c_standard_library/index.htm
+https://www.tutorialspoint.com/cprogramming/index.htm
+
 ### Redefining main method with Macros (Use macro as function name)
 
 `__FILE__` macro is not expanded in the function name.
