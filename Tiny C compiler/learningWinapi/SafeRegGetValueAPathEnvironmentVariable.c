@@ -46,7 +46,7 @@ void main(){
 	LPCSTR  lpSubKey = "SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Environment";
 	LPCSTR  lpValue  = "Path";
 	DWORD   dwFlags  = RRF_RT_ANY;
-	LPDWORD pdwType  = NULL; // This default NULL value, states that we do not request the data, only the Size of it
+	LPDWORD pdwType  = NULL; // This default NULL value, states that we do not request specific registry value type  https://docs.microsoft.com/en-us/windows/win32/sysinfo/registry-value-types
 	PVOID   pvData   = NULL; // This default NULL value, states that we do not request the data, only the Size of it
 	LPDWORD pcbData  = &BufferSize;
 	
