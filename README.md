@@ -21,7 +21,21 @@ void __FILE__t()
 It is simply treated as function name `__FILE__t` instead of `WindowProc.c_t`
 
 ### Redefining main method with literal strings
+As mentioned function names do not expand macros and are treated directly as literal strings.
+#### Example: 
+```
+#ifndef main
+#define WindowProc2a main
+#endif
 
+#include <stdio.h>
+void WindowProc2a() 
+{ 
+	printf(__FILE__" \n");
+
+
+} 
+```
 
 
 
