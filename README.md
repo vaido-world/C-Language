@@ -1,5 +1,8 @@
 # C-Language-Tutorial
 
+## 2021-06-02
+https://elmicro.com/files/cosmic/clanguage.pdf
+
 ## 2021-06-01
 ### Looking at the C language compiler output using -E Preprocesor parameter in TCC
 `tcc -E  windowproc.c`
