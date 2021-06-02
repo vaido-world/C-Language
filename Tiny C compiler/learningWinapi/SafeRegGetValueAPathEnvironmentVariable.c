@@ -1,6 +1,8 @@
 // Pragmatic compiler instructions
 // Pragmatic comment for advapi32 library.
 #pragma comment(lib, "advapi32") // No more Need for "tcc -ladvapi32 RegGetValueA.c"         tcc: error: undefined symbol 'RegGetValueA' 
+
+// Include directives.
 #include <stdio.h>               // Prevents a warning:                  test.c:34: warning: implicit declaration of function 'printf'
 #include <windows.h>             // Required, else an error:             test.c:12: error: 'DWORD' undeclared
 #include <stdlib.h>              // Required, else a warning:            RegGetValue.c:62: warning: implicit declaration of function 'malloc'
