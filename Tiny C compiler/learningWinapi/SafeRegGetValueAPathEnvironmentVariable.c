@@ -79,6 +79,7 @@ void main(){
 		pcbData
 	);
 	
+	// Debug information
 		printf("                  ---");
 		printf("\n");
 		printf("%s", pvData);
