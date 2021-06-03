@@ -46,23 +46,24 @@ void main(){
 	#define BUFFER  8192
 	DWORD BufferSize = BUFFER;
 	
-	HKEY    hkey     = HKEY_LOCAL_MACHINE;
-	LPCSTR  lpSubKey = "SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Environment";
-	LPCSTR  lpValue  = "Path";
-	DWORD   dwFlags  = RRF_RT_ANY;
-	LPDWORD pdwType  = NULL; // This default NULL value, states that we do not request specific registry value type  https://docs.microsoft.com/en-us/windows/win32/sysinfo/registry-value-types
-	PVOID   pvData   = NULL; // This default NULL value, states that we do not request the data, only the Size of it
-	LPDWORD pcbData  = &BufferSize;
+	// Types Definitions for RegGetValue function arguments
+	HKEY    hkey;
+	LPCSTR  lpSubKey;
+	LPCSTR  lpValue;
+	DWORD   dwFlags;
+	LPDWORD pdwType; 
+	PVOID   pvData; 
+	LPDWORD pcbData;
 	
 	// Retrieves the size of the pvData registry value and place it into pcbData variable
 	RegGetValueA(
-		hkey,
-		lpSubKey,
-		lpValue,
-		dwFlags,
-		pdwType,
-		pvData,
-		pcbData
+		hkey     = HKEY_LOCAL_MACHINE,
+		lpSubKey = "SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Environment",
+		lpValue  = "Path",
+		dwFlags  = RRF_RT_ANY,
+		pdwType  = NULL, // This default NULL value, states that we do not request specific registry value type  https://docs.microsoft.com/en-us/windows/win32/sysinfo/registry-value-types
+		pvData   = NULL, // This default NULL value, states that we do not request the data, only the Size of it
+		pcbData  = &BufferSize
 	);
 
 	// Allocate memory for the size of retrieved pcbData value
