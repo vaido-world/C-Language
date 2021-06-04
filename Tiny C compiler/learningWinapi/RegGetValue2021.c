@@ -8,7 +8,8 @@
 
 // This source code is in Ansi mode.
 void main(){
-	
+		printf(TEXT("_________________________________________ \n"));
+		printf(TEXT("_______________RegGetValue_______________ \n"));
 		// Types Definitions for RegGetValue function arguments
 		HKEY    hkey;
 		LPCSTR  lpSubKey;
@@ -78,12 +79,13 @@ void main(){
 				}
 			}
 
-
-		printf("                  ---");
+		printf("Output \n");
+		printf("                  ----Output---");
 		printf("\n");
 		printf("%s", pvData);
 		printf("\n");
 		printf("                  ---");
+		printf("-Debug---- \n");
 		printf("\n");
 		printf("\nRetrieved information about array size: %i bytes.\n",*pcbData);
 		printf("Actual size of the array: %i characters counted.\n", strlen(pvData));
