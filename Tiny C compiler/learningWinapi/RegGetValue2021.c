@@ -6,6 +6,14 @@
 #include <stdlib.h>              // Required, else a warning:            RegGetValue.c:62: warning: implicit declaration of function 'malloc'
 
 
+// TODO:
+// Use this as application for interfacing with PATH variables.
+// Gather a folder using the function arguments.
+// Simply append the folder at the end of the output.
+// Check if the string already contains 
+// if contains, use search and replace to replace the thing with empty
+https://github.com/vaido-world/C-Language-Tutorial/blob/master/FindAndReplaceString.c
+
 // This source code is in Ansi mode.
 void main(){
 		printf(TEXT("_________________________________________ \n"));
