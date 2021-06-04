@@ -10,6 +10,9 @@ tar xf "tcc-0.9.27-win32-bin.zip"
 ECHO Setting "Old Precompiled Tiny C Compiler" to a PATH variable
 SET "PATH=%CD%\tcc;%PATH%"
 
+ECHO INFO: The location of pre-compiler in use: 
+where "tcc.exe"
+
 ECHO Downloading "Latest Tiny C Compiler Source Code"
 curl "https://repo.or.cz/tinycc.git/snapshot/HEAD.tar.gz" -O
 
@@ -57,13 +60,8 @@ REM tcc: error: undefined symbol '_start'
 ECHO Proof that it is not missing headers fault or copying fault, that x86 binary is not being compiled.
 copy "include\*.h" "win32\include" 
 
-copy "include\*.h" "win32\include" 
-
 ECHO Opening "win32" directory of "Latest Tiny C Compiler Source Code"
 CD "win32"
-
-
-
 
 ECHO Launching "Tiny C Compiler Building Script"
 START /B "build-tcc.bat" build-tcc.bat -c tcc -t 32 -i "..\..\latest-built"
@@ -89,14 +87,32 @@ WinSocktest.exe
 
 ECHO ---------Diagnostics-----------
 
+ECHO OUTPUT DIRECTORY: %OUTPUT_DIRECTORY%\x86_64-win32-tcc.exe
 IF NOT EXIST "%OUTPUT_DIRECTORY%\x86_64-win32-tcc.exe" (
 	ECHO BUG DETECTED, x86_64-win32-tcc.exe is not being compiled.
 	ECHO Relaunching this build script does compile x86_64-win32-tcc.exe properly
 	ECHO Older TCC version 0.9.27 that is not taken from the master branch, but Bellard website, might not have this problem?
 	ECHO New evidence: 
 	ECHO tcc: error: tinycc-HEAD-0378168\win32\lib\libtcc1-32.a not found
-	ECHO Archive libraries (.a) are statically linked i.e when you compile your program with -c option 
+	ECHO Archive libraries ^(.a^) are statically linked i.e when you compile your program with -c option 
+	
+	ECHO Permanent patching:
+	ECHO   x86 is not being compiled as libtcc1.a are compiled after building of x86 executable.
+	ECHO [SOLUTION]
+	ECHO   Open build-tcc.bat
+	ECHO FIND line: 
+	ECHO   %%CC%% -o %%PX%%-tcc.exe ..\tcc.c %%DX%%
+	ECHO REPLACE with:
+	ECHO   CALL :libtcc1.a
+	ECHO   %%CC%% -o %%PX%%-tcc.exe ..\tcc.c %%DX%%
+	ECHO FIND line:
+	ECHO   :libtcc1.a
+	ECHO REPLACE with:
+	ECHO   GOTO :tcc-doc.html
+    ECHO   :libtcc1.a
+	ECHO REMEMBER to place GOTO :EOF at the end of the :libtcc1.a routine
 )
+pause
 IF NOT EXIST "%SOURCE_CODE_FOLDER%\win32\include\tccdefs.h" ( 
   IF EXIST "%SOURCE_CODE_FOLDER%\include\tccdefs.h" ECHO %SOURCE_CODE_FOLDER%/include/tccdefs.h yes exist 
 	ECHO New evidence suggests: "tinycc-HEAD-704c816/include" is simply not copied to the "tinycc-HEAD-704c816/win32/include"
