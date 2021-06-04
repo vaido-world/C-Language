@@ -56,7 +56,8 @@ void main(){
 					
 				}
 			}
-		
+	
+		// Allocate memory for the pvData in size of retrieved pcbData value
 		pvData = (int*)malloc(*pcbData);
 
 		error = RegGetValueA(
