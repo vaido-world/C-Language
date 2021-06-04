@@ -18,6 +18,7 @@ tar xf "HEAD.tar.gz"
 
 ECHO Opening "Latest Tiny C Compiler Source Code" extraction directory
 CD "tinycc-HEAD-*"
+SET "SOURCE_CODE_FOLDER=%cd%"
 
 REM Patch in progress
 REM SET /p "version="<"VERSION" 
@@ -53,9 +54,14 @@ REM tcc: error: undefined symbol '__fixunsdfdi'
 REM tcc: error: undefined symbol '__chkstk'
 REM tcc: error: undefined symbol '_start'
 
+ECHO Proof that it is not missing headers fault or copying fault, that x86 binary is not being compiled.
+copy "include\*.h" "win32\include" 
 
 ECHO Opening "win32" directory of "Latest Tiny C Compiler Source Code"
 CD "win32"
+
+
+
 
 ECHO Launching "Tiny C Compiler Building Script"
 START /B "build-tcc.bat" build-tcc.bat -c tcc -t 32 -i "..\..\latest-built"
@@ -68,6 +74,7 @@ ECHO If you see this, this script is still going, that means this script is succ
 
 ECHO Opening the Directory of the "latest compiled Tiny C Compiler"
 cd "..\..\latest-built"
+SET "OUTPUT_DIRECTORY=%cd%"
 
 ECHO Downloading "Source code for Winsocket test program"
 curl "https://raw.githubusercontent.com/vaido-world/C-Language-Tutorial/master/Tiny%%20C%%20compiler/winsocketsResearch/WinSocktest.c" -O
@@ -80,9 +87,13 @@ WinSocktest.exe
 
 ECHO ---------Diagnostics-----------
 
-IF NOT EXIST "../win32/include/tccdefs.h" ( 
-  IF EXIST "../include/tccdefs.h" ECHO ../include/tccdefs.h yes exist 
-=	ECHO BUG DETECTED, x86_64-win32-tcc.exe will not be compiled.
+IF NOT EXIST "%OUTPUT_DIRECTORY%\x86_64-win32-tcc.exe" (
+	ECHO BUG DETECTED, x86_64-win32-tcc.exe is not being compiled.
+	ECHO Relaunching this build script does compile x86_64-win32-tcc.exe properly
+	ECHO Older TCC version 0.9.27 that is not taken from the master branch, but Bellard website, might not have this problem?
+)
+IF NOT EXIST "%SOURCE_CODE_FOLDER%\win32\include\tccdefs.h" ( 
+  IF EXIST "%SOURCE_CODE_FOLDER%\include\tccdefs.h" ECHO %SOURCE_CODE_FOLDER%/include/tccdefs.h yes exist 
 	ECHO New evidence suggests: "tinycc-HEAD-704c816/include" is simply not copied to the "tinycc-HEAD-704c816/win32/include"
 	ECHO  Explanation: "copy^>nul ..\include\*.h include" does not complete copy before execution of statement: "%%CC%% -o %%PX%%-tcc.exe ..\tcc.c %%DX%%"
 	ECHO simply needs copy of files from tinycc-HEAD-704c816\include\.h to tinycc-HEAD-704c816\win32\include\.h manually
