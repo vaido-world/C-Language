@@ -17,7 +17,7 @@ void main(){
 		LPDWORD pcbData;
 					
 
-		// Holds size of the buffer for pvData value
+		// Holds size of the buffer for pvData value in bytes
 		DWORD BufferSize;
 	
 		// Error Codes Handling
@@ -37,6 +37,10 @@ void main(){
 		// For RegGetValueA only
 		// RegGetValueW needs printfw
 		printf(TEXT("Information \n"));
+
+		if ( hkey == HKEY_LOCAL_MACHINE){ printf("  hkey: HKEY_LOCAL_MACHINE (value in Hexadecimal: %x)\n", hkey); }
+		if ( hkey == HKEY_CURRENT_USER ){ printf("  hkey: HKEY_CURRENT_USER  (value in Hexadecimal: %x)\n", hkey); }
+		if ( hkey == HKEY_USERS ){ printf("  hkey: HKEY_USERS   (value in Hexadecimal: %x)\n", hkey); }
 		printf(TEXT("  lpSubKey: %s \n"), lpSubKey);
 		printf(TEXT("  lpValue: %s \n"), lpValue);
 		
