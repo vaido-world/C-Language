@@ -89,7 +89,4 @@ void main(){
 		printf("Actual size of the array: %i characters counted.\n", strlen(pvData));
 		printf("Manually Allocated bytes for the array: %zu bytes.", sizeof(pvData));
 		printf("\nSince malloc was used, the dynamic Allocation makes the Manual Allocation results strange.");
-
-		wprintf(L"The %s subkey could not be opened. Error code: %x\n", lpSubKey, error);
-		
 }
