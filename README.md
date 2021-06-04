@@ -126,6 +126,29 @@ Results: they are all executable and can be included in each other and called wh
 Downside: Requires a lot of manual work to avoid the conflict between the main functions of each source file.   
 
 
+## Experiment
+The most main source file should look like this
+
+```
+#define main main
+#define tes main
+
+#include "prep.c"
+
+
+// Redefine Main method
+
+
+
+void tes(){
+	printf("alrigdffffffffffffffffht");
+	
+
+	
+}
+```
+
+
 ## 2021-05-31
 https://stackoverflow.com/questions/61861026/how-does-the-c-standard-library-work-behind-the-scenes/61861971#61861971
 
