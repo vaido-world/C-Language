@@ -12,7 +12,7 @@
 // Simply append the folder at the end of the output.
 // Check if the string already contains 
 // if contains, use search and replace to replace the thing with empty
-https://github.com/vaido-world/C-Language-Tutorial/blob/master/FindAndReplaceString.c
+// https://github.com/vaido-world/C-Language-Tutorial/blob/master/FindAndReplaceString.c
 
 // This source code is in Ansi mode.
 void main(){
