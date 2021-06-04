@@ -133,7 +133,7 @@ The most main source file should look like this
 #define main main
 #define tes main
 
-#include "prep.c"
+#include "RegGetPathValue.c"
 
 
 // Redefine Main method
@@ -142,7 +142,7 @@ The most main source file should look like this
 
 void tes(){
 	printf("alrigdffffffffffffffffht");
-	
+	RegGetPathValue();
 
 	
 }
