@@ -57,6 +57,8 @@ REM tcc: error: undefined symbol '_start'
 ECHO Proof that it is not missing headers fault or copying fault, that x86 binary is not being compiled.
 copy "include\*.h" "win32\include" 
 
+copy "include\*.h" "win32\include" 
+
 ECHO Opening "win32" directory of "Latest Tiny C Compiler Source Code"
 CD "win32"
 
@@ -91,6 +93,9 @@ IF NOT EXIST "%OUTPUT_DIRECTORY%\x86_64-win32-tcc.exe" (
 	ECHO BUG DETECTED, x86_64-win32-tcc.exe is not being compiled.
 	ECHO Relaunching this build script does compile x86_64-win32-tcc.exe properly
 	ECHO Older TCC version 0.9.27 that is not taken from the master branch, but Bellard website, might not have this problem?
+	ECHO New evidence: 
+	ECHO tcc: error: tinycc-HEAD-0378168\win32\lib\libtcc1-32.a not found
+	ECHO Archive libraries (.a) are statically linked i.e when you compile your program with -c option 
 )
 IF NOT EXIST "%SOURCE_CODE_FOLDER%\win32\include\tccdefs.h" ( 
   IF EXIST "%SOURCE_CODE_FOLDER%\include\tccdefs.h" ECHO %SOURCE_CODE_FOLDER%/include/tccdefs.h yes exist 
