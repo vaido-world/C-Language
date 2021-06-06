@@ -44,7 +44,7 @@ void openRegistryKey(
 	REGSAM samDesired,
 	PHKEY  phkResult){
 	  
-	HKEY subKey;
+	HKEY openedHkey;
 	  
 	  
 	  
@@ -54,12 +54,13 @@ void openRegistryKey(
 		lpSubKey  = "System",	  
 		ulOptions = 0,
 		samDesired = KEY_READ,
-		phkResult = &subKey
+		phkResult = &openedHkey
 	);
 	
 		printf("Registry hive:   ");
 		registryHiveInterpretation(hKey);
 		printf("Registry subkey: \\%s \n", lpSubKey);
+		printf("phkResuslt: %x \n", *phkResult);
 	
 	if (error == ERROR_SUCCESS) {
 		printf("The registry subkey has been opened successfully\n");
@@ -74,7 +75,7 @@ void openRegistryKey(
 		}
 		
 		
-	error = RegCloseKey(hKey);
+	error = RegCloseKey(openedHkey);
 	if (error == ERROR_SUCCESS) {
 		printf("The registry subkey has been closed successfully\n ");
 	} else {
