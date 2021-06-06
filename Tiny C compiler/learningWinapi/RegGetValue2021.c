@@ -6,13 +6,98 @@
 #include <stdlib.h>              // Required, else a warning:            RegGetValue.c:62: warning: implicit declaration of function 'malloc'
 
 // Redefine Main method
-#ifndef main
-#define RegGetPathValue main
-#endif
 
+
+//#ifndef RegGetPathValue_C
+//#define RegGetPathValue_C
+//#include "RegGetPathValue.c"
+//#endif
+
+// #ifndef main
+// #define main main
+// #define openRegistryKey main
+// #endif
+// 
+// #ifndef NEWONE_C
+// #define NEWONE_C
+// #include "newone.c"
+// #endif
+
+
+void openRegistryKey();
+void getRegistryKeyValue();
+
+void main(){
+	openRegistryKey();
+	
+}
+
+
+void openRegistryKey(
+	HKEY   hKey,
+	LPCSTR lpSubKey,
+	DWORD  ulOptions,
+	REGSAM samDesired,
+	PHKEY  phkResult){
+	  
+	HKEY subKey;
+	  
+	LONG error = RegOpenKeyExA(
+		hKey      = HKEY_CURRENT_CONFIG,
+		lpSubKey  = "",	  
+		ulOptions = 0,
+		samDesired = KEY_READ,
+		phkResult = &subKey
+	);
+	
+	if (error == ERROR_SUCCESS) {
+		printf("The registry key has been opened successfully\n");
+				
+		switch ((int) hKey){
+			case HKEY_CLASSES_ROOT:
+				
+				printf("It's HKEY_CLASSES_ROOT, 0x%x \n", hKey);
+				break;
+				
+			case HKEY_CURRENT_USER:
+				printf("It's HKEY_CURRENT_USER, 0x%x \n", hKey);
+				break;
+				
+			case HKEY_LOCAL_MACHINE:
+				printf("It's HKEY_LOCAL_MACHINE, 0x%x \n", hKey);
+				break;
+				
+			case HKEY_USERS:
+				printf("It's HKEY_USERS, 0x%x \n", hKey);
+				break;
+				
+			case HKEY_CURRENT_CONFIG:
+				printf("hkey: HKEY_CURRENT_CONFIG: %x \n", hKey);
+				break;
+			
+			default:
+				printf("Notice:");
+				printf("Less expected hKey '0x%x', the known ones are: \n", hKey);
+				printf(" HKEY_CLASSES_ROOT   | Integer value: 80000000 \n");
+				printf(" HKEY_CURRENT_USER   | Integer value: 80000001 \n");
+				printf(" HKEY_LOCAL_MACHINE  | Integer value: 80000002 \n");
+				printf(" HKEY_USERS          | Integer value: 80000003 \n");
+				printf(" HKEY_CURRENT_CONFIG | Integer value: 80000005 \n");
+				printf("For more information consult: https://docs.microsoft.com/en-us/windows/win32/sysinfo/predefined-keys \n");
+				
+		}
+		
+	}
+		
+		
+		
+	if (error == ERROR_FILE_NOT_FOUND) {
+		printf("Registry key cannot be found or is incorrect.\n");
+		}
+}
 
 // This source code is in Ansi mode.
-void RegGetPathValue(){
+void getRegistryKeyValue(){
 		printf(TEXT("_________________________________________ \n"));
 		printf(TEXT("_______________RegGetValue_______________ \n"));
 		// Types Definitions for RegGetValue function arguments
@@ -54,7 +139,7 @@ void RegGetPathValue(){
 		if (error != ERROR_SUCCESS)
 			{
 				if (error == ERROR_FILE_NOT_FOUND){
-					printf(TEXT("  ERROR on line %d: The '%s' subkey could not be opened. Error code: %x\n"), __LINE__, lpSubKey, error );
+					printf(TEXT("  [ERROR on line %d]: \n   The Windows Registry '%s' subkey could not be opened. \n   Error code: %x\n"), __LINE__, lpSubKey, error );
 					
 				} else {
 					wprintf(L"Please consult the error https://docs.microsoft.com/en-us/windows/win32/debug/system-error-codes--0-499-. Error code: %x\n", lpSubKey, error);
