@@ -72,6 +72,16 @@ void openRegistryKey(
 	if (error == ERROR_FILE_NOT_FOUND) {
 		printf("Registry subkey cannot be found or is incorrect.\n");
 		}
+		
+		
+	error = RegCloseKey(hKey);
+	if (error == ERROR_SUCCESS) {
+		printf("The registry subkey has been closed successfully\n ");
+	} else {
+		printf("Error code: %x    Consult the Microsoft documentation to understand the error. https://docs.microsoft.com/en-us/windows/win32/api/winreg/nf-winreg-regclosekey  \n", error);
+		//
+	}
+	
 }
 
 // This source code is in Ansi mode.
