@@ -47,6 +47,9 @@ void openRegistryKey(
 	  
 	HKEY subKey;
 	  
+	  
+	  
+	// https://docs.microsoft.com/en-us/windows/win32/api/winreg/nf-winreg-regopenkeyexa
 	LONG error = RegOpenKeyExA(
 		hKey      = HKEY_CURRENT_CONFIG,
 		lpSubKey  = "",	  
