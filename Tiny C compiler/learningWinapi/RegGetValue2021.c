@@ -51,16 +51,18 @@ void openRegistryKey(
 	// https://docs.microsoft.com/en-us/windows/win32/api/winreg/nf-winreg-regopenkeyexa
 	LONG error = RegOpenKeyExA(
 		hKey      = HKEY_CURRENT_CONFIG,
-		lpSubKey  = "",	  
+		lpSubKey  = "System",	  
 		ulOptions = 0,
 		samDesired = KEY_READ,
 		phkResult = &subKey
 	);
 	
-	if (error == ERROR_SUCCESS) {
-		printf("Registry hive: ");
+		printf("Registry hive:   ");
 		registryHiveInterpretation(hKey);
-		printf("The registry key has been opened successfully\n");
+		printf("Registry subkey: \\%s \n", lpSubKey);
+	
+	if (error == ERROR_SUCCESS) {
+		printf("The registry subkey has been opened successfully\n");
 				
 		
 	}
@@ -68,7 +70,7 @@ void openRegistryKey(
 		
 		
 	if (error == ERROR_FILE_NOT_FOUND) {
-		printf("Registry key cannot be found or is incorrect.\n");
+		printf("Registry subkey cannot be found or is incorrect.\n");
 		}
 }
 
@@ -164,23 +166,23 @@ void registryHiveInterpretation(hKey){
 	switch ((int) hKey){
 		case HKEY_CLASSES_ROOT:
 			
-			printf("It's HKEY_CLASSES_ROOT, 0x%x \n", hKey);
+			printf("HKEY_CLASSES_ROOT: 0x%x \n", hKey);
 			break;
 			
 		case HKEY_CURRENT_USER:
-			printf("It's HKEY_CURRENT_USER, 0x%x \n", hKey);
+			printf("HKEY_CURRENT_USER: 0x%x \n", hKey);
 			break;
 			
 		case HKEY_LOCAL_MACHINE:
-			printf("It's HKEY_LOCAL_MACHINE, 0x%x \n", hKey);
+			printf("HKEY_LOCAL_MACHINE: 0x%x \n", hKey);
 			break;
 			
 		case HKEY_USERS:
-			printf("It's HKEY_USERS, 0x%x \n", hKey);
+			printf("HKEY_USERS: 0x%x \n", hKey);
 			break;
 			
 		case HKEY_CURRENT_CONFIG:
-			printf("hkey: HKEY_CURRENT_CONFIG: %x \n", hKey);
+			printf("HKEY_CURRENT_CONFIG: %x \n", hKey);
 			break;
 		
 		default:
