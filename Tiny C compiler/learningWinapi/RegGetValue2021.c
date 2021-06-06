@@ -26,16 +26,15 @@
 
 void openRegistryKey();
 void getRegistryKeyValue();
+void registryHiveInterpretation();
 
     // For hKey argument
 	// Makes Accept both hex values, integer values and string values
 	// HKEY_LOCAL_MACHINE       80000002      0x80000002
 void main(){
-
-	
 	openRegistryKey();
-	
 }
+
 
 
 void openRegistryKey(
@@ -59,41 +58,10 @@ void openRegistryKey(
 	);
 	
 	if (error == ERROR_SUCCESS) {
+		printf("Registry hive: ");
+		registryHiveInterpretation(hKey);
 		printf("The registry key has been opened successfully\n");
 				
-		switch ((int) hKey){
-			case HKEY_CLASSES_ROOT:
-				
-				printf("It's HKEY_CLASSES_ROOT, 0x%x \n", hKey);
-				break;
-				
-			case HKEY_CURRENT_USER:
-				printf("It's HKEY_CURRENT_USER, 0x%x \n", hKey);
-				break;
-				
-			case HKEY_LOCAL_MACHINE:
-				printf("It's HKEY_LOCAL_MACHINE, 0x%x \n", hKey);
-				break;
-				
-			case HKEY_USERS:
-				printf("It's HKEY_USERS, 0x%x \n", hKey);
-				break;
-				
-			case HKEY_CURRENT_CONFIG:
-				printf("hkey: HKEY_CURRENT_CONFIG: %x \n", hKey);
-				break;
-			
-			default:
-				printf("Notice:");
-				printf("Less expected hKey '0x%x', the known ones are: \n", hKey);
-				printf(" HKEY_CLASSES_ROOT   | Integer value: 80000000 \n");
-				printf(" HKEY_CURRENT_USER   | Integer value: 80000001 \n");
-				printf(" HKEY_LOCAL_MACHINE  | Integer value: 80000002 \n");
-				printf(" HKEY_USERS          | Integer value: 80000003 \n");
-				printf(" HKEY_CURRENT_CONFIG | Integer value: 80000005 \n");
-				printf("For more information consult: https://docs.microsoft.com/en-us/windows/win32/sysinfo/predefined-keys \n");
-				
-		}
 		
 	}
 		
@@ -191,3 +159,42 @@ void getRegistryKeyValue(){
 		printf("Manually Allocated bytes for the array: %zu bytes.", sizeof(pvData));
 		printf("\nSince malloc was used, the dynamic Allocation makes the Manual Allocation results strange.");
 }
+
+void registryHiveInterpretation(hKey){
+	switch ((int) hKey){
+		case HKEY_CLASSES_ROOT:
+			
+			printf("It's HKEY_CLASSES_ROOT, 0x%x \n", hKey);
+			break;
+			
+		case HKEY_CURRENT_USER:
+			printf("It's HKEY_CURRENT_USER, 0x%x \n", hKey);
+			break;
+			
+		case HKEY_LOCAL_MACHINE:
+			printf("It's HKEY_LOCAL_MACHINE, 0x%x \n", hKey);
+			break;
+			
+		case HKEY_USERS:
+			printf("It's HKEY_USERS, 0x%x \n", hKey);
+			break;
+			
+		case HKEY_CURRENT_CONFIG:
+			printf("hkey: HKEY_CURRENT_CONFIG: %x \n", hKey);
+			break;
+		
+		default:
+			printf("Notice:");
+			printf("Less expected hKey '0x%x', the known ones are: \n", hKey);
+			printf(" HKEY_CLASSES_ROOT   | Integer value: 80000000 \n");
+			printf(" HKEY_CURRENT_USER   | Integer value: 80000001 \n");
+			printf(" HKEY_LOCAL_MACHINE  | Integer value: 80000002 \n");
+			printf(" HKEY_USERS          | Integer value: 80000003 \n");
+			printf(" HKEY_CURRENT_CONFIG | Integer value: 80000005 \n");
+			printf("For more information consult: https://docs.microsoft.com/en-us/windows/win32/sysinfo/predefined-keys \n");
+			
+	}
+
+	
+}
+
