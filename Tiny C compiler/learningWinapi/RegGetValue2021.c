@@ -27,7 +27,12 @@
 void openRegistryKey();
 void getRegistryKeyValue();
 
+    // For hKey argument
+	// Makes Accept both hex values, integer values and string values
+	// HKEY_LOCAL_MACHINE       80000002      0x80000002
 void main(){
+
+	
 	openRegistryKey();
 	
 }
