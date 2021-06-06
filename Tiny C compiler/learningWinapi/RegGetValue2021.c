@@ -44,6 +44,8 @@ void openRegistryKey(
 	REGSAM samDesired,
 	PHKEY  phkResult){
 	  
+	
+	// Pointer to opened registry key
 	HKEY openedHkey;
 	  
 	  
