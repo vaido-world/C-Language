@@ -32,7 +32,7 @@ void registryHiveInterpretation();
 	// Makes Accept both hex values, integer values and string values
 	// HKEY_LOCAL_MACHINE       80000002      0x80000002
 void main(){
-	openRegistryKey();
+	getRegistryKeyValue();
 }
 
 
@@ -103,6 +103,9 @@ void getRegistryKeyValue(){
 
 		// Holds size of the buffer for pvData value in bytes
 		DWORD BufferSize;
+		
+		// Holds the type of the registry key value
+		DWORD valueType;
 	
 		// Error Codes Handling
 		LONG error;
@@ -113,7 +116,7 @@ void getRegistryKeyValue(){
 			lpSubKey = "SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Environment",
 			lpValue  = "Path",
 			dwFlags  = RRF_RT_ANY,
-			pdwType  = NULL, // This default NULL value, states that we do not request specific registry value type  https://docs.microsoft.com/en-us/windows/win32/sysinfo/registry-value-types
+			pdwType  = &valueType, // This default NULL value, states that we do not request specific registry value type  https://docs.microsoft.com/en-us/windows/win32/sysinfo/registry-value-types
 			pvData   = NULL, // This default NULL value, states that we do not request the data, only the Size of it
 			pcbData  = &BufferSize
 		);
@@ -126,6 +129,8 @@ void getRegistryKeyValue(){
 		if ( hkey == HKEY_USERS ){ printf("  hkey: HKEY_USERS   (value in Hexadecimal: 0x%x)\n", hkey); }
 		printf(TEXT("  lpSubKey: %s \n"), lpSubKey);
 		printf(TEXT("  lpValue: %s \n"), lpValue);
+		// Needs enumeration
+		printf(TEXT("  pdwType: %i https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-rprn/25cce700-7fcf-4bb6-a2f3-0f6d08430a55 \n"), pdwType);
 		
 		if (error != ERROR_SUCCESS)
 			{
@@ -175,6 +180,8 @@ void getRegistryKeyValue(){
 		printf("\nSince malloc was used, the dynamic Allocation makes the Manual Allocation results strange.");
 }
 
+
+// Manual enumeration
 void registryHiveInterpretation(hKey){
 	switch ((int) hKey){
 		case HKEY_CLASSES_ROOT:
