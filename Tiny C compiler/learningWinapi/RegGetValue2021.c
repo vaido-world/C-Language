@@ -32,7 +32,7 @@ void registryHiveInterpretation();
 	// Makes Accept both hex values, integer values and string values
 	// HKEY_LOCAL_MACHINE       80000002      0x80000002
 void main(){
-	openRegistryKey();
+	getRegistryKeyValue();
 }
 
 
@@ -76,7 +76,6 @@ void openRegistryKey(
 		printf("Registry hive:   ");
 		registryHiveInterpretation(hKey);
 		printf("Registry subkey: \\%s \n", lpSubKey);
-		printf("phkResuslt: %x \n", *phkResult);
 		
 	error = RegCloseKey(openedHkey);
 	switch(error){
@@ -137,8 +136,9 @@ void getRegistryKeyValue(){
 		printf(TEXT("  lpSubKey: %s \n"), lpSubKey);
 		printf(TEXT("  lpValue: %s \n"), lpValue);
 		// Needs enumeration
-		printf(TEXT("  pdwType: %i https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-rprn/25cce700-7fcf-4bb6-a2f3-0f6d08430a55 \n"), pdwType);
-		
+		// https://www.debugcn.com/en/article/32924235.html
+		printf("  pdwType: %i https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-rprn/25cce700-7fcf-4bb6-a2f3-0f6d08430a55 \n", valueType);
+		printf("%i",RRF_RT_REG_SZ);
 		if (error != ERROR_SUCCESS)
 			{
 				if (error == ERROR_FILE_NOT_FOUND){
