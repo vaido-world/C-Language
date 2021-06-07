@@ -102,6 +102,7 @@ void getRegistryKeyValue(){
 					
 
 		// Holds size of the buffer for pvData value in bytes
+		// https://stackoverflow.com/questions/26069085/visual-c-reggetvalue-fails-in-program-where-it-shouldnt/26069277#26069277
 		DWORD BufferSize;
 		
 		// Holds the type of the registry key value
