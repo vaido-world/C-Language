@@ -134,12 +134,24 @@ void getRegistryKeyValue(){
 		if ( hkey == HKEY_CURRENT_USER ){ printf("  hkey: HKEY_CURRENT_USER  (value in Hexadecimal: 0x%x)\n", hkey); }
 		if ( hkey == HKEY_USERS ){ printf("  hkey: HKEY_USERS   (value in Hexadecimal: 0x%x)\n", hkey); }
 		printf(TEXT("  lpSubKey: %s \n"), lpSubKey);
-		printf(TEXT("  lpValue: %s \n"), lpValue);
+		printf(TEXT("  lpValue: %s "), lpValue);
+		printf("\n");
+		
 		// Needs enumeration
 		// https://www.debugcn.com/en/article/32924235.html
-		// https://www.rubydoc.info/stdlib/dl/2.0.0/Win32/Registry/Constants#REG_SZ-constant
-		printf("  pdwType: %i https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-rprn/25cce700-7fcf-4bb6-a2f3-0f6d08430a55 \n", valueType);
-		printf("%i",RRF_RT_REG_SZ);
+		printf("  pdwType: %i ", valueType);
+		switch (valueType){
+			case 1:
+				printf("(REG_SZ) ");
+			break;
+			
+			case 4:
+				printf("(REG_DWORD) ");
+			break;
+		}
+		printf("https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-rprn/25cce700-7fcf-4bb6-a2f3-0f6d08430a55 \n");
+		
+		printf("Reference\\example: RRF_RT_REG_SZ: %i\n",RRF_RT_REG_SZ);
 		if (error != ERROR_SUCCESS)
 			{
 				if (error == ERROR_FILE_NOT_FOUND){
