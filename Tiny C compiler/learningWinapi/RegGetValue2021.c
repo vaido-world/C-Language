@@ -102,7 +102,7 @@ void getRegistryKeyValue(){
 					
 
 		// Holds size of the buffer for pvData value in bytes
-		// Variable is overwritten when returning, so making a macro that holds the initial value would be needed.
+		// Variable is overwritten when returning, so making a macro that holds the initial value would be needed, to preserve the value for longer.
 		// https://stackoverflow.com/questions/26069085/visual-c-reggetvalue-fails-in-program-where-it-shouldnt/26069277#26069277
 		DWORD BufferSize;
 		
