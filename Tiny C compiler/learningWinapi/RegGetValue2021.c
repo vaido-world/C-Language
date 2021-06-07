@@ -32,7 +32,7 @@ void registryHiveInterpretation();
 	// Makes Accept both hex values, integer values and string values
 	// HKEY_LOCAL_MACHINE       80000002      0x80000002
 void main(){
-	getRegistryKeyValue();
+	openRegistryKey();
 }
 
 
@@ -48,42 +48,47 @@ void openRegistryKey(
 	// Pointer to opened registry key
 	HKEY openedHkey;
 	  
+	//Error Codes Handling
+	LONG error;
 	  
 	  
 	// https://docs.microsoft.com/en-us/windows/win32/api/winreg/nf-winreg-regopenkeyexa
-	LONG error = RegOpenKeyExA(
+	error = RegOpenKeyExA(
 		hKey      = HKEY_CURRENT_CONFIG,
 		lpSubKey  = "System",	  
 		ulOptions = 0,
 		samDesired = KEY_READ,
 		phkResult = &openedHkey
 	);
-	
+	switch(error){
+		case ERROR_SUCCESS: 
+			printf("The registry subkey has been opened successfully\n");
+		break;
+		
+		case ERROR_FILE_NOT_FOUND:
+			printf("Registry subkey cannot be found or is incorrect.\n");
+		break;
+			
+		default:
+			printf("Less known error, consult Microsoft Documentation: https://docs.microsoft.com/en-us/windows/win32/debug/system-error-codes--0-499-");
+		
+	}
 		printf("Registry hive:   ");
 		registryHiveInterpretation(hKey);
 		printf("Registry subkey: \\%s \n", lpSubKey);
 		printf("phkResuslt: %x \n", *phkResult);
-	
-	if (error == ERROR_SUCCESS) {
-		printf("The registry subkey has been opened successfully\n");
-				
-		
-	}
-		
-		
-		
-	if (error == ERROR_FILE_NOT_FOUND) {
-		printf("Registry subkey cannot be found or is incorrect.\n");
-		}
-		
 		
 	error = RegCloseKey(openedHkey);
-	if (error == ERROR_SUCCESS) {
-		printf("The registry subkey has been closed successfully\n ");
-	} else {
-		printf("Error code: %x    Consult the Microsoft documentation to understand the error. https://docs.microsoft.com/en-us/windows/win32/api/winreg/nf-winreg-regclosekey  \n", error);
-		//
+	switch(error){
+		case ERROR_SUCCESS: 
+			printf("The registry subkey has been closed successfully\n ");
+		break;
+		
+		default:
+			printf("Error code: %x    Consult the Microsoft documentation to understand the error. https://docs.microsoft.com/en-us/windows/win32/api/winreg/nf-winreg-regclosekey  \n", error);
 	}
+	
+
 	
 }
 
