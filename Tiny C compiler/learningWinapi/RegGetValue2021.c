@@ -183,7 +183,7 @@ void getRegistryKeyValue(){
 }
 
 
-// Manual enumeration
+// Manual enumeration https://docs.microsoft.com/en-us/windows/win32/sysinfo/enumerating-registry-subkeys
 void registryHiveInterpretation(hKey){
 	switch ((int) hKey){
 		case HKEY_CLASSES_ROOT:
