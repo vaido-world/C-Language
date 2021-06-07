@@ -137,6 +137,7 @@ void getRegistryKeyValue(){
 		printf(TEXT("  lpValue: %s \n"), lpValue);
 		// Needs enumeration
 		// https://www.debugcn.com/en/article/32924235.html
+		// https://www.rubydoc.info/stdlib/dl/2.0.0/Win32/Registry/Constants#REG_SZ-constant
 		printf("  pdwType: %i https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-rprn/25cce700-7fcf-4bb6-a2f3-0f6d08430a55 \n", valueType);
 		printf("%i",RRF_RT_REG_SZ);
 		if (error != ERROR_SUCCESS)
