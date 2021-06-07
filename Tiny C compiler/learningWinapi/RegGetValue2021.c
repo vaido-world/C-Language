@@ -182,7 +182,7 @@ void getRegistryKeyValue(){
 		printf("\nSince malloc was used, the dynamic Allocation makes the Manual Allocation results strange.");
 }
 
-
+// Enumeration is defined as the process of extracting user names, machine names, network resources, shares and services from a system.
 // Manual enumeration https://docs.microsoft.com/en-us/windows/win32/sysinfo/enumerating-registry-subkeys
 void registryHiveInterpretation(hKey){
 	switch ((int) hKey){
