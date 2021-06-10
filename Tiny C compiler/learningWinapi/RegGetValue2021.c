@@ -202,6 +202,8 @@ void getRegistryKeyValue(){
 
 // Enumeration is defined as the process of extracting user names, machine names, network resources, shares and services from a system.
 // Manual enumeration https://docs.microsoft.com/en-us/windows/win32/sysinfo/enumerating-registry-subkeys
+//Registry Hive values are to be found in tcc\include\winapi\winreg.h
+// Microsoft also uses switch statements to translate HEX to String values: https://stackoverflow.com/questions/58510869/c-sharp-get-basekey-from-registrykey/58547945#58547945
 void registryHiveInterpretation(hKey){
 	switch ((int) hKey){
 		case HKEY_CLASSES_ROOT:
