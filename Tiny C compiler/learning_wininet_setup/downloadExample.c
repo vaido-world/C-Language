@@ -15,7 +15,7 @@ int main(void)
         printf("InternetOpen failed\n");
         return 1;
     }
-    hFile = InternetOpenUrl(hInternet, "http://www.martinbroadhurst.com", NULL, 0L, 0, 0);
+    hFile = InternetOpenUrl(hInternet, "http://vaido.world", NULL, 0L, 0, 0);
     if (hFile == NULL) {
         printf("InternetOpenUrl failed\n");
         return 1;
