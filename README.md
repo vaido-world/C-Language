@@ -1,7 +1,7 @@
 # C-Language-Tutorial
 
 ## 2021-06-20
-Tiny C Compiler Community Examples  
+Tiny C Compiler Community Examples: `tcc/examples/community` or `tcc/community_examples`  
 Internet Connection, HTTP    
 Registry Access  
 
