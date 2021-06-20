@@ -21,7 +21,7 @@ hInternetSession = InternetOpen(
 // Make connection to desired page.
 hURL = InternetOpenUrl(
     hInternetSession,                       // session handle
-    TEXT("http://wallpapers-images.ru/1920x1080/nature/wallpapers/wallpapers-nature-1.jpg"),  // URL to access
+    TEXT("http://vaido.world"),  // URL to access
     NULL, 0, 0, 0);                         // defaults
 
 // Read page into memory buffer.
