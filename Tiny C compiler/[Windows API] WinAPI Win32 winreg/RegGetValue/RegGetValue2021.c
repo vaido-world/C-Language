@@ -149,7 +149,7 @@ void getRegistryKeyValue(HKEY KeyHandle){
 		
 		// Needs enumeration
 		// https://www.debugcn.com/en/article/32924235.html
-		printf("  pdwType: %i ", valueType);
+		printf("  pdwType: ");
 		switch (valueType){
 			case 1:
 				printf("(REG_SZ) ");
@@ -158,15 +158,26 @@ void getRegistryKeyValue(HKEY KeyHandle){
 			case 4:
 				printf("(REG_DWORD) ");
 			break;
+			case 4207424:
+				printf("Unknown");
+			break;
 		}
-		printf("https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-rprn/25cce700-7fcf-4bb6-a2f3-0f6d08430a55 \n");
+		printf(" (Hex value: %i)",valueType);
 		
+		/*
+		printf("https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-rprn/25cce700-7fcf-4bb6-a2f3-0f6d08430a55 \n");
 		printf("Reference\\example: RRF_RT_REG_SZ: %i\n",RRF_RT_REG_SZ);
+		*/
 		if (ErrorCode != ERROR_SUCCESS)
 			{
 				if (ErrorCode == ERROR_FILE_NOT_FOUND){
-					printf(TEXT("  [ERROR on line %d]: \n   The Windows Registry '%s' subkey could not be opened. \n   Error code: %x\n"), __LINE__, lpSubKey, ErrorCode );
-					
+					printf("\n");
+					printf("\n");
+					printf(TEXT("  [ERROR! on line %d]: \n "), __LINE__);
+					printf(TEXT("  The Windows Registry Subkey:  \n "));
+					printf(TEXT("    '%s' could not be opened or is not found. \n "), lpSubKey );
+					printf(TEXT("  Error code: %x (ERROR_FILE_NOT_FOUND)"), ErrorCode);
+					exit(0);
 				} else {
 					wprintf(L"Please consult the error https://docs.microsoft.com/en-us/windows/win32/debug/system-error-codes--0-499-. Error code: %x\n", lpSubKey, ErrorCode);
 					
@@ -210,6 +221,8 @@ void getRegistryKeyValue(HKEY KeyHandle){
 		printf("\nSince malloc was used, the dynamic Allocation makes the Manual Allocation results strange.");
 }
 
+
+/* Predefined Registry Hives*/
 // Enumeration is defined as the process of extracting user names, machine names, network resources, shares and services from a system.
 // Manual enumeration https://docs.microsoft.com/en-us/windows/win32/sysinfo/enumerating-registry-subkeys
 //Registry Hive values are to be found in tcc\include\winapi\winreg.h
