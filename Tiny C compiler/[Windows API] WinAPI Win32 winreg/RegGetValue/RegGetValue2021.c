@@ -31,8 +31,9 @@ void registryHiveInterpretation();
     // For hKey argument
 	// Makes Accept both hex values, integer values and string values
 	// HKEY_LOCAL_MACHINE       80000002      0x80000002
-void main(){
-	getRegistryKeyValue();
+int main(){
+	getRegistryKeyValue(HKEY_CURRENT_USER);
+	return 0;
 }
 
 
@@ -49,18 +50,18 @@ void openRegistryKey(
 	HKEY openedHkey;
 	  
 	//Error Codes Handling
-	LONG errorCode;
+	LONG ErrorCode;
 	  
 	  
 	// https://docs.microsoft.com/en-us/windows/win32/api/winreg/nf-winreg-regopenkeyexa
-	errorCode = RegOpenKeyExA(
+	ErrorCode = RegOpenKeyExA(
 		hKey      = HKEY_CURRENT_CONFIG,
 		lpSubKey  = "System",	  
 		ulOptions = 0,
 		samDesired = KEY_READ,
 		phkResult = &openedHkey
 	);
-	switch(errorCode){
+	switch(ErrorCode){
 		case ERROR_SUCCESS: 
 			printf("The registry subkey has been opened successfully\n");
 		break;
@@ -77,14 +78,14 @@ void openRegistryKey(
 		registryHiveInterpretation(hKey);
 		printf("Registry subkey: \\%s \n", lpSubKey);
 		
-	errorCode = RegCloseKey(openedHkey);
-	switch(errorCode){
+	ErrorCode = RegCloseKey(openedHkey);
+	switch(ErrorCode){
 		case ERROR_SUCCESS: 
 			printf("The registry subkey has been closed successfully\n ");
 		break;
 		
 		default:
-			printf("Error code: %x    Consult the Microsoft documentation to understand the error. https://docs.microsoft.com/en-us/windows/win32/api/winreg/nf-winreg-regclosekey  \n", errorCode);
+			printf("Error code: %x    Consult the Microsoft documentation to understand the error. https://docs.microsoft.com/en-us/windows/win32/api/winreg/nf-winreg-regclosekey  \n", ErrorCode);
 	}
 	
 
@@ -92,9 +93,8 @@ void openRegistryKey(
 }
 
 // This source code is in Ansi mode.
-void getRegistryKeyValue(){
-		printf(TEXT("_________________________________________ \n"));
-		printf(TEXT("_______________RegGetValue_______________ \n"));
+void getRegistryKeyValue(HKEY KeyHandle){
+
 		// Types Definitions for RegGetValue function arguments
 		HKEY    hkey;
 		LPCSTR  lpSubKey;
@@ -103,7 +103,6 @@ void getRegistryKeyValue(){
 		LPDWORD pdwType; 
 		PVOID   pvData; 
 		LPDWORD pcbData;
-					
 
 		// Holds size of the buffer for pvData value in bytes
 		// Variable is overwritten when returning, so making a macro that holds the initial value would be needed, to preserve the value after the function return.
@@ -114,11 +113,11 @@ void getRegistryKeyValue(){
 		DWORD valueType;
 	
 		// Error Codes Handling
-		LONG errorCode;
+		LONG ErrorCode;
 	
 		// RegGetValue, Retrieves the type and data for the specified registry value. https://docs.microsoft.com/en-us/windows/win32/api/winreg/nf-winreg-reggetvaluea
-		errorCode = RegGetValueA(
-			hkey     = HKEY_LOCAL_MACHINE,
+		ErrorCode = RegGetValueA(
+			hkey     = KeyHandle,
 			lpSubKey = "SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Environment",
 			lpValue  = "Path",
 			dwFlags  = RRF_RT_ANY,
@@ -126,6 +125,9 @@ void getRegistryKeyValue(){
 			pvData   = NULL, // This default NULL value, states that we do not request the data, only the Size of it
 			pcbData  = &BufferSize
 		);
+		
+		printf(TEXT("_________________________________________ \n"));
+		printf(TEXT("_______________RegGetValue_______________ \n"));
 		
 		// For RegGetValueA only
 		// RegGetValueW needs printfw
@@ -152,13 +154,13 @@ void getRegistryKeyValue(){
 		printf("https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-rprn/25cce700-7fcf-4bb6-a2f3-0f6d08430a55 \n");
 		
 		printf("Reference\\example: RRF_RT_REG_SZ: %i\n",RRF_RT_REG_SZ);
-		if (errorCode != ERROR_SUCCESS)
+		if (ErrorCode != ERROR_SUCCESS)
 			{
-				if (errorCode == ERROR_FILE_NOT_FOUND){
-					printf(TEXT("  [ERROR on line %d]: \n   The Windows Registry '%s' subkey could not be opened. \n   Error code: %x\n"), __LINE__, lpSubKey, errorCode );
+				if (ErrorCode == ERROR_FILE_NOT_FOUND){
+					printf(TEXT("  [ERROR on line %d]: \n   The Windows Registry '%s' subkey could not be opened. \n   Error code: %x\n"), __LINE__, lpSubKey, ErrorCode );
 					
 				} else {
-					wprintf(L"Please consult the error https://docs.microsoft.com/en-us/windows/win32/debug/system-error-codes--0-499-. Error code: %x\n", lpSubKey, errorCode);
+					wprintf(L"Please consult the error https://docs.microsoft.com/en-us/windows/win32/debug/system-error-codes--0-499-. Error code: %x\n", lpSubKey, ErrorCode);
 					
 				}
 			}
@@ -166,7 +168,7 @@ void getRegistryKeyValue(){
 		// Allocate memory for the pvData in size of retrieved pcbData value
 		pvData = (int*)malloc(*pcbData);
 
-		errorCode = RegGetValueA(
+		ErrorCode = RegGetValueA(
 				hkey,
 				lpSubKey,
 				lpValue,
@@ -176,12 +178,12 @@ void getRegistryKeyValue(){
 				pcbData
 			);
 
-		if (errorCode != ERROR_SUCCESS)
+		if (ErrorCode != ERROR_SUCCESS)
 			{
-				if (errorCode == ERROR_FILE_NOT_FOUND){
-					printf(TEXT("  ERROR on line %d: The '%s' subkey could not be opened. Error code: %x\n"), __LINE__, lpSubKey, errorCode );
+				if (ErrorCode == ERROR_FILE_NOT_FOUND){
+					printf(TEXT("  ERROR on line %d: The '%s' subkey could not be opened. Error code: %x\n"), __LINE__, lpSubKey, ErrorCode );
 				} else {
-					wprintf(L"Please consult the error https://docs.microsoft.com/en-us/windows/win32/debug/system-error-codes--0-499-. Error code: %x\n", lpSubKey, errorCode);
+					wprintf(L"Please consult the error https://docs.microsoft.com/en-us/windows/win32/debug/system-error-codes--0-499-. Error code: %x\n", lpSubKey, ErrorCode);
 					
 				}
 			}
