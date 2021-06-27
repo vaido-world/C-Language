@@ -95,14 +95,6 @@ void openRegistryKey(
 // This source code is in Ansi mode.
 void getRegistryKeyValue(HKEY KeyHandle){
 
-		// Types Definitions for RegGetValue function arguments
-		HKEY    hkey;
-		LPCSTR  lpSubKey;
-		LPCSTR  lpValue;
-		DWORD   dwFlags;
-		LPDWORD pdwType; 
-		PVOID   pvData; 
-		LPDWORD pcbData;
 
 		// Holds size of the buffer for pvData value in bytes
 		// Variable is overwritten when returning, so making a macro that holds the initial value would be needed, to preserve the value after the function return.
@@ -114,6 +106,17 @@ void getRegistryKeyValue(HKEY KeyHandle){
 	
 		// Error Codes Handling
 		LONG ErrorCode;
+	
+
+		// Types Definitions for RegGetValue function arguments
+		HKEY    hkey;
+		LPCSTR  lpSubKey;
+		LPCSTR  lpValue;
+		DWORD   dwFlags;
+		LPDWORD pdwType; 
+		PVOID   pvData; 
+		LPDWORD pcbData;
+	
 	
 		// RegGetValue, Retrieves the type and data for the specified registry value. https://docs.microsoft.com/en-us/windows/win32/api/winreg/nf-winreg-reggetvaluea
 		ErrorCode = RegGetValueA(
