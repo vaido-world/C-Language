@@ -50,7 +50,7 @@ void openRegistryKey(
 	  
 	
 	// Pointer to opened registry key
-	HKEY openedHkey;
+	HKEY OpenedRegistryKey;
 	  
 	//Error Codes Handling
 	LONG ErrorCode;
@@ -62,7 +62,7 @@ void openRegistryKey(
 		lpSubKey  = "System",	  
 		ulOptions = 0,
 		samDesired = KEY_READ,
-		phkResult = &openedHkey
+		phkResult = &OpenedRegistryKey
 	);
 	switch(ErrorCode){
 		case ERROR_SUCCESS: 
@@ -83,7 +83,7 @@ void openRegistryKey(
 		printf("\n");
 		printf("Registry subkey: \\%s \n", lpSubKey);
 		
-	ErrorCode = RegCloseKey(openedHkey);
+	ErrorCode = RegCloseKey(OpenedRegistryKey);
 	switch(ErrorCode){
 		case ERROR_SUCCESS: 
 			printf("The registry subkey has been closed successfully\n ");
@@ -170,6 +170,9 @@ void getRegistryKeyValue(HKEY KeyHandle){
 					printf(TEXT("  The Windows Registry Subkey:  \n "));
 					printf(TEXT("    '%s' could not be opened or is not found. \n "), lpSubKey );
 					printf(TEXT("  Error code: %x (ERROR_FILE_NOT_FOUND)"), ErrorCode);
+					printf("\n");
+					printf("TODO: implement open registry loop and check what registry location is not available");
+					printf("\n");
 					exit(0);
 				} else {
 					wprintf(L"Please consult the error https://docs.microsoft.com/en-us/windows/win32/debug/system-error-codes--0-499-. Error code: %x\n", lpSubKey, ErrorCode);
