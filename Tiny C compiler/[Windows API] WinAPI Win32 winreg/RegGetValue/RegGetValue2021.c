@@ -8,6 +8,7 @@ upon the material in any medium or format, even for commercial purposes.
 To view a copy of this license, visit http://creativecommons.org/publicdomain/zero/1.0
 */
 
+//_____________________________________________________________
 // File: RegGetValue.c
 // Description: Receives registry value from the Registry key
 
