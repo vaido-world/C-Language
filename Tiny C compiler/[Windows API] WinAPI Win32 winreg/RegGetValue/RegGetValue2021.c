@@ -16,25 +16,6 @@ To view a copy of this license, visit http://creativecommons.org/publicdomain/ze
 #include <windows.h>             // Required, else an error:             test.c:12: error: 'DWORD' undeclared
 #include <stdlib.h>              // Required, else a warning:            RegGetValue.c:62: warning: implicit declaration of function 'malloc'
 
-// Redefine Main method
-
-
-//#ifndef RegGetPathValue_C
-//#define RegGetPathValue_C
-//#include "RegGetPathValue.c"
-//#endif
-
-// #ifndef main
-// #define main main
-// #define openRegistryKey main
-// #endif
-// 
-// #ifndef NEWONE_C
-// #define NEWONE_C
-// #include "newone.c"
-// #endif
-
-
 void openRegistryKey();
 void getRegistryKeyValue();
 const char* registryHiveInterpretation();
