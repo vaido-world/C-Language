@@ -27,6 +27,7 @@
 void openRegistryKey();
 void getRegistryKeyValue();
 const char* registryHiveInterpretation();
+const char* registryTypeValuesInterpretation(valueType);
 
     // For hKey argument
 	// Makes Accept both hex values, integer values and string values
@@ -150,19 +151,9 @@ void getRegistryKeyValue(HKEY KeyHandle){
 		// Needs enumeration
 		// https://www.debugcn.com/en/article/32924235.html
 		printf("  pdwType: ");
-		switch (valueType){
-			case 1:
-				printf("(REG_SZ) ");
-			break;
-			
-			case 4:
-				printf("(REG_DWORD) ");
-			break;
-			case 4207424:
-				printf("Unknown");
-			break;
-		}
+		printf(registryTypeValuesInterpretation(valueType));
 		printf(" (Hex value: %i)",valueType);
+		printf("\n");
 		
 		/*
 		printf("https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-rprn/25cce700-7fcf-4bb6-a2f3-0f6d08430a55 \n");
@@ -257,6 +248,25 @@ const char* registryHiveInterpretation(hKey){
 			
 	}
 
+	
+}
+
+// https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-rprn/25cce700-7fcf-4bb6-a2f3-0f6d08430a55
+// tcc\include\winapi\winnt.h
+const char* registryTypeValuesInterpretation(valueType){
+	switch (valueType){
+		case REG_SZ:
+			return "REG_SZ";
+			
+		case REG_DWORD:
+			return "REG_DWORD";
+			
+		case 4207424:
+			return "Unknown";
+			
+		default:
+			return "Truly unknown value type";
+	}
 	
 }
 
