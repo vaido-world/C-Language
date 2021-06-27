@@ -1,8 +1,8 @@
 /*
-|_____________________________________________________________
-| File: RegGetValue.c
-| Description: Receives registry value from the Registry key
-|_____________________________________________________________
+_____________________________________________________________
+ File: RegGetValue.c
+ Description: Receives registry value from the Registry key
+_____________________________________________________________
 
 This work is marked with CC0 1.0 Universal. 🄍
 
