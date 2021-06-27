@@ -1,3 +1,6 @@
+// This work is marked with CC0 1.0 Universal. 
+// To view a copy of this license, visit http://creativecommons.org/publicdomain/zero/1.0
+
 #pragma comment(lib, "advapi32") // No more Need for "tcc -ladvapi32 RegGetValueA.c"         tcc: error: undefined symbol 'RegGetValueA' 
 
 // Include directives.
