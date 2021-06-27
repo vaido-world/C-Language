@@ -132,17 +132,18 @@ void getRegistryKeyValue(HKEY KeyHandle){
 		// RegGetValueW needs printfw
 		printf(TEXT("Information \n"));
 		printf("  hkey: "); 
+		printf("     ");
 		printf(registryHiveInterpretation(hkey));
 		printf(" (value in Hexadecimal: 0x%x)", hkey);
+		
+		printf("\n");
+		printf(TEXT("  lpSubKey: '%s' \n"), lpSubKey);
+		printf(TEXT("  lpValue:  '%s' "), lpValue);
 		printf("\n");
 		
-		printf(TEXT("  lpSubKey: %s \n"), lpSubKey);
-		printf(TEXT("  lpValue: %s "), lpValue);
-		printf("\n");
-		
-		// Needs enumeration
 		// https://www.debugcn.com/en/article/32924235.html
 		printf("  pdwType: ");
+		printf("  ");
 		printf(registryTypeValuesInterpretation(valueType));
 		printf(" (Hex value: %i)",valueType);
 		printf("\n");
@@ -189,8 +190,7 @@ void getRegistryKeyValue(HKEY KeyHandle){
 					
 				}
 			}
-
-		printf("Output \n");
+		printf("\n");
 		printf("                  ----Output---");
 		printf("\n");
 		printf("%s", pvData);
