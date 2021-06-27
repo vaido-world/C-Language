@@ -23,6 +23,7 @@ To view a copy of this license, visit http://creativecommons.org/publicdomain/ze
 #include <windows.h>             // Required, else an error:             test.c:12: error: 'DWORD' undeclared
 #include <stdlib.h>              // Required, else a warning:            RegGetValue.c:62: warning: implicit declaration of function 'malloc'
 
+// Functions declaration
 void openRegistryKey();
 void getRegistryKeyValue();
 const char* registryHiveInterpretation();
