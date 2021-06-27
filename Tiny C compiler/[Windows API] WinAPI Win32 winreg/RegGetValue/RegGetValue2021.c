@@ -117,7 +117,7 @@ void getRegistryKeyValue(HKEY KeyHandle){
 	
 		// RegGetValue, Retrieves the type and data for the specified registry value. https://docs.microsoft.com/en-us/windows/win32/api/winreg/nf-winreg-reggetvaluea
 		ErrorCode = RegGetValueA(
-			hkey     = KeyHandle,
+			hkey     = HKEY_LOCAL_MACHINE,
 			lpSubKey = "SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Environment",
 			lpValue  = "Path",
 			dwFlags  = RRF_RT_ANY,
