@@ -1,4 +1,6 @@
 // RegGetValue.c 
+// Receives registry value from the Registry key
+
 /*
 This work is marked with CC0 1.0 Universal. 🄍
 
