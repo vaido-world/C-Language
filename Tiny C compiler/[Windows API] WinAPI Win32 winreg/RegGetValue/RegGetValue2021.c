@@ -11,7 +11,6 @@ To view a copy of this license, visit http://creativecommons.org/publicdomain/ze
 // File: RegGetValue.c
 // Description: Receives registry value from the Registry key
 
-
 // Compiler Pragmatic comments
 #pragma comment(lib, "advapi32") // No more Need for "tcc -ladvapi32 RegGetValueA.c"         tcc: error: undefined symbol 'RegGetValueA' 
 
