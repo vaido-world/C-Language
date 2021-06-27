@@ -8,7 +8,9 @@ upon the material in any medium or format, even for commercial purposes.
 To view a copy of this license, visit http://creativecommons.org/publicdomain/zero/1.0
 */
 
-// _______RegGetValue.c_______ - Receives registry value from the Registry key
+
+// File: RegGetValue.c
+// Description: Receives registry value from the Registry key
 
 // Compiler Pragmatic comments
 #pragma comment(lib, "advapi32") // No more Need for "tcc -ladvapi32 RegGetValueA.c"         tcc: error: undefined symbol 'RegGetValueA' 
