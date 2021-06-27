@@ -26,12 +26,13 @@
 
 void openRegistryKey();
 void getRegistryKeyValue();
-void registryHiveInterpretation();
+const char* registryHiveInterpretation();
 
     // For hKey argument
 	// Makes Accept both hex values, integer values and string values
 	// HKEY_LOCAL_MACHINE       80000002      0x80000002
 int main(){
+	//openRegistryKey();
 	getRegistryKeyValue(HKEY_CURRENT_USER);
 	return 0;
 }
@@ -75,7 +76,9 @@ void openRegistryKey(
 		
 	}
 		printf("Registry hive:   ");
-		registryHiveInterpretation(hKey);
+		printf(registryHiveInterpretation(hKey));
+		printf(" (Hex value: 0x%x)", hKey);
+		printf("\n");
 		printf("Registry subkey: \\%s \n", lpSubKey);
 		
 	ErrorCode = RegCloseKey(openedHkey);
@@ -135,9 +138,11 @@ void getRegistryKeyValue(HKEY KeyHandle){
 		// For RegGetValueA only
 		// RegGetValueW needs printfw
 		printf(TEXT("Information \n"));
-		if ( hkey == HKEY_LOCAL_MACHINE){ printf("  hkey: HKEY_LOCAL_MACHINE (value in Hexadecimal: 0x%x)\n", hkey); }
-		if ( hkey == HKEY_CURRENT_USER ){ printf("  hkey: HKEY_CURRENT_USER  (value in Hexadecimal: 0x%x)\n", hkey); }
-		if ( hkey == HKEY_USERS ){ printf("  hkey: HKEY_USERS   (value in Hexadecimal: 0x%x)\n", hkey); }
+		printf("  hkey: "); 
+		printf(registryHiveInterpretation(hkey));
+		printf(" (value in Hexadecimal: 0x%x)", hkey);
+		printf("\n");
+		
 		printf(TEXT("  lpSubKey: %s \n"), lpSubKey);
 		printf(TEXT("  lpValue: %s "), lpValue);
 		printf("\n");
@@ -209,28 +214,22 @@ void getRegistryKeyValue(HKEY KeyHandle){
 // Manual enumeration https://docs.microsoft.com/en-us/windows/win32/sysinfo/enumerating-registry-subkeys
 //Registry Hive values are to be found in tcc\include\winapi\winreg.h
 // Microsoft also uses switch statements to translate HEX to String values: https://stackoverflow.com/questions/58510869/c-sharp-get-basekey-from-registrykey/58547945#58547945
-void registryHiveInterpretation(hKey){
+const char* registryHiveInterpretation(hKey){
 	switch ((int) hKey){
 		case HKEY_CLASSES_ROOT:
-			
-			printf("HKEY_CLASSES_ROOT: 0x%x \n", hKey);
-			break;
+			return "HKEY_CLASSES_ROOT";
 			
 		case HKEY_CURRENT_USER:
-			printf("HKEY_CURRENT_USER: 0x%x \n", hKey);
-			break;
+			return "HKEY_CURRENT_USER";
 			
 		case HKEY_LOCAL_MACHINE:
-			printf("HKEY_LOCAL_MACHINE: 0x%x \n", hKey);
-			break;
+			return "HKEY_LOCAL_MACHINE";
 			
 		case HKEY_USERS:
-			printf("HKEY_USERS: 0x%x \n", hKey);
-			break;
+			return "HKEY_USERS";
 			
 		case HKEY_CURRENT_CONFIG:
-			printf("HKEY_CURRENT_CONFIG: %x \n", hKey);
-			break;
+			return "HKEY_CURRENT_CONFIG";
 		
 		default:
 			printf("Notice:");
@@ -241,6 +240,7 @@ void registryHiveInterpretation(hKey){
 			printf(" HKEY_USERS          | Integer value: 80000003 \n");
 			printf(" HKEY_CURRENT_CONFIG | Integer value: 80000005 \n");
 			printf("For more information consult: https://docs.microsoft.com/en-us/windows/win32/sysinfo/predefined-keys \n");
+			return "";
 			
 	}
 
