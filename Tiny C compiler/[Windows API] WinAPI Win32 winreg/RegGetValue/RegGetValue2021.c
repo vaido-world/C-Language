@@ -210,7 +210,7 @@ void getRegistryKeyValue(HKEY KeyHandle){
 				}
 			}
 		printf("\n");
-		printf("                 [Registry Values]");
+		printf("              [Registry Key Values]");
 		printf("\n");
 		printf("                  ----Output---");
 		printf("\n");
