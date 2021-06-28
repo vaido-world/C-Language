@@ -2,6 +2,8 @@
 _____________________________________________________________
  File: RegGetValue.c
  Description: Receives registry value from the Registry key
+ Notes:
+  * https://stackoverflow.com/questions/30812594/how-do-i-determine-the-size-of-a-registry-values-data-using-the-windows-api/30812628#30812628
 _____________________________________________________________
 
 This work is marked with CC0 1.0 Universal. 🄍
