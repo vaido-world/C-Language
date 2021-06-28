@@ -122,7 +122,7 @@ void getRegistryKeyValue(HKEY KeyHandle){
 		PVOID   pvData; 
 		LPDWORD pcbData;
 	
-	
+		// https://docs.microsoft.com/en-us/windows/win32/api/winreg/nf-winreg-reggetvaluea
 		// RegGetValue, Retrieves the type and data for the specified registry value. https://docs.microsoft.com/en-us/windows/win32/api/winreg/nf-winreg-reggetvaluea
 		ErrorCode = RegGetValueA(
 			hkey     = HKEY_LOCAL_MACHINE,
