@@ -214,6 +214,17 @@ void getRegistryKeyValue(HKEY KeyHandle){
 		printf("\n");
 		
 		
+		
+		
+		int tokensCounted = 0;
+		char *ptr = pvData;
+		while((ptr = strchr(ptr, ';')) != NULL) {
+			tokensCounted++;
+			ptr++;
+		}		
+		
+
+		
 		// https://wiki.sei.cmu.edu/confluence/display/c/STR06-C.+Do+not+assume+that+strtok%28%29+leaves+the+parse+string+unchanged
 		char *copy = (char *)malloc(strlen(pvData) + 1);
 		if (copy == NULL) {
@@ -221,11 +232,18 @@ void getRegistryKeyValue(HKEY KeyHandle){
 		}
 		strcpy(copy, pvData);
 		char * token = strtok(copy, ";");
-		while( token != NULL ) {
+		int tokenCount = 0;
+		for(tokenCount; token != NULL; token = strtok(NULL, ";"), tokenCount++){
+			
+			printf("%i", tokenCount);
 			printf("   ");
+		
 			printf( "%s", token ); //printing each token
-			printf("\n");
-			token = strtok(NULL, ";");
+			if (tokenCount != tokensCounted-1){
+				printf("\n");
+			}
+			
+			
 		}
 		free(copy);
 		copy = NULL;
