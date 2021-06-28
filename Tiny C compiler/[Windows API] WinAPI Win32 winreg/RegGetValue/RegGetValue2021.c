@@ -122,7 +122,9 @@ void getRegistryKeyValue(HKEY KeyHandle){
 		LPDWORD pdwType; 
 		PVOID   pvData; 
 		LPDWORD pcbData;
-	
+		
+		printf("[!]Getting the size of the registry key value to be returned (pvData) \n");
+		
 		// https://docs.microsoft.com/en-us/windows/win32/api/winreg/nf-winreg-reggetvaluea
 		// RegGetValue, Retrieves the type and data for the specified registry value. https://docs.microsoft.com/en-us/windows/win32/api/winreg/nf-winreg-reggetvaluea
 		ErrorCode = RegGetValueA(
@@ -134,7 +136,9 @@ void getRegistryKeyValue(HKEY KeyHandle){
 			pvData   = NULL, // This default NULL value, states that we do not request the data, only the Size of it
 			pcbData  = &BufferSize
 		);
-		
+		printf("[!]Setting the pointer to registry address of &BufferSize \n");
+		printf("[!]The size of pvData will be stored in the variable &BufferSize \n");
+		printf("[!]The size of the pvData will be returned in a variable &BufferSize pointed by pcbData \n");
 		printf(TEXT("_________________________________________ \n"));
 		printf(TEXT("_______________RegGetValue_______________ \n"));
 		if (strcmp(lpSubKey, "SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Environment") == 0){
@@ -190,9 +194,12 @@ void getRegistryKeyValue(HKEY KeyHandle){
 			}
 	
 		// Allocate memory for the pvData in size of retrieved pcbData value
+		printf("\n"); 
+		printf("[!]%i bytes is the size of pvData\n", *pcbData); 
+		printf("[!]Allocating heap memory pvData as retrieved by pcbData \n");
 		pvData = (int*)malloc(*pcbData);
-		//printf("%i bytes is the size of pvData", *pcbData); 
 	
+		printf("[!]Getting values of the Registry Key \n");
 		ErrorCode = RegGetValueA(
 				hkey,
 				lpSubKey,
