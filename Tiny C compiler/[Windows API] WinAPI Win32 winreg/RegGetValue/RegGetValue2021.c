@@ -178,6 +178,7 @@ void getRegistryKeyValue(HKEY KeyHandle){
 					printf(TEXT("    '%s' could not be opened or is not found. \n "), lpSubKey );
 					printf(TEXT("  Error code: %x (ERROR_FILE_NOT_FOUND)"), ErrorCode);
 					printf("\n");
+					printf("\n");
 					printf("TODO: implement open registry loop and check what registry location is not available");
 					printf("\n");
 					exit(0);
