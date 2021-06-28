@@ -34,20 +34,21 @@ const char* registryTypeValuesInterpretation(valueType);
 // Makes Accept both hex values, integer values and string values
 // HKEY_LOCAL_MACHINE       80000002      0x80000002
 int main(){
-	//openRegistryKey();
-	getRegistryKeyValue(HKEY_CURRENT_USER);
+	openRegistryKey();
+	//getRegistryKeyValue(HKEY_CURRENT_USER);
 	return 0;
 }
 
 
 
-void openRegistryKey(
-	HKEY   hKey,
-	LPCSTR lpSubKey,
-	DWORD  ulOptions,
-	REGSAM samDesired,
-	PHKEY  phkResult){
+void openRegistryKey(){
 	  
+	// Types Definitions
+	HKEY   hKey;
+	LPCSTR lpSubKey;
+	DWORD  ulOptions;
+	REGSAM samDesired;
+	PHKEY  phkResult;
 	
 	// Pointer to opened registry key
 	HKEY OpenedRegistryKey;
