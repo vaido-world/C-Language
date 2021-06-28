@@ -34,8 +34,8 @@ const char* registryTypeValuesInterpretation(valueType);
 // Makes Accept both hex values, integer values and string values
 // HKEY_LOCAL_MACHINE       80000002      0x80000002
 int main(){
-	openRegistryKey();
-	//getRegistryKeyValue(HKEY_CURRENT_USER);
+	//openRegistryKey();
+	getRegistryKeyValue(HKEY_CURRENT_USER);
 	return 0;
 }
 
@@ -191,7 +191,8 @@ void getRegistryKeyValue(HKEY KeyHandle){
 	
 		// Allocate memory for the pvData in size of retrieved pcbData value
 		pvData = (int*)malloc(*pcbData);
-
+		//printf("%i bytes is the size of pvData", *pcbData); 
+	
 		ErrorCode = RegGetValueA(
 				hkey,
 				lpSubKey,
