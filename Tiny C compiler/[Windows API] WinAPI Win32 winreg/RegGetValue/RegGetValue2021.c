@@ -136,7 +136,14 @@ void getRegistryKeyValue(HKEY KeyHandle){
 		
 		printf(TEXT("_________________________________________ \n"));
 		printf(TEXT("_______________RegGetValue_______________ \n"));
-		
+		if (strcmp(lpSubKey, "SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Environment") == 0){
+			if (strcmp(lpValue, "Path") == 0){
+				printf("Note: ");
+				printf("System Environment Variables");
+				printf("\n");
+				
+			}
+		}
 		// For RegGetValueA only
 		// RegGetValueW needs printfw
 		printf(TEXT("Information \n"));
