@@ -26,7 +26,7 @@ To view a copy of this license, visit http://creativecommons.org/publicdomain/ze
 // Functions declaration
 void openRegistryKey();
 void getRegistryKeyValue();
-const char* registryHiveInterpretation();
+const char* registryHiveInterpretation(hKey);
 const char* registryTypeValuesInterpretation(valueType);
 
 
@@ -154,7 +154,7 @@ void getRegistryKeyValue(HKEY KeyHandle){
 		printf("  pdwType: ");
 		printf("  ");
 		printf(registryTypeValuesInterpretation(valueType));
-		printf(" (Hex value: %i)",valueType);
+		printf(" (Hex value: %i)", valueType);
 		printf("\n");
 		
 		/*
@@ -205,10 +205,28 @@ void getRegistryKeyValue(HKEY KeyHandle){
 		printf("\n");
 		printf("                  ----Output---");
 		printf("\n");
-		printf("%s", pvData);
+		
+		
+		// https://wiki.sei.cmu.edu/confluence/display/c/STR06-C.+Do+not+assume+that+strtok%28%29+leaves+the+parse+string+unchanged
+		char *copy = (char *)malloc(strlen(pvData) + 1);
+		if (copy == NULL) {
+		  /* Handle error */
+		}
+		strcpy(copy, pvData);
+		char * token = strtok(copy, ";");
+		while( token != NULL ) {
+			printf("   ");
+			printf( "%s", token ); //printing each token
+			printf("\n");
+			token = strtok(NULL, ";");
+		}
+		free(copy);
+		copy = NULL;
+		
 		printf("\n");
 		printf("                  ---");
 		printf("-Debug---- \n");
+		printf(pvData);
 		printf("\n");
 		printf("\nRetrieved information about array size: %i bytes.\n",*pcbData);
 		printf("Actual size of the array: %i characters counted.\n", strlen(pvData));
