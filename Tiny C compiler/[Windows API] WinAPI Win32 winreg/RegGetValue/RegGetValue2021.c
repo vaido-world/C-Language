@@ -249,6 +249,7 @@ void getRegistryKeyValue(HKEY KeyHandle){
 		copy = NULL;
 		
 		printf("\n");
+		printf("\n");
 		printf("                  ---");
 		printf("-Debug---- \n");
 		printf(pvData);
