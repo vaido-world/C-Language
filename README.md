@@ -1,5 +1,8 @@
 # C-Language-Tutorial
 
+## 2021-07-11
+https://www.google.lt/url?sa=t&source=web&rct=j&url=https://solidsands.com/wp-content/uploads/Master_Thesis_Vasileios_GemistosFinal.pdf&ved=2ahUKEwilxLOA_NrxAhWwxIsKHW1BD0I4FBAWMAN6BAgBEAI&usg=AOvVaw2L3vjh_8Ojg0pPD5R19ab6
+
 ## 2021-06-20
 Tiny C Compiler Community Examples: `tcc/examples/community` or `tcc/community_examples` or `community_resources`  
 Internet Connection, HTTP    
