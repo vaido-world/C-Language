@@ -1,6 +1,7 @@
 # C-Language-Tutorial
 
 ## 2021-07-16 Executable Modules-libraries system
+For rolling-release projects.
 ### module_program.c
 ```
 #include <stdio.h>
