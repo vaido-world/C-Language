@@ -14,7 +14,6 @@ int main() {
 }
 #endif
 
-// Triggers implicit declaration of the function
 #ifndef MODULE_PROGRAM2_C
 #define MODULE_PROGRAM2_C
 #include "module_program2.c"
