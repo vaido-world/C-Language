@@ -5,44 +5,44 @@
 ```
 #ifndef NOT_TESTING //if NOT_TESTING was NOT defined
 #define NOT_TESTING
-void libfunc(); // program.c:6: warning: implicit declaration of function 'libfunc'
+void Program2_libfunc(); // program.c:6: warning: implicit declaration of function 'libfunc'
                 // Program2.c:12: error: incompatible types for redefinition of 'libfunc'
 int main() {
 	printf("Program1\n");
-	libfunc();
+	Program2_libfunc();
 }
 #endif
 
 // Triggers implicit declaration of the function
-#ifndef PROGRAM2_H
-#define PROGRAM2_H
+#ifndef PROGRAM2_C
+#define PROGRAM2_C
 #include "Program2.c"
-#endif /* PROGRAM2_H */
+#endif /* PROGRAM2_C */
 ```
 
 ### Program2
 ```
 #ifndef NOT_TESTING //if NOT_TESTING was NOT defined
 #define NOT_TESTING
-void libfunc(); // program2.c:6: warning: implicit declaration of function 'libfunc'
+void Program2_libfunc(); // program2.c:6: warning: implicit declaration of function 'libfunc'
                 // Program2.c:12: error: incompatible types for redefinition of 'libfunc'
 int main() {
 	printf("Program2\n");
-	libfunc();
+	Program2_libfunc();
 }
 #endif
 
-#ifndef LIBFUNC_H
-#define LIBFUNC_H
-void libfunc(){
+#ifndef LIBFUNC_C
+#define LIBFUNC_C
+void Program2_libfunc(){
 	printf(" This is libfunc\n");
 }
-#endif /* LIBFUNC_H */
+#endif /* LIBFUNC_C */
 
-#ifndef PROGRAM1_H
-#define PROGRAM1_H
+#ifndef PROGRAM1_C
+#define PROGRAM1_C
 #include "Program.c"
-#endif /* PROGRAM1_H */
+#endif /* PROGRAM1_C */
 ```
 
 ## 2021-07-11
