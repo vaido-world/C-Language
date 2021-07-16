@@ -3,7 +3,7 @@
 ## 2021-07-16
 ### Program
 ```
-#ifndef NOT_TESTING //if NOT_TESTING was NOT defined
+#ifndef NOT_TESTING
 #define NOT_TESTING
 void Program2_libfunc(); // program.c:6: warning: implicit declaration of function 'libfunc'
                 // Program2.c:12: error: incompatible types for redefinition of 'libfunc'
@@ -22,7 +22,7 @@ int main() {
 
 ### Program2
 ```
-#ifndef NOT_TESTING //if NOT_TESTING was NOT defined
+#ifndef NOT_TESTING
 #define NOT_TESTING
 void Program2_libfunc(); // program2.c:6: warning: implicit declaration of function 'libfunc'
                 // Program2.c:12: error: incompatible types for redefinition of 'libfunc'
