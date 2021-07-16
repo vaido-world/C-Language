@@ -3,6 +3,7 @@
 ## 2021-07-16
 ### Program
 ```
+#include <stdio.h>
 #ifndef NOT_TESTING
 #define NOT_TESTING
 void Program2_libfunc(); // program.c:6: warning: implicit declaration of function 'libfunc'
@@ -22,6 +23,7 @@ int main() {
 
 ### Program2
 ```
+#include <stdio.h>
 #ifndef NOT_TESTING
 #define NOT_TESTING
 void Program2_libfunc(); // program2.c:6: warning: implicit declaration of function 'libfunc'
