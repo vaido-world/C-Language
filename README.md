@@ -22,25 +22,30 @@ int main() {
 ```
 
 ### Program2
-```
+```/* External Libraries */
 #include <stdio.h>
+
+/* Main Function*/
 #ifndef NOT_TESTING
 #define NOT_TESTING
 void Program2_libfunc(); // program2.c:6: warning: implicit declaration of function 'libfunc'
-                // Program2.c:12: error: incompatible types for redefinition of 'libfunc'
+						 // Program2.c:12: error: incompatible types for redefinition of 'libfunc'
 int main() {
 	printf("Program2\n");
 	Program2_libfunc();
 }
 #endif
 
-#ifndef LIBFUNC_C
-#define LIBFUNC_C
+/* Library Functions */
+#ifndef PROGRAM2_LIBFUNC_C
+#define PROGRAM2_LIBFUNC_C
 void Program2_libfunc(){
 	printf(" This is libfunc\n");
 }
-#endif /* LIBFUNC_C */
+#endif /* PROGRAM2_LIBFUNC_C */
 
+
+/* Modules Includes */
 #ifndef PROGRAM1_C
 #define PROGRAM1_C
 #include "Program.c"
