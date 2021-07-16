@@ -7,7 +7,7 @@
 #define NOT_TESTING
 void libfunc();
 int main() {
-	printf("Program1");
+	printf("Program1\n");
 	libfunc();
 }
 #endif
@@ -25,7 +25,7 @@ int main() {
 #define NOT_TESTING
 void libfunc();
 int main() {
-	printf("Program2");
+	printf("Program2\n");
 	libfunc();
 }
 #endif
@@ -33,7 +33,7 @@ int main() {
 #ifndef LIBFUNC_H
 #define LIBFUNC_H
 void libfunc(){
-	printf(" This is libfunc");
+	printf(" This is libfunc\n");
 }
 #endif /* LIBFUNC_H */
 
