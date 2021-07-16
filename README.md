@@ -1,55 +1,60 @@
 # C-Language-Tutorial
 
 ## 2021-07-16 Executable Modules-libraries system
-### Program
+### module_program.c
 ```
 #include <stdio.h>
 #ifndef NOT_TESTING
 #define NOT_TESTING
-void Program2_libfunc(); // program.c:6: warning: implicit declaration of function 'libfunc'
-                // Program2.c:12: error: incompatible types for redefinition of 'libfunc'
+void program2_module_function(); // program.c:6: warning: implicit declaration of function 'libfunc'
+				 // Program2.c:12: error: incompatible types for redefinition of 'libfunc'
 int main() {
 	printf("Program1\n");
-	Program2_libfunc();
+	program2_module_function();
 }
 #endif
 
 // Triggers implicit declaration of the function
-#ifndef PROGRAM2_C
-#define PROGRAM2_C
-#include "Program2.c"
-#endif /* PROGRAM2_C */
+#ifndef MODULE_PROGRAM2_C
+#define MODULE_PROGRAM2_C
+#include "module_program2.c"
+#endif /* MODULE_PROGRAM2_C */
 ```
 
-### Program2
-```/* External Libraries */
+### module_program2.c
+```
+/* External Libraries */
 #include <stdio.h>
 
 /* Main Function*/
 #ifndef NOT_TESTING
 #define NOT_TESTING
-void Program2_libfunc(); // program2.c:6: warning: implicit declaration of function 'libfunc'
-						 // Program2.c:12: error: incompatible types for redefinition of 'libfunc'
+
+/* Module function declaration for access */
+void program2_module_function(); // program2.c:6: warning: implicit declaration of function 'program2_module_function'
+				 // Program2.c:12: error: incompatible types for redefinition of 'program2_module_function'
 int main() {
 	printf("Program2\n");
-	Program2_libfunc();
+	
+/* Module function access */
+	program2_module_function();
 }
 #endif
 
 /* Library Functions */
-#ifndef PROGRAM2_LIBFUNC_C
-#define PROGRAM2_LIBFUNC_C
-void Program2_libfunc(){
+#ifndef PROGRAM2_MODULE_FUNCTION_C
+#define PROGRAM2_MODULE_FUNCTION_C
+void program2_module_function(){
 	printf(" This is libfunc\n");
 }
-#endif /* PROGRAM2_LIBFUNC_C */
+#endif /* PROGRAM2_LIBRARY_FUNCTION_C */
 
 
 /* Modules Includes */
-#ifndef PROGRAM1_C
-#define PROGRAM1_C
-#include "Program.c"
-#endif /* PROGRAM1_C */
+#ifndef MODULE_PROGRAM_C
+#define MODULE_PROGRAM_C
+#include "module_program.c"
+#endif /* MODULE_PROGRAM_C */
 ```
 
 ## 2021-07-11
