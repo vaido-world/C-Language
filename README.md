@@ -4,11 +4,13 @@
 For rolling-release projects.
 ### module_program.c
 ```
+#!/usr/local/bin/tcc -run
+
 #include <stdio.h>
 #ifndef NOT_TESTING
 #define NOT_TESTING
 void program2_module_function(); // program.c:6: warning: implicit declaration of function 'libfunc'
-				 // Program2.c:12: error: incompatible types for redefinition of 'libfunc'
+								 // Program2.c:12: error: incompatible types for redefinition of 'libfunc'
 int main() {
 	printf("Program1\n");
 	program2_module_function();
@@ -23,6 +25,8 @@ int main() {
 
 ### module_program2.c
 ```
+#!/usr/local/bin/tcc -run
+
 /* External Libraries */
 #include <stdio.h>
 
@@ -32,7 +36,7 @@ int main() {
 
 /* Module function declaration for access */
 void program2_module_function(); // program2.c:6: warning: implicit declaration of function 'program2_module_function'
-				 // Program2.c:12: error: incompatible types for redefinition of 'program2_module_function'
+								 // Program2.c:12: error: incompatible types for redefinition of 'program2_module_function'
 int main() {
 	printf("Program2\n");
 	
