@@ -5,7 +5,8 @@
 ```
 #ifndef NOT_TESTING //if NOT_TESTING was NOT defined
 #define NOT_TESTING
-void libfunc();
+void libfunc(); // program.c:6: warning: implicit declaration of function 'libfunc'
+                // Program2.c:12: error: incompatible types for redefinition of 'libfunc'
 int main() {
 	printf("Program1\n");
 	libfunc();
@@ -23,7 +24,8 @@ int main() {
 ```
 #ifndef NOT_TESTING //if NOT_TESTING was NOT defined
 #define NOT_TESTING
-void libfunc();
+void libfunc(); // program2.c:6: warning: implicit declaration of function 'libfunc'
+                // Program2.c:12: error: incompatible types for redefinition of 'libfunc'
 int main() {
 	printf("Program2\n");
 	libfunc();
@@ -41,8 +43,6 @@ void libfunc(){
 #define PROGRAM1_H
 #include "Program.c"
 #endif /* PROGRAM1_H */
-
-
 ```
 
 ## 2021-07-11
