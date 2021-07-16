@@ -1,5 +1,50 @@
 # C-Language-Tutorial
 
+## 2021-07-16
+### Program
+```
+#ifndef NOT_TESTING //if NOT_TESTING was NOT defined
+#define NOT_TESTING
+void libfunc();
+int main() {
+	printf("Program1");
+	libfunc();
+}
+#endif
+
+// Triggers implicit declaration of the function
+#ifndef PROGRAM2_H
+#define PROGRAM2_H
+#include "Program2.c"
+#endif /* PROGRAM2_H */
+```
+
+### Program2
+```
+#ifndef NOT_TESTING //if NOT_TESTING was NOT defined
+#define NOT_TESTING
+void libfunc();
+int main() {
+	printf("Program2");
+	libfunc();
+}
+#endif
+
+#ifndef LIBFUNC_H
+#define LIBFUNC_H
+void libfunc(){
+	printf(" This is libfunc");
+}
+#endif /* LIBFUNC_H */
+
+#ifndef PROGRAM1_H
+#define PROGRAM1_H
+#include "Program.c"
+#endif /* PROGRAM1_H */
+
+
+```
+
 ## 2021-07-11
 https://www.google.lt/url?sa=t&source=web&rct=j&url=https://solidsands.com/wp-content/uploads/Master_Thesis_Vasileios_GemistosFinal.pdf&ved=2ahUKEwilxLOA_NrxAhWwxIsKHW1BD0I4FBAWMAN6BAgBEAI&usg=AOvVaw2L3vjh_8Ojg0pPD5R19ab6
 
