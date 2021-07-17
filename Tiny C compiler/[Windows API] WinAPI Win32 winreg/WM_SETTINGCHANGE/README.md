@@ -1,8 +1,8 @@
 ### Uninstalling
-To uninstall it is better to keep track of the PATH added in a TEMP folder.
-To unistall all tcc compilers from the path a search and replace method can be used, 
-but it is more dangerous as it would remove all of TCC added to the PATH, and that could be unwanted behaviour.
-Which means that a recovery file for those paths should be created and stored in a .txt text file.
+To uninstall it is better to keep track of the PATH added in a TEMP folder.  
+To unistall all tcc compilers from the path a search and replace method can be used,  
+but it is more dangerous as it would remove all of TCC added to the PATH, and that could be unwanted behaviour.  
+Which means that a recovery file for those paths should be created and stored in a .txt text file.  
 
 ### Immediate acess to TCC on Command Prompt
 **Problem:** Command prompt does not fetch PATH variable on runtime.  
