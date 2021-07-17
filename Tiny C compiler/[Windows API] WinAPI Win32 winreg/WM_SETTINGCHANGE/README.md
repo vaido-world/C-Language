@@ -1,3 +1,9 @@
+### Immediate acess to TCC on Command Prompt
+Before the PATH variable is updated, to make immediate access of tcc.exe to the current Command Prompt Windows:  
+Shortcuts to the tcc.exe can be made in the `C:/Windows` or `C:/Windows/System32` folders.
+
+### Old information
+
 ```
 Tiny C Compiler has been Appended to the PATH variable using Registry. 
 (HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment Path) 
