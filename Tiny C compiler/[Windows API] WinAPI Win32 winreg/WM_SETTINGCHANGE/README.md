@@ -8,6 +8,12 @@ Shortcuts to the tcc.exe can be made in the `C:/Windows` or `C:/Windows/System32
 ### Old information
 
 ```
+where "tcc -version"
+IF ERRORLEVEL 0 (
+ECHO tcc.exe is now available.
+ECHO Tiny C Compiler installed successfully
+)
+
 Tiny C Compiler has been Appended to the PATH variable using Registry. 
 (HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment Path) 
 
