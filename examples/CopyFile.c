@@ -4,6 +4,9 @@
 //  Source: https://www.easefilter.com/kb/fileapi-copyfile.htm
 // Reference: https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-copyfile
 
+// Remember to start tcc.exe as administrator by setting tcc.exe in the PATH to "Run as administrator"
+
+
 #include <windows.h>  
 #include <tchar.h>  
 #include <stdio.h>  
