@@ -12,6 +12,8 @@ https://docs.microsoft.com/en-us/windows/deployment/usmt/usmt-recognized-environ
 **Problem:** Command prompt does not fetch PATH variable on runtime.  
 PATH variable is fetched only when Command Prompt is launching by design.  
 
+**Update:** `USERPROFILE=C:\Users\user` is also available to the the Command Prompt. This is a perfect location for temporary immmediate initiation. 
+
 **Resolution:** Before the PATH variable is updated, to make immediate access of tcc.exe to the current Command Prompt Windows:  
 Shortcuts to the tcc.exe can be made in the `C:/Windows` or `C:/Windows/System32` folders.
 
