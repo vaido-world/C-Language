@@ -4,6 +4,8 @@
 https://stackoverflow.com/questions/6285791/how-to-associate-a-program-with-a-file-type-but-only-for-the-current-user/6285850#6285850
 https://stackoverflow.com/questions/2681878/associate-file-extension-with-application/2697804#2697804
 
+Idea: Associated file types could log output to log.txt files for preservation and debugging.
+
 ## 2021-07-17
 https://stackoverflow.com/questions/31844584/is-there-an-api-call-to-prompt-user-for-uac-elevation
 
