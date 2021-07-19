@@ -18,6 +18,10 @@ This is a perfect location for temporary immmediate initiation.
 **Update2:** .lnk files are not accepted by command prompt by default as executables.     
 It's best to make batch file that would launch the needed program.   
 
+**Update3:** `temporary_path_user_location_cleanup.cmd` To delete the temporary files, the startup batch script might be needed that deletes itself as well.   
+`C:\Users\user\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup` 
+A Task Scheduler can be used as well, but it is too complicated and not as simple.
+
 **Resolution:** Before the PATH variable is updated, to make immediate access of tcc.exe to the current Command Prompt Windows:  
 Shortcuts to the tcc.exe can be made in the `C:/Windows` or `C:/Windows/System32` folders.
 
