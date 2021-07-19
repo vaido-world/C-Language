@@ -20,23 +20,18 @@ int main()
 	// TODO: Return multiple values of the array
 	// TODO: 
 	char * returning = get_environment_variable("USERPROFILE");
-	char newstr[ 30 * sizeof(returning) ]; // As suggested by "chux" - ensure buffer is big enough!
-    int i, j;
-    for (i = j = 0; i < (int)strlen(returning); i++, j++) {
-        newstr[j] = returning[i];
-        if (returning[i] == '\\') newstr[++j] = '\\'; // Insert extra backslash
-    }
-    newstr[j] = '\0'; // We need to add nul-terminator!
 
-	#define filenamelength 10
-	strncat(newstr, "\\tccs.cmd", filenamelength);
-	printf("%s\n", newstr);
+	printf("test2: %s\n", returning);
+	
+	#define filenamelength 100
+	strncat(returning, "\\tccs.cmd", filenamelength);
+	
 	
     /* 
      * Open file in w (write) mode. 
      * "tcc.cmd" is complete path to create file
      */
-    fPtr = fopen(newstr, "w");
+    fPtr = fopen(returning, "w");
 
 
     /* fopen() return NULL if last operation was unsuccessful */
@@ -79,8 +74,20 @@ char * get_environment_variable(char * Environment_Variable){
 		char * Environment_Variable_Value = getenv(Environment_Variable);
 		int    Environment_Variable_Length_In_Bytes = strlen(Environment_Variable_Value);
 
-		static_array[0] = Environment_Variable_Value;
+			char newstr[ 30 * sizeof(Environment_Variable_Value) ]; // As suggested by "chux" - ensure buffer is big enough!
+			int i, j;
+			for (i = j = 0; i < (int)strlen(Environment_Variable_Value); i++, j++) {
+				newstr[j] = Environment_Variable_Value[i];
+				if (Environment_Variable_Value[i] == '\\') newstr[++j] = '\\'; // Insert extra backslash
+			}
+			newstr[j] = '\0'; // We need to add nul-terminator!
 
+			#define filenamelength 10
+			strncat(newstr, "\\tccs.cmd", filenamelength);
+			
+	
+		static_array[0] = Environment_Variable_Value;
+		
 		
 		//printf("Environment_Variable: %s\n", Environment_Variable);
 		//printf("Environment_Variable_Value: %s \n", Environment_Variable_Value);
@@ -88,6 +95,7 @@ char * get_environment_variable(char * Environment_Variable){
 	} else {
 		printf("'%s' Environment Variable is not found.", Environment_Variable);		
 	}
-
+	
+	printf("", static_array); // Buggy, removing no return happens.
 	return * static_array;
 }
