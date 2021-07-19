@@ -7,6 +7,8 @@ Which means that a recovery file for those paths should be created and stored in
 ### Immediate acess to TCC on Command Prompt
 https://docs.microsoft.com/en-us/windows/deployment/usmt/usmt-recognized-environment-variables
 
+`where *.*`  can be used to list available programs in the Command Prompt.
+
 **Problem:** Command prompt does not fetch PATH variable on runtime.  
 PATH variable is fetched only when Command Prompt is launching by design.  
 
@@ -25,7 +27,6 @@ ECHO Tiny C Compiler installed successfully
 Tiny C Compiler has been Appended to the PATH variable using Registry. 
 (HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment Path) 
 
-`where *.*`  can be used to list available programs in the Command Prompt.
 
 Environment Variables have been reloaded.
 
