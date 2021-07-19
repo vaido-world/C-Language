@@ -15,6 +15,9 @@ PATH variable is fetched only when Command Prompt is launching by design.
 **Update:** `USERPROFILE=C:\Users\user` is also available to the the Command Prompt.  
 This is a perfect location for temporary immmediate initiation.  
 
+**Update2:** .lnk files are not accepted by command prompt by default as executables.     
+It's best to make batch file that would launch the needed program.   
+
 **Resolution:** Before the PATH variable is updated, to make immediate access of tcc.exe to the current Command Prompt Windows:  
 Shortcuts to the tcc.exe can be made in the `C:/Windows` or `C:/Windows/System32` folders.
 
