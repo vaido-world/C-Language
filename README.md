@@ -1,5 +1,9 @@
 # C-Language-Tutorial
 
+## 2021-07-20 Realloc mistakes.
+https://stackoverflow.com/questions/36923389/what-will-realloc-do-to-the-old-pointer/36923607#36923607
+https://stackoverflow.com/questions/38213123/is-it-good-coding-practice-to-assign-the-address-returned-by-realloc-to-the-sa/38213241#38213241
+
 ## 2021-07-19 Associate filetype with a program on win32
 https://stackoverflow.com/questions/6285791/how-to-associate-a-program-with-a-file-type-but-only-for-the-current-user/6285850#6285850
 https://stackoverflow.com/questions/2681878/associate-file-extension-with-application/2697804#2697804
