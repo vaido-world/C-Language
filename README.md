@@ -16,7 +16,15 @@ else
 {
     orig = tmp;
 }
+
 ```
+
+### https://en.cppreference.com/w/c/memory/calloc#Return_value
+> On success, returns the pointer to the beginning of newly allocated memory. To avoid a memory leak, the returned pointer must be deallocated with free() or realloc().
+> On failure, returns a null pointer.
+
+
+
 ## 2021-07-19 Associate filetype with a program on win32
 https://stackoverflow.com/questions/6285791/how-to-associate-a-program-with-a-file-type-but-only-for-the-current-user/6285850#6285850
 https://stackoverflow.com/questions/2681878/associate-file-extension-with-application/2697804#2697804
