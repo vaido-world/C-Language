@@ -3,7 +3,7 @@
 ## 2021-07-20 Realloc common mistakes.
 https://stackoverflow.com/questions/36923389/what-will-realloc-do-to-the-old-pointer/36923607#36923607
 https://stackoverflow.com/questions/38213123/is-it-good-coding-practice-to-assign-the-address-returned-by-realloc-to-the-sa/38213241#38213241
-
+https://stackoverflow.com/questions/44789295/correct-use-of-realloc/44789441#44789441
 
 ### Checking if realloc succeed
 ```
