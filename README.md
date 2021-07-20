@@ -1,6 +1,6 @@
 # C-Language-Tutorial
 
-## 2021-07-20 Realloc mistakes.
+## 2021-07-20 Realloc common mistakes.
 https://stackoverflow.com/questions/36923389/what-will-realloc-do-to-the-old-pointer/36923607#36923607
 https://stackoverflow.com/questions/38213123/is-it-good-coding-practice-to-assign-the-address-returned-by-realloc-to-the-sa/38213241#38213241
 
