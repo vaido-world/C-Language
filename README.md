@@ -16,9 +16,6 @@ else
 {
     orig = tmp;
 }
-
-
-
 ```
 ## 2021-07-19 Associate filetype with a program on win32
 https://stackoverflow.com/questions/6285791/how-to-associate-a-program-with-a-file-type-but-only-for-the-current-user/6285850#6285850
