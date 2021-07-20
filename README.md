@@ -20,9 +20,9 @@ else
 ```
 
 ### https://en.cppreference.com/w/c/memory/calloc#Return_value
-> **On success**, returns the pointer to the beginning of newly allocated memory. 
-> To avoid a memory leak, the returned pointer must be deallocated with free() or realloc().
-> **On failure**, returns a null pointer.
+> **On success**, returns the pointer to the beginning of newly allocated memory.   
+> To avoid a memory leak, the returned pointer must be deallocated with free() or realloc().  
+> **On failure**, returns a null pointer.  
 
 
 
