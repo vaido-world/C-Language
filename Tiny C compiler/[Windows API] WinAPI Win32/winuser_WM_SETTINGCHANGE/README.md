@@ -6,7 +6,7 @@ Which means that a recovery file for those paths should be created and stored in
 
 ### Immediate acess to TCC on Command Prompt
 
-NOTICE: Only newly created files in `USERPROFILE=C:\Users\user` are detected and rescanned to path variable.
+NOTICE: Only newly created files in `USERPROFILE=C:\Users\user` are detected and rescanned in path variable.
 
 https://docs.microsoft.com/en-us/windows/deployment/usmt/usmt-recognized-environment-variables
 
