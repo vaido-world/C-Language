@@ -5,6 +5,9 @@ but it is more dangerous as it would remove all of TCC added to the PATH, and th
 Which means that a recovery file for those paths should be created and stored in a .txt text file.  
 
 ### Immediate acess to TCC on Command Prompt
+
+NOTICE: Only newly created files in `USERPROFILE=C:\Users\user` are detected and rescanned to path variable.
+
 https://docs.microsoft.com/en-us/windows/deployment/usmt/usmt-recognized-environment-variables
 
 `where *.*`  can be used to list available programs in the Command Prompt.
