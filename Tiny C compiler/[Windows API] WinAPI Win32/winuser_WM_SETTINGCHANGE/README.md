@@ -23,7 +23,7 @@ It's best to make batch file that would launch the needed program.
 `C:\Users\user\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup` 
 A Task Scheduler can be used as well, but it is too complicated and not as simple.
 
-** Update 4: ** Only Windows and System32 folders and Current Directory are accessible to the Command Prompt.**
+**Update 4:** Only Windows and System32 folders and Current Directory are accessible to the Command Prompt.**
   There is no way to add to immediately add to path without an administrator previlegie. (Only by creating the launch file in Windows and System32 folder)
 
 **Resolution:** Before the PATH variable is updated, to make immediate access of tcc.exe to the current Command Prompt Windows:  
