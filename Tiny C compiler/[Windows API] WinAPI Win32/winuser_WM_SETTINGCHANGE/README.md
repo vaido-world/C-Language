@@ -6,8 +6,6 @@ Which means that a recovery file for those paths should be created and stored in
 
 ### Immediate acess to TCC on Command Prompt
 
-NOTICE: Only newly created files in `USERPROFILE=C:\Users\user` are detected and rescanned in path variable.
-
 https://docs.microsoft.com/en-us/windows/deployment/usmt/usmt-recognized-environment-variables
 
 `where *.*`  can be used to list available programs in the Command Prompt.
@@ -15,8 +13,8 @@ https://docs.microsoft.com/en-us/windows/deployment/usmt/usmt-recognized-environ
 **Problem:** Command prompt does not fetch PATH variable on runtime.  
 PATH variable is fetched only when Command Prompt is launching by design.  
 
-**Update:** `USERPROFILE=C:\Users\user` is also available to the the Command Prompt.  
-This is a perfect location for temporary immmediate initiation.  
+<s>**Update:** `USERPROFILE=C:\Users\user` is also available to the the Command Prompt.  
+This is a perfect location for temporary immmediate initiation.  </s>
 
 **Update2:** .lnk files are not accepted by command prompt by default as executables.     
 It's best to make batch file that would launch the needed program.   
@@ -24,6 +22,9 @@ It's best to make batch file that would launch the needed program.
 **Update3:** `temporary_path_user_location_cleanup.cmd` To delete the temporary files, the startup batch script might be needed that deletes itself as well.   
 `C:\Users\user\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup` 
 A Task Scheduler can be used as well, but it is too complicated and not as simple.
+
+** Update 4: ** Only Windows and System32 folders and Current Directory are accessible to the Command Prompt.**
+  There is no way to add to immediately add to path without an administrator previlegie. (Only by creating the launch file in Windows and System32 folder)
 
 **Resolution:** Before the PATH variable is updated, to make immediate access of tcc.exe to the current Command Prompt Windows:  
 Shortcuts to the tcc.exe can be made in the `C:/Windows` or `C:/Windows/System32` folders.
