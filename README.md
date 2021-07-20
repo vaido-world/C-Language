@@ -26,6 +26,103 @@ else
 
 
 
+### Backlashes conversion incomplete
+```
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+void main(){
+	char text[] = "The text with backlashes\\ \\";
+	
+	
+	printf("%i bytes \n", sizeof(text));
+	//printf("%s", text);
+	
+	
+	printf("_____\n");
+	
+
+	char character;
+	int character_position;
+	int backslash_count = 0;
+
+	char * new_text = (char*)malloc(sizeof(text));
+	int new_character_position;
+
+	
+	for (    character_position = 0, 
+	     new_character_position = 0;  
+		 
+		 character_position < strlen(text); 
+	 
+	         character_position++, 
+	     new_character_position++){
+
+		if (character_position >= 10) printf("%i|", character_position);
+		if (character_position < 10) printf("%i |", character_position);
+
+		character = text[character_position];
+		new_text[new_character_position] = character;
+		
+		
+		
+		
+		if (character == '\\') {
+			printf("Backlash");
+			backslash_count++;
+			new_text[++new_character_position] = '\\';
+			
+			// tcc -b -run backlashes_conversion.c
+			/* realloc should be reimplemented here. */
+			//temporary_variable = realloc(new_text, (sizeof(char)) + sizeof(new_text));
+		}
+		
+		
+		
+		//printf("%c", character);
+		printf("%c", new_text[new_character_position]);
+		printf("\n");
+		
+		
+	}
+	
+	new_text[new_character_position] = '\0'; // We need to add nul-terminator!
+	
+	printf("\n");
+	printf("-----\n");
+	printf("%i \n", backslash_count);
+	printf("%s", new_text);
+	printf("%i",  sizeof(new_text));
+	
+	
+	
+	
+	
+	
+	
+	
+	// char newstr[ 2 * sizeof(buffertest) ]; // As suggested by "chux" - ensure buffer is big enough!
+	// 
+	// int i, j;
+	// for (i = j = 0; i < strlen(buffertest); i++, j++) {
+	// 	newstr[j] = buffertest[i];
+	// 	if (buffertest[i] == '\\') {
+	// 		newstr[++j] = '\\'; // Insert extra backslash
+	// 	}
+	// }
+	//  printf("test %i", j);
+	// newstr[j] = '\0'; // We need to add nul-terminator!
+	// 
+	// #define filenamelength 10
+	// strncat(newstr, "\\tccs.cmd", filenamelength);
+	// printf(newstr);
+	
+}
+```
+
+
+
 ## 2021-07-19 Associate filetype with a program on win32
 https://stackoverflow.com/questions/6285791/how-to-associate-a-program-with-a-file-type-but-only-for-the-current-user/6285850#6285850
 https://stackoverflow.com/questions/2681878/associate-file-extension-with-application/2697804#2697804
