@@ -26,7 +26,7 @@ else
 
 
 
-### Backlashes conversion incomplete
+### Backlashes conversion incomplete | Needs proper Realloc usage 
 ```
 #include <stdio.h>
 #include <stdlib.h>
