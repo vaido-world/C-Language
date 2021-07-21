@@ -31,31 +31,50 @@ else
 
 
 ### Backlashes conversion 
+![image](https://user-images.githubusercontent.com/21064622/126502200-25e6ba7d-9d38-4eef-9674-72235cf5d5b0.png)
+
+
 ```
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+ #include <time.h>
 
 void main(){
+ 
+     clock_t start, end;
+     double cpu_time_used;
+     
+     start = clock();
+	
+	
 	char text[] = "The text with backlashes\\ \\";
+	int text_size_in_bytes = sizeof(text);
+	printf("_______________________________________________________\n");
+	printf("Input String      :'%s' \n", text);
+	printf("text_size_in_bytes: %i bytes \n", text_size_in_bytes);
 	
-	
-	printf("%i bytes \n", sizeof(text));
-	//printf("%s", text);
-	
-	
-	printf("_____\n");
-	
+
 
 	char character;
 	int character_position;
 
 	char * new_text = (char*)malloc(sizeof(text));
-	int new_size_in_bytes = sizeof(text);
+	int new_text_size_in_bytes = sizeof(text);
 	int new_character_position;
-
-
+	
 	int backslash_count = 0;
+
+	printf("_______________________________________________________
+	Description: 
+	Copies every character of the text into a new text variable 
+	and checks if the character is a backslash. If it is: places additional backlash.
+	
+	Dynamic Memory Allocation is present to avoid Memory Leaks caused by Undefined Behaviour 
+	of language specification. 
+	\n_______________________________________________________\n
+	character_position | character
+	\n_______________________________________________________\n");
 	for (    character_position = 0, 
 	     new_character_position = 0;  
 		 
@@ -64,22 +83,22 @@ void main(){
 	         character_position++, 
 	     new_character_position++){
 
+		/* Prettier to print this way, can be removed*/
 		if (character_position >= 10) printf("%i|", character_position);
 		if (character_position < 10) printf("%i |", character_position);
+		
 
 		character = text[character_position];
-		new_text[new_character_position] = character;
-		
-		
-					
+		new_text[new_character_position] = character;				
 	
 		if (character == '\\') {
 			printf("Backlash");
 			backslash_count++;
 			new_text[++new_character_position] = '\\';
 			
-	
-			char * tmp = realloc(new_text, new_size_in_bytes = new_size_in_bytes + sizeof(char));
+			// tcc -b -run backlashes_conversion_in_ASCII.c
+			new_text_size_in_bytes += sizeof(char);
+			char * tmp = realloc(new_text, new_text_size_in_bytes);
 			if (tmp == NULL)
 			{
 				// could not realloc, but orig still valid
@@ -88,18 +107,10 @@ void main(){
 			{
 				new_text = tmp;
 			}
-	
-			
-			
-			// tcc -b -run backlashes_conversion.c
-			/* realloc should be reimplemented here. */
-			//temporary_variable = realloc(new_text, (sizeof(char)) + sizeof(new_text));
+
 		}
 		
-		
-		
-		//printf("%c", character);
-		printf("%c", new_text[new_character_position]);
+		printf("%c", text[character_position]);
 		printf("\n");
 
 		
@@ -107,15 +118,17 @@ void main(){
 	
 	new_text[new_character_position] = '\0'; // We need to add nul-terminator!
 	
+
+	printf("_______________________________________________________\n");
+	printf("backslash_count: %i \n", backslash_count);
+	printf("new_text: '%s'", new_text);
 	printf("\n");
-	printf("-----\n");
-	printf("New backlashes count: %i \n", backslash_count);
-	printf("%s", new_text);
+	printf("new_text_size_in_bytes: %i ", new_text_size_in_bytes);
 	printf("\n");
-	printf("The size of the new string in bytes: %i ", new_size_in_bytes);
 	
-	
-	
+	 end = clock();
+     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+	 printf("Program took %f seconds to execute. \n", cpu_time_used);
 	
 	
 	
@@ -138,6 +151,8 @@ void main(){
 	// printf(newstr);
 	
 }
+
+
 
 	
 ```
