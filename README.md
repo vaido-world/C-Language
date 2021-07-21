@@ -49,13 +49,13 @@ void main(){
 
 	char character;
 	int character_position;
-	int backslash_count = 0;
 
 	char * new_text = (char*)malloc(sizeof(text));
 	int new_size_in_bytes = sizeof(text);
 	int new_character_position;
 
 
+	int backslash_count = 0;
 	for (    character_position = 0, 
 	     new_character_position = 0;  
 		 
