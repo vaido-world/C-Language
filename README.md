@@ -39,6 +39,13 @@ else
 #include <stdlib.h>
 #include <string.h>
  #include <time.h>
+ 
+ 
+void description(){
+	
+	
+	
+}
 
 void main(){
  
@@ -53,7 +60,6 @@ void main(){
 	printf("_______________________________________________________\n");
 	printf("Input String      :'%s' \n", text);
 	printf("text_size_in_bytes: %i bytes \n", text_size_in_bytes);
-	
 
 
 	char character;
@@ -64,7 +70,7 @@ void main(){
 	int new_character_position;
 	
 	int backslash_count = 0;
-
+	
 	printf("_______________________________________________________
 	Description: 
 	Copies every character of the text into a new text variable 
@@ -151,8 +157,6 @@ void main(){
 	// printf(newstr);
 	
 }
-
-
 
 	
 ```
