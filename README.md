@@ -30,7 +30,7 @@ else
 
 
 
-### backlashes_conversion_in_ASCII.c
+### ASCII_backlashes_conversion_in.c
 Based on:  
 https://stackoverflow.com/questions/61125503/how-to-replace-a-backslash-with-two-backslashes-in-c-program/61125744#61125744
 ![image](https://user-images.githubusercontent.com/21064622/126502200-25e6ba7d-9d38-4eef-9674-72235cf5d5b0.png)
