@@ -108,7 +108,7 @@ void main(){
 	
 	printf("\n");
 	printf("-----\n");
-	printf("%i \n", backslash_count);
+	printf("New backlashes count: %i \n", backslash_count);
 	printf("%s", new_text);
 	printf("\n");
 	printf("The size of the new string in bytes: %i ", new_size_in_bytes);
@@ -137,8 +137,8 @@ void main(){
 	// printf(newstr);
 	
 }
-	
 
+	
 ```
 
 
