@@ -31,6 +31,8 @@ else
 
 
 ### backlashes_conversion_in_ASCII.c
+Based on:  
+https://stackoverflow.com/questions/61125503/how-to-replace-a-backslash-with-two-backslashes-in-c-program/61125744#61125744
 ![image](https://user-images.githubusercontent.com/21064622/126502200-25e6ba7d-9d38-4eef-9674-72235cf5d5b0.png)
 
 
@@ -128,26 +130,6 @@ void main(){
 	 end = clock();
      cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
 	 printf("Program took %f seconds to execute. \n", cpu_time_used);
-	
-	
-	
-	
-	
-	// char newstr[ 2 * sizeof(buffertest) ]; // As suggested by "chux" - ensure buffer is big enough!
-	// 
-	// int i, j;
-	// for (i = j = 0; i < strlen(buffertest); i++, j++) {
-	// 	newstr[j] = buffertest[i];
-	// 	if (buffertest[i] == '\\') {
-	// 		newstr[++j] = '\\'; // Insert extra backslash
-	// 	}
-	// }
-	//  printf("test %i", j);
-	// newstr[j] = '\0'; // We need to add nul-terminator!
-	// 
-	// #define filenamelength 10
-	// strncat(newstr, "\\tccs.cmd", filenamelength);
-	// printf(newstr);
 	
 }
 
