@@ -40,24 +40,34 @@ https://stackoverflow.com/questions/61125503/how-to-replace-a-backslash-with-two
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
- #include <time.h>
+
+#include <time.h>
 
 void main(){
  
      clock_t start, end;
      double cpu_time_used;
-     
      start = clock();
 	
+	
+	
+	printf("
+	
+ _______
+|       |
+|       |
+|       |  _
+|_______| |_|
+	
+	");
 	
 	char text[] = "The text with backlashes\\ \\";
 	int text_size_in_bytes = sizeof(text);
 	printf("_______________________________________________________\n");
-	printf("Input String      :'%s' \n", text);
+	printf("text              :'%s' \n", text);
 	printf("text_size_in_bytes: %i bytes \n", text_size_in_bytes);
 
 
-	char character;
 	int character_position;
 
 	char * new_text = (char*)malloc(sizeof(text));
@@ -66,16 +76,16 @@ void main(){
 	
 	int backslash_count = 0;
 	
-	printf("_______________________________________________________
-	Description: 
-	Copies every character of the text into a new text variable 
-	and checks if the character is a backslash. If it is: places additional backlash.
-	
-	Dynamic Memory Allocation is present to avoid Memory Leaks caused by Undefined Behaviour 
-	of language specification. 
-	\n_______________________________________________________\n
-	character_position | character
-	\n_______________________________________________________\n");
+	printf("_______________________________________________________\n");
+	printf("Description: ");
+	printf("Copies every character of the text into a new text variable \n");
+	printf("and checks if the character is a backslash. If it is: places additional backlash. \n");
+	printf("\n");
+	printf("Dynamic Memory Allocation is present to avoid Memory Leaks caused by Undefined Behaviour \n");
+	printf("of language specification. \n");
+	printf("\n_______________________________________________________\n");
+	printf("character_position | text[character_position]");
+	printf("\n_______________________________________________________\n");
 	for (    character_position = 0, 
 	     new_character_position = 0;  
 		 
@@ -89,10 +99,10 @@ void main(){
 		if (character_position < 10) printf("%i |", character_position);
 		
 
-		character = text[character_position];
-		new_text[new_character_position] = character;				
+		new_text[new_character_position] = text[character_position];
+		
 	
-		if (character == '\\') {
+		if (text[character_position] == '\\') {
 			printf("Backlash");
 			backslash_count++;
 			new_text[++new_character_position] = '\\';
@@ -130,167 +140,11 @@ void main(){
 	 end = clock();
      cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
 	 printf("Program took %f seconds to execute. \n", cpu_time_used);
-	
+	printf("_______________________________________________________\n");
 }
 
 	
-```
 
-
-
-## 2021-07-19 Associate filetype with a program on win32
-https://stackoverflow.com/questions/6285791/how-to-associate-a-program-with-a-file-type-but-only-for-the-current-user/6285850#6285850
-https://stackoverflow.com/questions/2681878/associate-file-extension-with-application/2697804#2697804
-
-Idea: Associated file types could log output to log.txt files for preservation and debugging.
-
-## 2021-07-17
-https://stackoverflow.com/questions/31844584/is-there-an-api-call-to-prompt-user-for-uac-elevation
-
-## 2021-07-16 Executable Modules-libraries system
-For rolling-release projects.
-### module_program.c
-```
-#!/usr/local/bin/tcc -run
-
-#include <stdio.h>
-#ifndef NOT_TESTING
-#define NOT_TESTING
-void program2_module_function(); // program.c:6: warning: implicit declaration of function 'libfunc'
-								 // Program2.c:12: error: incompatible types for redefinition of 'libfunc'
-int main() {
-	printf("Program1\n");
-	program2_module_function();
-}
-#endif
-
-#ifndef MODULE_PROGRAM2_C
-#define MODULE_PROGRAM2_C
-#include "module_program2.c"
-#endif /* MODULE_PROGRAM2_C */
-```
-
-### module_program2.c
-```
-#!/usr/local/bin/tcc -run
-
-/* External Libraries */
-#include <stdio.h>
-
-/* Main Function*/
-#ifndef NOT_TESTING
-#define NOT_TESTING
-
-/* Module function declaration for access */
-void program2_module_function(); // program2.c:6: warning: implicit declaration of function 'program2_module_function'
-								 // Program2.c:12: error: incompatible types for redefinition of 'program2_module_function'
-int main() {
-	printf("Program2\n");
-	
-/* Module function access */
-	program2_module_function();
-}
-#endif
-
-/* Library Functions */
-#ifndef PROGRAM2_MODULE_FUNCTION_C
-#define PROGRAM2_MODULE_FUNCTION_C
-void program2_module_function(){
-	printf(" This is libfunc\n");
-}
-#endif /* PROGRAM2_LIBRARY_FUNCTION_C */
-
-
-/* Modules Includes */
-#ifndef MODULE_PROGRAM_C
-#define MODULE_PROGRAM_C
-#include "module_program.c"
-#endif /* MODULE_PROGRAM_C */
-```
-
-## 2021-07-11
-https://www.google.lt/url?sa=t&source=web&rct=j&url=https://solidsands.com/wp-content/uploads/Master_Thesis_Vasileios_GemistosFinal.pdf&ved=2ahUKEwilxLOA_NrxAhWwxIsKHW1BD0I4FBAWMAN6BAgBEAI&usg=AOvVaw2L3vjh_8Ojg0pPD5R19ab6
-
-## 2021-06-20
-Tiny C Compiler Community Examples: `tcc/examples/community` or `tcc/community_examples` or `community_resources`  
-Internet Connection, HTTP    
-Registry Access  
-
-## 2021-06-03
-https://stackoverflow.com/questions/20055838/hello-world-with-tcc-using-assembly-language/20075715#20075715
-
-## 2021-06-02
-https://elmicro.com/files/cosmic/clanguage.pdf
-
-## 2021-06-01
-### Looking at the C language compiler output using -E Preprocesor parameter in TCC
-`tcc -E  windowproc.c`
-
-```
-#define main __FILE__ 
-void main() 
-{ 
-	printf("WindowProc\n");
-	gets();
-
-} 
-```
-
-Output of `tcc -E  windowproc.c`
-
-```
-
-void "windowproc.c"()
-{
-        printf("WindowProc\n");
-        gets();
-
-}
-
-```
-**Notice:** As can be seen `__FILE__` is expanded to `"windowproc.c"` the quotes (`""`) seem to not let to use this macro as function name. 
-
-### Some average quality C Reference Book
-c language reference book manual c89
-http://www.cs.columbia.edu/~sedwards/papers/sgi1999c.pdf
-### References
-https://www.tutorialspoint.com/c_standard_library/index.htm  
-https://www.tutorialspoint.com/cprogramming/index.htm
-
-### Redefining main method with Macros (Use macro as function name)
-
-`__FILE__` macro is not expanded in the function name.
-#### Example: WindowProc.c
-```
-#ifndef __FILE__t
-#define __FILE__t main
-#endif
-
-void __FILE__t() 
-{ 
-	printf("WindowProc\n");
-	gets();
-
-} 
-```
-
-It is simply treated as function name `__FILE__t` instead of `WindowProc.c_t`
-
-### Redefining main method with literal strings
-As mentioned function names do not expand macros and are treated directly as literal strings.
-#### Example: 
-```
-#ifndef main
-#define WindowProc2a main
-#endif
-
-#include <stdio.h>
-void WindowProc2a() 
-{ 
-	printf(__FILE__" \n");
-
-
-} 
 ```
 
 
