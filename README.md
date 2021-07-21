@@ -2,6 +2,7 @@
 
 ## 2021-07-21
 https://www.codeproject.com/Articles/12532/Inject-your-code-to-a-Portable-Executable-file
+https://stackoverflow.com/questions/2988038/default-values-on-arguments-in-c-functions-and-function-overloading-in-c/12094348#12094348
 
 ## 2021-07-20 Realloc common mistakes.
 https://stackoverflow.com/questions/36923389/what-will-realloc-do-to-the-old-pointer/36923607#36923607
