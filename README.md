@@ -51,9 +51,10 @@ void main(){
 	int backslash_count = 0;
 
 	char * new_text = (char*)malloc(sizeof(text));
+	int new_size_in_bytes = sizeof(text);
 	int new_character_position;
 
-	
+
 	for (    character_position = 0, 
 	     new_character_position = 0;  
 		 
@@ -69,12 +70,25 @@ void main(){
 		new_text[new_character_position] = character;
 		
 		
-		
-		
+					
+	
 		if (character == '\\') {
 			printf("Backlash");
 			backslash_count++;
 			new_text[++new_character_position] = '\\';
+			
+	
+			char * tmp = realloc(new_text, new_size_in_bytes = new_size_in_bytes + sizeof(char));
+			if (tmp == NULL)
+			{
+				// could not realloc, but orig still valid
+			}
+			else
+			{
+				new_text = tmp;
+			}
+	
+			
 			
 			// tcc -b -run backlashes_conversion.c
 			/* realloc should be reimplemented here. */
@@ -86,7 +100,7 @@ void main(){
 		//printf("%c", character);
 		printf("%c", new_text[new_character_position]);
 		printf("\n");
-		
+
 		
 	}
 	
@@ -96,7 +110,8 @@ void main(){
 	printf("-----\n");
 	printf("%i \n", backslash_count);
 	printf("%s", new_text);
-	printf("%i",  sizeof(new_text));
+	printf("\n");
+	printf("The size of the new string in bytes: %i ", new_size_in_bytes);
 	
 	
 	
@@ -122,6 +137,8 @@ void main(){
 	// printf(newstr);
 	
 }
+	
+
 ```
 
 
