@@ -3,6 +3,130 @@
 ## 2021-07-22 ASCII TO UTF-8
 https://www.google.com/search?q=Moving+from+ASCII+to+UTF-8+in+c&sxsrf=ALeKk00oT0vdGIKMq3NIjCmmTNuO3KhZbg%3A1626949861741&ei=5Uj5YPTTLIKcrgSty5nIAQ&oq=Moving+from+ASCII+to+UTF-8+in+c&gs_lcp=Cgdnd3Mtd2l6EAMyCAghEBYQHRAeMggIIRAWEB0QHjIICCEQFhAdEB4yCAghEBYQHRAeMggIIRAWEB0QHjIICCEQFhAdEB4yCAghEBYQHRAeMggIIRAWEB0QHjIICCEQFhAdEB4yCAghEBYQHRAeOgcIABBHELADOgcIIxCuAhAnSgQIQRgAUPsCWOEIYJkKaABwA3gAgAF4iAHPBJIBAzQuMpgBAKABAaoBB2d3cy13aXrIAQjAAQE&sclient=gws-wiz&ved=0ahUKEwi02s3EvPbxAhUCjosKHa1lBhkQ4dUDCA4&uact=5
 
+### Unicode_backlashes_conversion_in.c
+Now Displays Unicode Characters.   
+The ASCII version still can process search and replace the characters, 
+but displaying them with printf was a hassle.  
+This version resolves it.
+```
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#include <locale.h>
+#include <wchar.h>
+#include <time.h>
+
+void main(){
+ 
+     clock_t start, end;
+     double cpu_time_used;
+     start = clock();
+	 
+	 
+	
+	
+	
+	printf("
+	
+ _______
+|       |
+|       |
+|       |  _
+|_______| |_|
+	
+	");
+	 setlocale(LC_ALL, "");
+	const wchar_t text[] = L"The text with šįėšūįė9š backlashes\\ \\";
+
+	int text_size_in_bytes = sizeof(text);
+	printf("_______________________________________________________\n");
+	wprintf(L"text              :'%ls' \n", text);
+
+	printf("text_size_in_bytes: %i bytes \n", text_size_in_bytes);
+
+
+	int character_position;
+
+	wchar_t * new_text = (wchar_t*)malloc(sizeof(text));
+	int new_text_size_in_bytes = sizeof(text);
+	int new_character_position;
+	
+	int backslash_count = 0;
+	
+	printf("_______________________________________________________\n");
+	printf("Description: ");
+	printf("Copies every character of the text into a new text variable \n");
+	printf("and checks if the character is a backslash. If it is: places additional backlash. \n");
+	printf("\n");
+	printf("Dynamic Memory Allocation is present to avoid Memory Leaks caused by Undefined Behaviour \n");
+	printf("of language specification. \n");
+	printf("\n_______________________________________________________\n");
+	printf("character_position | text[character_position]");
+	printf("\n_______________________________________________________\n");
+	for (    character_position = 0, 
+	     new_character_position = 0;  
+		 
+		 character_position < wcslen(text); 
+	 
+	         character_position++, 
+	     new_character_position++){
+
+		/* Prettier to print this way, can be removed*/
+		if (character_position >= 10) printf("%i|", character_position);
+		if (character_position < 10) printf("%i |", character_position);
+		
+
+		new_text[new_character_position] = text[character_position];
+		
+	
+		if (text[character_position] == '\\') {
+			printf("Backlash");
+			backslash_count++;
+			new_text[++new_character_position] = '\\';
+			
+			// tcc -b -run backlashes_conversion_in_ASCII.c
+			new_text_size_in_bytes += sizeof(wchar_t);
+			char * tmp = realloc(new_text, new_text_size_in_bytes);
+			if (tmp == NULL)
+			{
+				// could not realloc, but orig still valid
+			}
+			else
+			{
+				new_text = tmp;
+			}
+
+		}
+		
+		wprintf(L"%c", text[character_position]);
+		printf("\n");
+
+		
+	}
+	
+	new_text[new_character_position] = '\0'; // We need to add nul-terminator!
+	
+
+	wprintf(L"_______________________________________________________\n");
+	wprintf(L"backslash_count: %i \n", backslash_count);
+	wprintf(L"new_text: '%s'", new_text);
+	wprintf(L"\n");
+	wprintf(L"new_text_size_in_bytes: %i ", new_text_size_in_bytes);
+	wprintf(L"\n");
+	
+	 end = clock();
+     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+	 printf("Program took %f seconds to execute. \n", cpu_time_used);
+	printf("_______________________________________________________\n");
+}
+
+	
+
+
+```
+
+
 https://stackoverflow.com/questions/526430/c-programming-how-to-program-for-unicode/526494#526494
 
 ## 2021-07-21
