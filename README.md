@@ -8,6 +8,9 @@ Now Displays Unicode Characters.
 The ASCII version still can process search and replace the characters,   
 but displaying them with printf was a hassle.    
 This version resolves it.  
+
+New Problem: Does not support emoji.
+
 ```
 #include <stdio.h>
 #include <stdlib.h>
