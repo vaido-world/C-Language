@@ -4,10 +4,10 @@
 https://www.google.com/search?q=Moving+from+ASCII+to+UTF-8+in+c&sxsrf=ALeKk00oT0vdGIKMq3NIjCmmTNuO3KhZbg%3A1626949861741&ei=5Uj5YPTTLIKcrgSty5nIAQ&oq=Moving+from+ASCII+to+UTF-8+in+c&gs_lcp=Cgdnd3Mtd2l6EAMyCAghEBYQHRAeMggIIRAWEB0QHjIICCEQFhAdEB4yCAghEBYQHRAeMggIIRAWEB0QHjIICCEQFhAdEB4yCAghEBYQHRAeMggIIRAWEB0QHjIICCEQFhAdEB4yCAghEBYQHRAeOgcIABBHELADOgcIIxCuAhAnSgQIQRgAUPsCWOEIYJkKaABwA3gAgAF4iAHPBJIBAzQuMpgBAKABAaoBB2d3cy13aXrIAQjAAQE&sclient=gws-wiz&ved=0ahUKEwi02s3EvPbxAhUCjosKHa1lBhkQ4dUDCA4&uact=5
 
 ### Unicode_backlashes_conversion_in.c
-Now Displays Unicode Characters.   
-The ASCII version still can process search and replace the characters, 
-but displaying them with printf was a hassle.  
-This version resolves it.
+Now Displays Unicode Characters.    
+The ASCII version still can process search and replace the characters,   
+but displaying them with printf was a hassle.    
+This version resolves it.  
 ```
 #include <stdio.h>
 #include <stdlib.h>
