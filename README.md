@@ -87,7 +87,7 @@ void main(){
 			
 			// tcc -b -run backlashes_conversion_in_ASCII.c
 			new_text_size_in_bytes += sizeof(wchar_t);
-			char * tmp = realloc(new_text, new_text_size_in_bytes);
+			wchar_t * tmp = realloc(new_text, new_text_size_in_bytes);
 			if (tmp == NULL)
 			{
 				// could not realloc, but orig still valid
@@ -120,9 +120,6 @@ void main(){
 	 printf("Program took %f seconds to execute. \n", cpu_time_used);
 	printf("_______________________________________________________\n");
 }
-
-	
-
 
 ```
 
