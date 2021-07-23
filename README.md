@@ -123,6 +123,7 @@ void main(){
 	 printf("Program took %f seconds to execute. \n", cpu_time_used);
 	printf("_______________________________________________________\n");
 free(new_text);
+new_text=NULL;
 }
 
 ```
