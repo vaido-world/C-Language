@@ -122,6 +122,7 @@ void main(){
      cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
 	 printf("Program took %f seconds to execute. \n", cpu_time_used);
 	printf("_______________________________________________________\n");
+free(new_text);
 }
 
 ```
