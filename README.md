@@ -32,53 +32,59 @@ New Problem: Does not support emoji.
 #include <time.h>
 
 void main(){
- 
-     clock_t start, end;
-     double cpu_time_used;
-     start = clock();
-	 
-	 
+printf("
+                _______
+               |       |
+               |       |
+               |       |  _
+               |_______| |_|
+\n");
+	printf("Initializing clock for measuring CPU time. \n");
+    clock_t start, end;
+    double cpu_time_used;
+    start = clock();
 	
-	
-	
-	printf("
-	
- _______
-|       |
-|       |
-|       |  _
-|_______| |_|
-	
-	");
-	 setlocale(LC_ALL, "");
-	const wchar_t text[] = L"The text with šįėšūįė9š backlashes\\ \\";
 
+	printf("Setting locale for the Command Prompt.\n");
+	setlocale(LC_ALL, "");
+	
+	printf("Initializing text variable:\n");
+	const wchar_t text[] = L"The text with šįėšūįė9š backlashes\\ \\";
 	int text_size_in_bytes = sizeof(text);
 	printf("_______________________________________________________\n");
 	wprintf(L"text              :'%ls' \n", text);
-
 	printf("text_size_in_bytes: %i bytes \n", text_size_in_bytes);
 
 
-	int character_position;
 
+	
+	printf("_______________________________________________________\n");
+	//printf("\nDescription: ");
+	//printf("Copies every character of the text into a new text variable \n");
+	//printf("and checks if the character is a backslash. If it is: places additional backlash. \n");
+	//printf("\n");
+	//printf("Dynamic Memory Allocation is present to avoid Memory Leaks caused by Undefined Behaviour \n");
+	//printf("of language specification. \n");
+	printf("\n");
+	printf("\n");
+	printf("\n");
+	printf("Looping through every character of the text variable.\n");
+	printf("Moving the character to a new_text variable.\n");
+	printf("Checking if the character is a '\\' backlash.\n");
+	printf("  If a '\\' backlash is found: \n");
+	printf("    Adding the additional '\\' backlash to the new_text variable.\n\n\n");
+	printf("_______________________________________________________\n");
+	printf("character_position | text[character_position]");
+	printf("\n_______________________________________________________\n");
+	
+	int character_position;
 	wchar_t * new_text = (wchar_t*)malloc(sizeof(text));
 	if (new_text == NULL) printf("Memory Allocation Failed.");
 	int new_text_size_in_bytes = sizeof(text);
 	int new_character_position;
 	
 	int backslash_count = 0;
-	
-	printf("_______________________________________________________\n");
-	printf("Description: ");
-	printf("Copies every character of the text into a new text variable \n");
-	printf("and checks if the character is a backslash. If it is: places additional backlash. \n");
-	printf("\n");
-	printf("Dynamic Memory Allocation is present to avoid Memory Leaks caused by Undefined Behaviour \n");
-	printf("of language specification. \n");
-	printf("\n_______________________________________________________\n");
-	printf("character_position | text[character_position]");
-	printf("\n_______________________________________________________\n");
+
 	for (    character_position = 0, 
 	     new_character_position = 0;  
 		 
@@ -134,8 +140,9 @@ void main(){
      cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
 	 printf("Program took %f seconds to execute. \n", cpu_time_used);
 	printf("_______________________________________________________\n");
-free(new_text);
-new_text=NULL;
+	
+	free(new_text);
+	new_text=NULL;
 }
 
 ```
