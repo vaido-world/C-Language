@@ -63,6 +63,7 @@ void main(){
 	int character_position;
 
 	wchar_t * new_text = (wchar_t*)malloc(sizeof(text));
+	if (new_text == NULL) printf("Memory Allocation Failed.");
 	int new_text_size_in_bytes = sizeof(text);
 	int new_character_position;
 	
