@@ -1,5 +1,5 @@
 ### Running
-tcc -Imingw-w64_strsafe_header -run example_threads.c
+`tcc -Imingw-w64_strsafe_header -run example_threads.c`
 
 ### Produces 
 `mingw-w64_strsafe_header/strsafe.h:131: error: ',' expected (got "dwFlags")`
