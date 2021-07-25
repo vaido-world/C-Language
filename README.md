@@ -1,5 +1,9 @@
 # C-Language-Tutorial
 
+## 2021-07-24 Multicore, parallelism, and multithreading 
+https://docs.microsoft.com/en-us/cpp/parallel/multithreading-with-c-and-win32?view=msvc-160
+https://docs.microsoft.com/en-us/cpp/parallel/sample-multithread-c-program?view=msvc-160
+
 ## 2021-07-23 Memory leaks, Undefined behaviour, out of bounds
 https://stackoverflow.com/questions/413477/is-there-a-good-valgrind-substitute-for-windows
 https://web.stanford.edu/class/cs343/resources/purify.pdf
