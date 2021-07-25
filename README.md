@@ -15,7 +15,8 @@ https://docs.microsoft.com/en-us/cpp/parallel/sample-multithread-c-program?view=
 
 
 #### Example of a thread creation in Windows using C
-https://docs.microsoft.com/en-us/windows/win32/procthread/creating-threads  
+https://docs.microsoft.com/en-us/windows/win32/procthread/creating-threads   
+Without strsafe as tcc does not support strsafe.h header   
 ```
 #include <windows.h>
 #include <tchar.h>
