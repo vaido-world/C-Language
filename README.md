@@ -3,7 +3,11 @@
 ## 2021-07-24 Multicore, parallelism, and multithreading 
 
 ### Offtopic: About strsafe
+https://docs.microsoft.com/en-us/windows/win32/menurc/strsafe-ovw
 https://stackoverflow.com/questions/54922292/is-stringcbprintf-strsafe-h-part-of-the-winapi
+https://stackoverflow.com/questions/10970617/there-is-no-strsafe-h-in-mingw-what-to-use-instead/12474997#12474997
+
+
 
 #### Thread Creation in Linux using C
 https://www.educative.io/edpresso/how-to-create-a-simple-thread-in-c  
