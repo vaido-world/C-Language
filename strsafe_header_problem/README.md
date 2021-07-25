@@ -9,5 +9,5 @@ https://github.com/msys2-contrib/mingw-w64/blob/master/mingw-w64-headers/include
 
 
 
-### Unrelated to the problem: More information about strsafe.h
+#### Unrelated to the problem: More information about strsafe.h
 https://github.com/vaido-world/C-Language-Tutorial#offtopic-about-strsafe
