@@ -1,7 +1,9 @@
 # C-Language-Tutorial
 
 ## 2021-07-24 Multicore, parallelism, and multithreading 
-https://docs.microsoft.com/en-us/windows/win32/procthread/creating-threads
+https://docs.microsoft.com/en-us/windows/win32/procthread/creating-threads  
+https://www.educative.io/edpresso/how-to-create-a-simple-thread-in-c  
+
 
 https://docs.microsoft.com/en-us/cpp/parallel/multithreading-with-c-and-win32?view=msvc-160  
 https://docs.microsoft.com/en-us/cpp/parallel/sample-multithread-c-program?view=msvc-160  
