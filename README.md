@@ -1,5 +1,39 @@
 # C-Language-Tutorial
 
+ 
+## 2021-07-25 Pointer Strings versus Array Strings
+https://stackoverflow.com/questions/11679050/c-string-function-strcopy-strcat-strstr-with-arrays-and-pointers/11679070#11679070
+
+```
+#include <stdio.h>
+#include <string.h>
+
+
+void fnc(char * string){
+
+    char *pointer = strstr(string, "out");
+    if (pointer != NULL) {
+        memcpy(pointer, "in", 2);
+        memmove(pointer + 2, pointer + 3, strlen(pointer + 3) + 1);
+    }
+    printf("%s\n", string);
+
+	
+	
+}
+
+int main(void) {
+	char strings[80] = "cat is out roaming";
+	// char strings[] = "cat is out roaming"; // works
+	// char strings[] = ""; // works
+	//fnc("cat is out roaming"); //  invalid memory access
+	fnc(strings);
+    return 0;
+}
+```
+
+
+
 ## 2021-07-24 Multicore, parallelism, and multithreading 
 
 ### Offtopic: About strsafe
