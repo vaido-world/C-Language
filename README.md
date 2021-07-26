@@ -2,10 +2,10 @@
 
  
 ## 2021-07-25 Pointer Strings versus Array Strings
-https://stackoverflow.com/questions/11679050/c-string-function-strcopy-strcat-strstr-with-arrays-and-pointers/11679070#11679070
+https://stackoverflow.com/questions/11679050/c-string-function-strcopy-strcat-strstr-with-arrays-and-pointers/11679070#11679070  
 
-https://www.youtube.com/watch?v=90gFFdzuZMw
-https://cboard.cprogramming.com/c-programming/180464-invalid-memory-access-when-passing-string-literals-argument.html#post1302476
+https://www.youtube.com/watch?v=90gFFdzuZMw  
+https://cboard.cprogramming.com/c-programming/180464-invalid-memory-access-when-passing-string-literals-argument.html#post1302476  
 
 ```
 #include <stdio.h>
