@@ -39,6 +39,9 @@ int main(void) {
 
 ## 2021-07-24 Multicore, parallelism, and multithreading 
 
+https://youtu.be/uA8X5zNOGw8
+
+
 ### Offtopic: About strsafe
 https://news.ycombinator.com/item?id=20793157  
 https://docs.microsoft.com/en-us/windows/win32/menurc/strsafe-ovw  
