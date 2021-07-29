@@ -1,8 +1,10 @@
 # C-Language-Tutorial
 
 ## 2021-07-29 Self contained Tiny C Compiler
-http://ptspts.blogspot.com/2009/11/tiny-self-contained-c-compiler-using.html
-https://github.com/pts/pts-tcc
+http://ptspts.blogspot.com/2009/11/tiny-self-contained-c-compiler-using.html  
+https://github.com/pts/pts-tcc  
+
+https://repo.or.cz/tinycc/self_contained.git
  
 ## 2021-07-25 Pointer Strings versus Array Strings
 https://stackoverflow.com/questions/11679050/c-string-function-strcopy-strcat-strstr-with-arrays-and-pointers/11679070#11679070  
