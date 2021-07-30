@@ -1,5 +1,9 @@
 # C-Language-Tutorial
 
+## 2021-07-30 Efficient strstr
+
+https://github.com/RaphaelJ/fast_strstr
+
 ## 2021-07-29 Self contained Tiny C Compiler
 http://ptspts.blogspot.com/2009/11/tiny-self-contained-c-compiler-using.html  
 https://github.com/pts/pts-tcc  
