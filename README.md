@@ -3,6 +3,8 @@
 ## 2021-07-31 C language Strings Basics
 https://www.youtube.com/watch?v=5TzFNouc0PE   
 https://www.youtube.com/watch?v=90gFFdzuZMw   
+https://www.youtube.com/watch?v=6BA7uT2xtPA&list=PLU4IQLU9e_Oq2dqhFV6n9shODnN8DR9b_&index=65
+https://www.youtube.com/watch?v=zgqoy70_z3c
 
 ## 2021-07-30 Efficient strstr
 
