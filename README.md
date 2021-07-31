@@ -1,5 +1,9 @@
 # C-Language-Tutorial
 
+## 2021-07-31 C language Strings Basics
+https://www.youtube.com/watch?v=5TzFNouc0PE   
+https://www.youtube.com/watch?v=90gFFdzuZMw   
+
 ## 2021-07-30 Efficient strstr
 
 https://github.com/RaphaelJ/fast_strstr
