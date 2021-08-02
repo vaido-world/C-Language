@@ -1,6 +1,6 @@
 # C-Language-Tutorial
 
-## 2021-08-02 Passed arrays as arguments become pointers and point to the first element in the array
+## 2021-08-02 Passed arrays as arguments become pointers and point to the first element in the array | Passing size of the array is mandatory
 https://stackoverflow.com/questions/27096272/using-sizeof-on-an-array-passed-to-a-function
 
 **backlash_convert_lite.c**
