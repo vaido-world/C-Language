@@ -2,7 +2,7 @@
 
 ## 2021-08-02 Passed arrays as arguments become pointers and point to the first element in the array | Passing size of the array is mandatory
 https://stackoverflow.com/questions/27096272/using-sizeof-on-an-array-passed-to-a-function
-
+https://stackoverflow.com/questions/3868962/how-do-you-get-the-size-of-array-that-is-passed-into-the-function/3868968#3868968
 **backlash_convert_lite.c**
 
 ```
