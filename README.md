@@ -9,6 +9,8 @@ https://stackoverflow.com/questions/27096272/using-sizeof-on-an-array-passed-to-
 https://stackoverflow.com/questions/3868962/how-do-you-get-the-size-of-array-that-is-passed-into-the-function/3868968#3868968
 **backlash_convert_lite.c**
 
+https://stackoverflow.com/questions/5493281/c-sizeof-a-passed-array/5493327#5493327
+
 ```
 #include <stdio.h>
 #include <stdlib.h>
