@@ -1,6 +1,8 @@
 # C-Language-Tutorial
 
-
+## 2021-08-03 Why static arrays can't
+https://stackoverflow.com/questions/26311364/static-arrays-with-variable-length/26311623
+https://stackoverflow.com/questions/10675399/why-cant-the-size-of-a-static-array-be-made-variable
 ### Wide character strings
 https://docs.microsoft.com/en-us/cpp/cpp/string-and-character-literals-cpp?view=msvc-160
 
