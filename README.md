@@ -1,5 +1,73 @@
 # C-Language-Tutorial
 
+## 2021-08-02 Passed arrays as arguments become pointers and point to the first element in the array
+https://stackoverflow.com/questions/27096272/using-sizeof-on-an-array-passed-to-a-function
+
+**backlash_convert_lite.c**
+
+```
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <wchar.h>
+
+
+void backlash_convert_lite(){
+	const wchar_t text[] = L"The text with šįėšūįė9š backlashes\\ \\";
+
+	wchar_t * new_text = (wchar_t*)malloc(sizeof(text));
+	if (new_text == NULL) printf("Memory Allocation Failed.");
+	int new_text_size_in_bytes = sizeof(text);
+	
+	int character_position;
+	int new_character_position;
+	
+	for (    character_position = 0, 
+	     new_character_position = 0;  
+		 
+		 character_position < wcslen(text); 
+	 
+	         character_position++, 
+	     new_character_position++){
+
+		new_text[new_character_position] = text[character_position];
+		
+	
+		if (text[character_position] == '\\') {
+			new_text[++new_character_position] = '\\';
+			new_text_size_in_bytes += sizeof(wchar_t);
+			wchar_t * tmp = realloc(new_text, new_text_size_in_bytes);
+			if (tmp == NULL)
+			{
+				// could not realloc, but orig still valid
+			}
+			else
+			{
+				new_text = tmp;
+			}
+
+		}
+		
+	}
+	new_text[new_character_position] = '\0'; // We need to add nul-terminator!
+	wprintf(L"new_text: '%s'", new_text);
+	free(new_text);
+	new_text=NULL;
+}
+
+
+
+
+
+
+void main(){
+
+	backlash_convert_lite();
+
+}
+```
+
+
 ## 2021-07-31 C language Strings Basics
 https://www.youtube.com/watch?v=5TzFNouc0PE   
 https://www.youtube.com/watch?v=90gFFdzuZMw   
