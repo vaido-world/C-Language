@@ -12,12 +12,11 @@ https://stackoverflow.com/questions/27096272/using-sizeof-on-an-array-passed-to-
 #include <wchar.h>
 
 
-void backlash_convert_lite(){
-	const wchar_t text[] = L"The text with šįėšūįė9š backlashes\\ \\";
+void backlash_convert_lite(const wchar_t text[], size_t text_size){
 
-	wchar_t * new_text = (wchar_t*)malloc(sizeof(text));
+	wchar_t * new_text = (wchar_t*)malloc(text_size);
 	if (new_text == NULL) printf("Memory Allocation Failed.");
-	int new_text_size_in_bytes = sizeof(text);
+	int new_text_size_in_bytes = text_size;
 	
 	int character_position;
 	int new_character_position;
@@ -61,8 +60,9 @@ void backlash_convert_lite(){
 
 
 void main(){
+	const wchar_t texts[] = L"The text with šįėšūįė9š backlashes\\ \\";
 
-	backlash_convert_lite();
+	backlash_convert_lite(texts, sizeof(texts));
 
 }
 ```
