@@ -3,6 +3,9 @@
 ## 2021-08-03 why-cant-the-size-of-a-static-array-be-made-variable
 https://stackoverflow.com/questions/26311364/static-arrays-with-variable-length/26311623
 https://stackoverflow.com/questions/10675399/why-cant-the-size-of-a-static-array-be-made-variable
+
+https://stackoverflow.com/questions/48367022/c-iterate-through-char-array-with-a-pointer/48367092#48367092
+
 ### Wide character strings
 
 https://www.codeproject.com/Questions/5269630/How-to-calculate-size-of-pointer-from-passed-funct  
