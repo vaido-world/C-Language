@@ -6,6 +6,26 @@ https://stackoverflow.com/questions/10675399/why-cant-the-size-of-a-static-array
 
 https://stackoverflow.com/questions/48367022/c-iterate-through-char-array-with-a-pointer/48367092#48367092
 
+```
+int getSize (char * s) {
+    char * t; // first copy the pointer to not change the original
+    int size = 0;
+
+    for (t = s; *t != '\0'; t++) {
+        size++;
+    }
+
+    return size;
+}
+
+int main() {
+  printf("%i", getSize("Hello"));
+  return 0;
+}
+
+
+```
+
 ### Wide character strings
 
 https://www.codeproject.com/Questions/5269630/How-to-calculate-size-of-pointer-from-passed-funct  
