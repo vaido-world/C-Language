@@ -4,6 +4,8 @@
 https://stackoverflow.com/questions/26311364/static-arrays-with-variable-length/26311623
 https://stackoverflow.com/questions/10675399/why-cant-the-size-of-a-static-array-be-made-variable
 ### Wide character strings
+
+https://www.codeproject.com/Questions/5269630/How-to-calculate-size-of-pointer-from-passed-funct  
 https://docs.microsoft.com/en-us/cpp/cpp/string-and-character-literals-cpp?view=msvc-160
 
 ## 2021-08-02 Passed arrays as arguments become pointers and point to the first element in the array | Passing size of the array is mandatory
