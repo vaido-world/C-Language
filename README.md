@@ -23,6 +23,10 @@ int main() {
   return 0;
 }
 
+### Should size of array should not be deduced using pointer arithmetics, but why?
+https://stackoverflow.com/questions/8464645/get-length-of-an-array-using-a-pointer/8464683#8464683
+
+
 
 ```
 
