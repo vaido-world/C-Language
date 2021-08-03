@@ -1,5 +1,8 @@
 # C-Language-Tutorial
 
+## GDB C language Debugging GUI
+https://github.com/cs01/gdbgui/releases
+
 ## 2021-08-03 why-cant-the-size-of-a-static-array-be-made-variable
 https://stackoverflow.com/questions/26311364/static-arrays-with-variable-length/26311623
 https://stackoverflow.com/questions/10675399/why-cant-the-size-of-a-static-array-be-made-variable
