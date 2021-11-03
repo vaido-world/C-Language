@@ -25,13 +25,13 @@
      showgrid="false"
      inkscape:zoom="2.096401"
      inkscape:cx="16.933783"
-     inkscape:cy="67.496629"
+     inkscape:cy="25.042919"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g3509"
+     inkscape:current-layer="layer1"
      borderlayer="false"
      fit-margin-top="0"
      fit-margin-left="0"
@@ -119,14 +119,14 @@
     </g>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:8.46667px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="102.19754"
+       style="font-style:normal;font-weight:normal;font-size:6.35px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="104.46475"
        y="83.191437"
        id="text9260"><tspan
          sodipodi:role="line"
          id="tspan9258"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.46667px;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed, ';stroke-width:0.264583"
-         x="102.19754"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed, ';stroke-width:0.264583"
+         x="104.46475"
          y="83.191437">Stack</tspan></text>
   </g>
 </svg>
