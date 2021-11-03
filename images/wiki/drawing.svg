@@ -23,9 +23,9 @@
      inkscape:pagecheckerboard="false"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="2.9647587"
-     inkscape:cx="115.69238"
-     inkscape:cy="61.556442"
+     inkscape:zoom="1.4823794"
+     inkscape:cx="393.96123"
+     inkscape:cy="137.95389"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
      inkscape:window-x="-8"
@@ -121,6 +121,47 @@
          height="35.506565"
          x="127.51855"
          y="69.05098" />
+      <rect
+         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.295;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect23097"
+         width="18.65624"
+         height="0.057685852"
+         x="127.5686"
+         y="74.378845"
+         ry="0" />
+      <rect
+         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.295;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect23205"
+         width="1.7513897"
+         height="0.06693209"
+         x="143.86339"
+         y="74.358444" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:3.52778px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="128.07335"
+         y="73.190849"
+         id="text25686"><tspan
+           sodipodi:role="line"
+           id="tspan25684"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed, ';stroke-width:0.264583"
+           x="128.07335"
+           y="73.190849">Drawn shape </tspan></text>
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 127.63239,79.883607 c 18.74194,0 18.74194,0 18.74194,0"
+         id="path29095" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:3.52778px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="127.82186"
+         y="79.307472"
+         id="text32223"><tspan
+           sodipodi:role="line"
+           id="tspan32221"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed, ';stroke-width:0.264583"
+           x="127.82186"
+           y="79.307472">Drawn Bezier</tspan></text>
     </g>
     <g
        inkscape:groupmode="layer"
