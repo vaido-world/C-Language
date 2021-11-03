@@ -23,9 +23,9 @@
      inkscape:pagecheckerboard="false"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="2.096401"
-     inkscape:cx="16.933783"
-     inkscape:cy="25.042919"
+     inkscape:zoom="1.0482005"
+     inkscape:cx="-72.028204"
+     inkscape:cy="19.557327"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
      inkscape:window-x="-8"
@@ -128,5 +128,16 @@
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed, ';stroke-width:0.264583"
          x="104.46475"
          y="83.191437">Stack</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.52778px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="112.69799"
+       y="102.66441"
+       id="text16603"><tspan
+         sodipodi:role="line"
+         id="tspan16601"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed, ';stroke-width:0.264583"
+         x="112.69799"
+         y="102.66441">Image 1</tspan></text>
   </g>
 </svg>
