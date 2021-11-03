@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="68.005783mm"
+   width="89.513092mm"
    height="35.801563mm"
-   viewBox="0 0 68.005783 35.801563"
+   viewBox="0 0 89.513092 35.801563"
    version="1.1"
    id="svg5"
    inkscape:version="1.1 (c68e22c387, 2021-05-23)"
@@ -12,7 +12,8 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
   <sodipodi:namedview
      id="namedview7"
      pagecolor="#ffffff"
@@ -22,21 +23,27 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="false"
      inkscape:document-units="mm"
-     showgrid="false"
+     showgrid="true"
      inkscape:zoom="2.9647587"
-     inkscape:cx="63.411568"
-     inkscape:cy="15.346949"
+     inkscape:cx="86.853611"
+     inkscape:cy="56.834304"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g3509"
+     inkscape:current-layer="layer1"
      borderlayer="false"
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
-     fit-margin-bottom="0" />
+     fit-margin-bottom="0">
+    <inkscape:grid
+       type="xygrid"
+       id="grid41014"
+       originx="255.45521"
+       originy="207.00051" />
+  </sodipodi:namedview>
   <defs
      id="defs2">
     <linearGradient
@@ -84,7 +91,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-78.348022,-68.90348)"
+     transform="translate(-56.89279,-68.90348)"
      style="display:inline">
     <g
        id="g3509"
@@ -145,8 +152,16 @@
          d="m 127.63239,79.883607 c 18.74194,0 18.74194,0 18.74194,0"
          id="path29095" />
       <path
+         style="display:inline;fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 127.66394,86.446443 c 18.74194,0 18.74194,0 18.74194,0"
+         id="path29095-1" />
+      <path
+         style="display:inline;fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 127.62697,91.979818 c 18.74194,0 18.74194,0 18.74194,0"
+         id="path29095-1-8" />
+      <path
          style="display:inline;fill:none;stroke:#000000;stroke-width:0.310848px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         d="m 98.717206,72.45088 c 25.869544,0 25.869544,0 25.869544,0"
+         d="m 99,75.7467 c 25.87,0 25.87,0 25.87,0"
          id="path29095-3" />
       <text
          xml:space="preserve"
@@ -157,8 +172,8 @@
            sodipodi:role="line"
            id="tspan32221"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed, ';stroke-width:0.264583"
-           x="0"
-           y="0">Drawn Bezier</tspan></text>
+           x="127.82186"
+           y="79.307472">Drawn Bezier</tspan></text>
     </g>
     <g
        inkscape:groupmode="layer"
@@ -195,5 +210,35 @@
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed, ';stroke-width:0.264583"
          x="112.69799"
          y="102.66441">Image 1</tspan></text>
+    <rect
+       style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect41040"
+       width="15.875"
+       height="21.166666"
+       x="57.025082"
+       y="69.528999" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 57.025084,77.46649 c 15.874999,0 15.874999,0 15.874999,0"
+       id="path41075" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="58.916447"
+       y="76.65831"
+       id="text47781"><tspan
+         sodipodi:role="line"
+         id="tspan47779"
+         style="font-size:4.23333px;stroke-width:0.264583"
+         x="58.916447"
+         y="76.65831">Stack </tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 57.025083,72.174823 c 15.875,0 15.875,0 15.875,0"
+       id="path973" />
   </g>
+  <metadata
+     id="metadata41016">
+    <rdf:RDF />
+  </metadata>
 </svg>
