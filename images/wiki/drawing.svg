@@ -23,9 +23,9 @@
      inkscape:pagecheckerboard="false"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="4.192802"
-     inkscape:cx="6.3203557"
-     inkscape:cy="23.015635"
+     inkscape:zoom="2.096401"
+     inkscape:cx="16.933783"
+     inkscape:cy="67.496629"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
      inkscape:window-x="-8"
@@ -96,11 +96,11 @@
          x="98.58374"
          y="69.05098" />
       <path
-         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.295;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
          d="m 98.603966,72.723427 c 25.916404,0 25.916404,0 25.916404,0"
          id="path8651" />
       <path
-         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.265, 0.265;stroke-dashoffset:0;stroke-opacity:1"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.295;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.295,0.295;stroke-dashoffset:0;stroke-opacity:1"
          d="m 98.603966,89.295943 c 25.916414,0 25.916414,0 25.916414,0"
          id="path8651-6" />
     </g>
