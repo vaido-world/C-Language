@@ -72,7 +72,7 @@ ECHO   TCC Library is being compiled!
 ECHO   ^| Source File: ..\libtcc.c
 ECHO   ^| Output Files: libtcc.dll, libtcc.def
 ECHO   ^| Preprocessor Flags: -shared %Dflags% -DLIBTCC_AS_DLL 
-%CC% -shared "..\libtcc.c" %Dflags% -DLIBTCC_AS_DLL -o "%outputDir%\libtcc.dll"
+"%CC%" -shared "..\libtcc.c" %Dflags% -DLIBTCC_AS_DLL -o "%outputDir%\libtcc.dll"
 IF ERRORLEVEL 1 (
 	ECHO  [-] Unable To Compile: TCC Library: libtcc.dll
 	IF NOT EXIST "%CC%" ( 
@@ -92,7 +92,7 @@ REM    Explanation: -DONE_SOURCE"=0" is used to link tcc.exe to libtcc.dll and r
 REM                (-DONE_SOURCE"=0" Can be ommited, flag is only used to reduce size)
 
 :: Bug Found, -run |  Compiling with an old/previous libtcc library, everything is alright (FROM Bellards official site). A newly compiled library says that -run is not available(%outputDir%\libtcc.dll)
-%CC%  "..\tcc.c" "%outputDir%\libtcc.dll" %Dflags% -DONE_SOURCE"=0" -o "%outputDir%\tcc.exe"
+"%CC%"  "..\tcc.c" "%outputDir%\libtcc.dll" %Dflags% -DONE_SOURCE"=0" -o "%outputDir%\tcc.exe"
 IF ERRORLEVEL 1 (
 	ECHO  Unable To Compile: TCC Executable: tcc.exe
 ) ELSE (
