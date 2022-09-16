@@ -67,7 +67,7 @@ MKDIR "%outputDir%" 2>NUL & IF ERRORLEVEL 1 (
 ECHO General Output directory: %outputDir%
 
 :Compilation
-ECHO ----------------------------Main-Compilation-----------------------------            
+ECHO ____________________________Main-Compilation_____________________________            
 ECHO   TCC Library is being compiled!
 ECHO   ^| Source File: ..\libtcc.c
 ECHO   ^| Output Files: libtcc.dll, libtcc.def
@@ -104,10 +104,9 @@ IF ERRORLEVEL 1 (
 		ECHO No Error
 	) ELSE (
 		ECHO There is Error: -run is not available in a cross compiler
+		ECHO Running x32 compiler on x86-64 Windows OS gives this error.
+		ECHO Please use x86-64 version instead of x32 compiler on x64 system
 	)
-
-	
-
 
 PAUSE
 
@@ -125,21 +124,19 @@ IF ERRORLEVEL 1 (
 )
 ECHO.
 
-ECHO ---------------------------Creating Directories---------------------------  
+ECHO ___________________________Creating Directories___________________________  
 
 REM EXES_ONLY
 
 REM "Folder ok" means Okey, a playful indication that it is ok. (^__^)
 REM Originally, MKDIR did not log/show messages of the Sucessfull attempts, only Error text output. 
 ECHO Creating directories..
-IF NOT EXIST "%outputDir%\libtcc"   ( MKDIR "%outputDir%\libtcc"   & IF ERRORLEVEL 0 ECHO  Sucessfully created "%outputDir%\libtcc"   ) ELSE ECHO  Folder ok "%outputDir%\libtcc"  Already exist 
-IF NOT EXIST "%outputDir%\lib"      ( MKDIR "%outputDir%\lib"      & IF ERRORLEVEL 0 ECHO  Sucessfully created "%outputDir%\lib"      ) ELSE ECHO  Folder ok "%outputDir%\lib"     Already exist
-IF NOT EXIST "%outputDir%\doc"      ( MKDIR "%outputDir%\doc"      & IF ERRORLEVEL 0 ECHO  Sucessfully created "%outputDir%\doc"      ) ELSE ECHO  Folder ok "%outputDir%\doc"     Already exist 
-IF NOT EXIST "%outputDir%\include"  ( MKDIR "%outputDir%\include"  & IF ERRORLEVEL 0 ECHO  Sucessfully created "%outputDir%\include"  ) ELSE ECHO  Folder ok "%outputDir%\include" Already exist 
-IF NOT EXIST "%outputDir%\examples" ( MKDIR "%outputDir%\examples" & IF ERRORLEVEL 0 ECHO  Sucessfully created "%outputDir%\examples" ) ELSE ECHO  Folder ok "%outputDir%\examples"  Already exist 
-ECHO.
+FOR %%D IN (libtcc lib doc include examples) DO (
+	IF NOT EXIST "%outputDir%\%%D"   ( MKDIR "%outputDir%\%%D"   & IF ERRORLEVEL 0 ECHO  Sucessfully created "%outputDir%\%%D"   ) ELSE ECHO  Folder ok "%outputDir%\%%D"  Already exist 	
+)
 
-ECHO ------------------Copy .h Headers and .def files, .txt files---------------
+ECHO.
+ECHO __________________Copy .h Headers and .def files, .txt files_______________
 
 
 REM  [Generating .def file] 
@@ -171,7 +168,7 @@ COPY "..\tests\libtcc_test.c" "%outputDir%\examples"
 COPY "tcc-win32.txt"          "%outputDir%\doc"
 
 ECHO.
-ECHO -------------Compiling TCC runtime library and other libraries------------  
+ECHO _____________Compiling TCC runtime library and other libraries____________  
 ECHO libtcc1.c
 
 ECHO.
