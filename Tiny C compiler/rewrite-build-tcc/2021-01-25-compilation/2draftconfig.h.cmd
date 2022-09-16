@@ -155,16 +155,30 @@ IF NOT EXIST "%outputDir%\libtcc.def" (
 )
 
 REM [Definition files .def]
+ECHO Moving "%outputDir%\libtcc.def" to "%outputDir%\libtcc\"
 MOVE "%outputDir%\libtcc.def" "%outputDir%\libtcc\"
 
 
 REM [Header files .h]
 ECHO. 
+ECHO Copying Headers "..\include\*.h" to "%outputDir%\include"
 COPY "..\include\*.h"         "%outputDir%\include"
+ECHO.
+	
+ECHO Copying Header "..\tcclib.h" to "%outputDir%\include"
 COPY "..\tcclib.h"            "%outputDir%\include"
+ECHO.
+	
+ECHO Copying Header "..\libtcc.h" to "%outputDir%\libtcc"
 COPY "..\libtcc.h"            "%outputDir%\libtcc"
+ECHO.
+	
+ECHO Copying  Header "..\tests\libtcc_test.c" to "%outputDir%\examples"
 COPY "..\tests\libtcc_test.c" "%outputDir%\examples"
-COPY "tcc-win32.txt"          "%outputDir%\doc"
+ECHO.
+
+ECHO Copying  Header ".\tcc-win32.txt" to "%outputDir%\doc"
+COPY ".\tcc-win32.txt"          "%outputDir%\doc"
 
 ECHO.
 ECHO _____________Compiling TCC runtime library and other libraries____________  
