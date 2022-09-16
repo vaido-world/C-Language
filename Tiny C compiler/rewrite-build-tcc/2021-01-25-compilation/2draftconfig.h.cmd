@@ -105,7 +105,8 @@ IF ERRORLEVEL 1 (
 	) ELSE (
 		ECHO There is Error: -run is not available in a cross compiler
 		ECHO Running x32 compiler on x86-64 Windows OS gives this error.
-		ECHO Please use x86-64 version instead of x32 compiler on x64 system
+		ECHO Please use x86-64 version instead of x32 compiler on x64 system.
+		ECHO OR compile with -DTCC_IS_NATIVE flag to compile according to your computer's architecture.
 	)
 
 PAUSE
