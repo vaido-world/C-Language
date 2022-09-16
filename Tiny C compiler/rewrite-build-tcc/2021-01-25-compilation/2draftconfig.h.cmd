@@ -117,7 +117,7 @@ ECHO   ^| Source File: ..\tcc.c
 ECHO   ^| Output Files: %prefix-architecture%-tcc.exe
 ECHO   ^| Preprocessor Flags: %DflagsSecondary%
 :: Bug Found, -run |  Compiling with an old/previous libtcc library, everything is alright (FROM Bellards official site). A newly compiled library says that -run is not available (%outputDir%\libtcc.dll)
-%CC% "..\tcc.c" "%outputDir%\libtcc.dll" %DflagsSecondary% -o "%outputDir%\%prefix-architecture%-tcc.exe"
+"%CC%" "..\tcc.c" "%outputDir%\libtcc.dll" %DflagsSecondary% -o "%outputDir%\%prefix-architecture%-tcc.exe"
 IF ERRORLEVEL 1 ( 
 	ECHO  Unable To Compile: TCC Secondary Executable: %prefix-architecture%-tcc.exe
 ) ELSE (
