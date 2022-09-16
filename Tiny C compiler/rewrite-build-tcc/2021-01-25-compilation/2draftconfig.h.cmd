@@ -60,8 +60,8 @@ REM FilenameforX32  i386-win32
 REM FilenameforX64  x86_64-win32
 SET "DflagsSecondary=-DTCC_TARGET_PE -DTCC_TARGET_X86_64"
 SET "Dflags=-DTCC_TARGET_PE -DTCC_TARGET_I386"
-SET "prefix-architecture=i386-win32"
-SET "prefix-architecture=x86_64-win32"
+SET "filename-prefix-architecture=i386-win32"
+SET "filename-prefix-architecture=x86_64-win32"
 
 REM outputDir Examples: 
 REM          ..\                 - Lower level Directory
@@ -129,14 +129,14 @@ IF ERRORLEVEL 1 (
 ECHO.
 ECHO   Alternative TCC Executable is being compiled! 
 ECHO   ^| Source File: ..\tcc.c 
-ECHO   ^| Output Files: %prefix-architecture%-tcc.exe
+ECHO   ^| Output Files: %filename-prefix-architecture%-tcc.exe
 ECHO   ^| Preprocessor Flags: %DflagsSecondary%
 :: Bug Found, -run |  Compiling with an old/previous libtcc library, everything is alright (FROM Bellards official site). A newly compiled library says that -run is not available (%outputDir%\libtcc.dll)
-"%CC%" "..\tcc.c" "%outputDir%\libtcc.dll" %DflagsSecondary% -o "%outputDir%\%prefix-architecture%-tcc.exe"
+"%CC%" "..\tcc.c" "%outputDir%\libtcc.dll" %DflagsSecondary% -o "%outputDir%\%filename-prefix-architecture%-tcc.exe"
 IF ERRORLEVEL 1 ( 
-	ECHO  Unable To Compile: TCC Secondary Executable: %prefix-architecture%-tcc.exe
+	ECHO  Unable To Compile: TCC Secondary Executable: %filename-prefix-architecture%-tcc.exe
 ) ELSE (
-	ECHO   TCC Secondary Executable: %prefix-architecture%-tcc.exe is Compiled Successfuly.
+	ECHO   TCC Secondary Executable: %filename-prefix-architecture%-tcc.exe is Compiled Successfuly.
 )
 ECHO.
 
