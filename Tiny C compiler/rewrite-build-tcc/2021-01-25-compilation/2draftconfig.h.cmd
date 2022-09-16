@@ -109,8 +109,6 @@ IF ERRORLEVEL 1 (
 		ECHO OR compile with -DTCC_IS_NATIVE flag to compile according to your computer's architecture.
 	)
 
-PAUSE
-
 ECHO.
 ECHO   Alternative TCC Executable is being compiled! 
 ECHO   ^| Source File: ..\tcc.c 
