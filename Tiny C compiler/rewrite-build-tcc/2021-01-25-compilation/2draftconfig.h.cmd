@@ -22,10 +22,10 @@ IF NOT DEFINED git_hash (
 :config.h
 
 REM Can be seen via "tcc -version"
-set /p VERSION= < ..\VERSION 
+SET /P VERSION= < ..\VERSION 
 REM Writes a new config.h
 (
-  ECHO #define TCC_VERSION "%VERSION% (git_hash: %git_hash%) (Compiled at: %DATE%)"
+  ECHO #define TCC_VERSION "%VERSION% mob:%git_hash% (Compiled at: %DATE%)"
   ECHO #ifdef TCC_TARGET_X86_64
   ECHO #define TCC_LIBTCC1 "libtcc1-64.a"
   ECHO #else
