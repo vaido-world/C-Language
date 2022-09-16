@@ -8,7 +8,7 @@ IF NOT "%thisFolder%" == "win32" (
 
  )
  
-:get_git_hash_from_folder_name
+:get_git_hash_from_folder_name_tinycc-HEAD
 FOR %%I IN ("%~dp0..") DO SET "folder_name=%%~nxI"
 FOR /F "tokens=3 delims=-" %%P IN ("%folder_name%") DO SET "git_hash=%%P" 
 REM Check if hash on the folder name consist of 7 characters, else folder name probably does not contain git hash
