@@ -73,7 +73,11 @@ REM          %~dp0\              - Current Directory of this executable script f
 REM Common Mistakes:  
 REM FIXED:   .\randoom   instead of  .\randoom\   - Appends a name "randoom" to the output filenames.
 
-SET "outputDir=%USERPROFILE%\Desktop\output"
+REM #1 Commmand Line Argument: Output
+SET "outputDir=%1"
+
+REM Default Output Directory
+IF NOT DEFINED outputDir SET "outputDir=%USERPROFILE%\Desktop\tcc"
 MKDIR "%outputDir%" 2>NUL & IF ERRORLEVEL 1 (
 	ECHO|SET /p="[INFO-NOTICE] MKDIR: "
 	MKDIR "%outputDir%"
