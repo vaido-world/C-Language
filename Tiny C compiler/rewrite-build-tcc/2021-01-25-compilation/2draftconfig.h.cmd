@@ -10,7 +10,9 @@ IF NOT "%thisFolder%" == "win32" (
  
 :get_git_hash_from_folder_name
 FOR %%I IN ("%~dp0..") DO SET "folder_name=%%~nxI"
-FOR /F "tokens=3 delims=-" %%P IN ("%folder_name%") DO SET "git_hash=%%P"
+FOR /F "tokens=3 delims=-" %%P IN ("%folder_name%") DO SET "git_hash=%%P" 
+REM Check if hash on the folder name consist of 7 characters, else folder name probably does not contain git hash
+IF DEFINED git_hash IF NOT "%git_hash:~0,-7%"=="" SET "git_hash=" 
 
 :get_git_hash_using_git_program
 IF NOT DEFINED git_hash (
@@ -18,6 +20,8 @@ IF NOT DEFINED git_hash (
 	WHERE git
 	IF %ERRORLEVEL% NEQ 0 ECHO git wasn't found 
 )
+
+ECHO Last commit hash: %git_hash% 
 
 :config.h
 
