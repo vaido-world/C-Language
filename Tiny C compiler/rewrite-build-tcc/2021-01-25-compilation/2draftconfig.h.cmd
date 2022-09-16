@@ -7,6 +7,17 @@ IF NOT "%thisFolder%" == "win32" (
 	PAUSE
 
  )
+ 
+:get_git_hash_from_folder_name
+FOR %%I IN ("%~dp0..") DO SET "folder_name=%%~nxI"
+FOR /F "tokens=3 delims=-" %%P IN ("%folder_name%") DO SET "git_hash=%%P"
+
+:get_git_hash_using_git_program
+IF NOT DEFINED git_hash (
+	ECHO %git_hash%
+	WHERE git
+	IF %ERRORLEVEL% NEQ 0 ECHO git wasn't found 
+)
 
 :config.h
 
@@ -14,7 +25,7 @@ REM Can be seen via "tcc -version"
 set /p VERSION= < ..\VERSION 
 REM Writes a new config.h
 (
-  ECHO #define TCC_VERSION "%VERSION% (Compiled at: %DATE: =0%)"
+  ECHO #define TCC_VERSION "%VERSION% (git_hash: %git_hash%) (Compiled at: %DATE%)"
   ECHO #ifdef TCC_TARGET_X86_64
   ECHO #define TCC_LIBTCC1 "libtcc1-64.a"
   ECHO #else
@@ -37,7 +48,7 @@ REM multiple architectures compilation
 REM primary architecture build
 REM secondary architecture build
 
-
+REM -DTCC_GITHASH="""%GITHASH%"""
 REM DflagsForX64
 REM DflagsForX32
 REM FilenameforX32  i386-win32
@@ -65,6 +76,7 @@ MKDIR "%outputDir%" 2>NUL & IF ERRORLEVEL 1 (
 )
 
 ECHO General Output directory: %outputDir%
+ECHO.
 
 :Compilation
 ECHO ____________________________Main-Compilation_____________________________            
@@ -87,7 +99,7 @@ ECHO.
 ECHO   TCC Executable is being compiled!
 ECHO   ^| Source File: ..\tcc.c
 ECHO   ^| Output Files: tcc.exe
-ECHO   ^| Preprocessor Flags: %Dflags% -DONE_SOURCE"=0"
+ECHO   ^| Preprocessor Flags: %Dflags% -DTCC_GITHASH="%git_hash%" -DONE_SOURCE"=0"
 REM    Explanation: -DONE_SOURCE"=0" is used to link tcc.exe to libtcc.dll and reuse it. 
 REM                (-DONE_SOURCE"=0" Can be ommited, flag is only used to reduce size)
 
@@ -185,7 +197,7 @@ ECHO _____________Compiling TCC runtime library and other libraries____________
 ECHO libtcc1.c
 
 ECHO.
-ECHO  TIP: %%EXES_ONLY%% simply jumps over Header files being included and compilation of further libraries.
+ECHO  TIP: %%EXES_ONLY%% Skips copying Header files and compilation of further libraries.
 ECHO  Skips any Documentation and Deletes *.o *.def files created.
 
 PAUSE
